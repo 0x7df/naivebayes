@@ -17,5 +17,3 @@ def count_words(words):
     for word in words:
         wc[word] = wc.get(word, 0.0) + 1.0
     return wc
-
-

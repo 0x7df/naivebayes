@@ -18,9 +18,12 @@ uinput = yaml.load(stream)
 vocab = {}
 word_counts = {}
 priors = {}
+log_prob = {}
+p_w_given = {}
 for icat in uinput['categories']:
     word_counts[icat] = {}
     priors[icat] = 0.
+    log_prob[icat] = 0.
 
 docs = []
 for f in find(uinput['trainingdata']):
@@ -36,7 +39,8 @@ for f in find(uinput['trainingdata']):
     words = nbutil.tokenize(text)
     counts = nbutil.count_words(words)
     for word, count in list(counts.items()):
-        # if we haven't seen a word yet, let's add it to our dictionaries with a count of 0
+        # if we haven't seen a word yet, let's add it to our dictionaries with
+        # a count of 0
         if word not in vocab:
             vocab[word] = 0.0  # use 0.0 here so Python does "correct" math
         if word not in word_counts[category]:
@@ -45,32 +49,31 @@ for f in find(uinput['trainingdata']):
         word_counts[category][word] += count
 
 
-new_doc = open("examples/Allosaurus.txt").read()
-new_doc = open("examples/Python.txt").read()
-new_doc = open("examples/Yeti.txt").read()
+#new_doc = open("examples/Allosaurus.txt").read()
+#new_doc = open("examples/Python.txt").read()
+new_doc = open(uinput['testfile']).read()
 words = nbutil.tokenize(new_doc)
 counts = nbutil.count_words(words)
 
 import math
 
-prior_dino = (priors["dino"] / sum(priors.values()))
-prior_crypto = (priors["crypto"] / sum(priors.values()))
+priors_sum = sum(priors.values())
+for icat in uinput['categories']:
+    priors[icat] = priors[icat] / priors_sum
 
-log_prob_crypto = 0.0
-log_prob_dino = 0.0
 for w, cnt in list(counts.items()):
     # skip words that we haven't seen before, or words less than 3 letters long
     if w not in vocab or len(w) <= 3:
         continue
 
     p_word = vocab[w] / sum(vocab.values())
-    p_w_given_dino = word_counts["dino"].get(w, 0.0) / sum(word_counts["dino"].values())
-    p_w_given_crypto = word_counts["crypto"].get(w, 0.0) / sum(word_counts["crypto"].values())
+    for icat in uinput['categories']:
+        p_w_given[icat] = (word_counts[icat].get(w, 0.0) / 
+                           sum(word_counts[icat].values()))
 
-    if p_w_given_dino > 0:
-        log_prob_dino += math.log(cnt * p_w_given_dino / p_word)
-    if p_w_given_crypto > 0:
-        log_prob_crypto += math.log(cnt * p_w_given_crypto / p_word)
+    for icat in uinput['categories']:
+        if p_w_given[icat] > 0.:
+            log_prob[icat] += math.log(cnt * p_w_given[icat] / p_word)
 
-print("Score(dino)  :", math.exp(log_prob_dino + math.log(prior_dino)))
-print("Score(crypto):", math.exp(log_prob_crypto + math.log(prior_crypto)))
+for icat in uinput['categories']:
+    print("Score("+icat+"):", math.exp(log_prob[icat] + math.log(priors[icat])))
