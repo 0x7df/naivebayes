@@ -1,16 +1,20 @@
 import nbutil
 from sh import find
+import yaml
+
+# read input
+filename = "test01_input.yaml"
+stream = file(filename, 'r')
+uinput = yaml.load(stream)
 
 # setup some structures to store our data
 vocab = {}
-word_counts = {
-    "crypto": {},
-    "dino": {}
-}
-priors = {
-    "crypto": 0.,
-    "dino": 0.
-}
+word_counts = {}
+priors = {}
+for icat in uinput['categories']:
+    word_counts[icat] = {}
+    priors[icat] = 0.
+
 docs = []
 for f in find("sample-data"):
     f = f.strip()
