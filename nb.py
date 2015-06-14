@@ -1,27 +1,4 @@
-import re
-import string
-
-def remove_punctuation(s):
-    """See: http://stackoverflow.com/a/266162
-    """
-    exclude = set(string.punctuation)
-    return ''.join(ch for ch in s if ch not in exclude)
-
-def tokenize(text):
-    text = remove_punctuation(text)
-    text = text.lower()
-    return re.split("\W+", text)
-
-def count_words(words):
-    wc = {}
-    for word in words:
-        wc[word] = wc.get(word, 0.0) + 1.0
-    return wc
-
-s = "Hello my name, is Greg. My favorite food is pizza."
-count_words(tokenize(s))
-{'favorite': 1.0, 'food': 1.0, 'greg': 1.0, 'hello': 1.0, 'is': 2.0, 'my': 2.0, 'name': 1.0, 'pizza': 1.0}
-
+import nbutil
 from sh import find
 
 # setup some structures to store our data
@@ -48,8 +25,8 @@ for f in find("sample-data"):
     # ok time to start counting stuff...
     priors[category] += 1
     text = open(f).read()
-    words = tokenize(text)
-    counts = count_words(words)
+    words = nbutil.tokenize(text)
+    counts = nbutil.count_words(words)
     for word, count in list(counts.items()):
         # if we haven't seen a word yet, let's add it to our dictionaries with a count of 0
         if word not in vocab:
@@ -63,8 +40,8 @@ for f in find("sample-data"):
 new_doc = open("examples/Allosaurus.txt").read()
 new_doc = open("examples/Python.txt").read()
 new_doc = open("examples/Yeti.txt").read()
-words = tokenize(new_doc)
-counts = count_words(words)
+words = nbutil.tokenize(new_doc)
+counts = nbutil.count_words(words)
 
 import math
 
