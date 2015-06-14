@@ -1,2 +1,3 @@
 # YAML
 categories: ["crypto", "dino"]
+trainingdata: "./sample-data"

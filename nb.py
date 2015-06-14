@@ -2,6 +2,13 @@ import nbutil
 from sh import find
 import yaml
 
+def categorise(file):
+    if "cryptid" in f:
+        category = "crypto"
+    else:
+        category = "dino"
+    return category
+
 # read input
 filename = "test01_input.yaml"
 stream = file(filename, 'r')
@@ -16,15 +23,12 @@ for icat in uinput['categories']:
     priors[icat] = 0.
 
 docs = []
-for f in find("sample-data"):
+for f in find(uinput['trainingdata']):
     f = f.strip()
     if not f.endswith(".txt"):
         # skip non .txt files
         continue
-    elif "cryptid" in f:
-        category = "crypto"
-    else:
-        category = "dino"
+    category = categorise(f)
     docs.append((category, f))
     # ok time to start counting stuff...
     priors[category] += 1
