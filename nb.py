@@ -1,6 +1,9 @@
 import nbutil
 from sh import find
 import yaml
+import sys
+
+filename = sys.argv[1]
 
 def categorise(file):
     if "cryptid" in f:
@@ -10,7 +13,7 @@ def categorise(file):
     return category
 
 # read input
-filename = "test01_input.yaml"
+#filename = "test01_input.yaml"
 stream = file(filename, 'r')
 uinput = yaml.load(stream)
 
