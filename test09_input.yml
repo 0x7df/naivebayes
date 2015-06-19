@@ -1,0 +1,8 @@
+# YAML
+categorisemodule: "./trainingdata/categorisefunc.py"
+categories: ["Reactor_physics", "Radiation_transport", "Linear_algebra", "Numerical_integration"]
+trainingdata: "./trainingdata"
+testfile: ["./testdata/Generalized_minimum_residual_method.pdf.txt",
+           "./testdata/Neutron_importance_and_variational_formulation_in_reactor_physics.pdf.txt",
+           "./testdata/Final_report-hybrid_Monte_Carlo-deterministic_methods_for_nuclear_reactor-related_criticality_calculations.pdf.txt",
+           "./testdata/Investigation_of_new_quadrature_sets_for_discrete_ordinates_method_with_application_to_non-conventional_problems.pdf.txt"]

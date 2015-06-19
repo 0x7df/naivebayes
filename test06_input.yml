@@ -1,0 +1,5 @@
+# YAML
+categorisemodule: "./trainingdata/categorisefunc.py"
+categories: ["Reactor_physics", "Radiation_transport", "Linear_algebra", "Numerical_integration"]
+trainingdata: "./trainingdata"
+testfile: ["./testdata/Final_report-hybrid_Monte_Carlo-deterministic_methods_for_nuclear_reactor-related_criticality_calculations.pdf.txt"]

@@ -27,7 +27,6 @@ vocab = {}
 word_counts = {}
 priors = {}
 log_prob = {}
-p_w_given = {}
 for icat in uinput['categories']:
     word_counts[icat] = {}
     priors[icat] = 0.
@@ -56,15 +55,16 @@ for f in find(uinput['trainingdata']):
         vocab[word] += count
         word_counts[category][word] += count
 
+priors_sum = sum(priors.values())
+for icat in uinput['categories']:
+    priors[icat] = priors[icat] / priors_sum
 
 for testfile in uinput['testfile']:
     new_doc = open(testfile).read()
     words = nbutil.tokenize(new_doc)
     counts = nbutil.count_words(words)
-
-    priors_sum = sum(priors.values())
     for icat in uinput['categories']:
-        priors[icat] = priors[icat] / priors_sum
+        log_prob[icat] = 0.
 
     for w, cnt in list(counts.items()):
         # skip words that we haven't seen before, or words less than 3 letters long
@@ -72,6 +72,7 @@ for testfile in uinput['testfile']:
             continue
 
         p_word = vocab[w] / sum(vocab.values())
+        p_w_given = {}
         for icat in uinput['categories']:
             p_w_given[icat] = (word_counts[icat].get(w, 0.0) / 
                                sum(word_counts[icat].values()))

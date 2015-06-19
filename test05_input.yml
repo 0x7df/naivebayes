@@ -1,0 +1,5 @@
+# YAML
+categorisemodule: "./trainingdata/categorisefunc.py"
+categories: ["Reactor_physics", "Radiation_transport", "Linear_algebra", "Numerical_integration"]
+trainingdata: "./trainingdata"
+testfile: ["./testdata/Neutron_importance_and_variational_formulation_in_reactor_physics.pdf.txt"]

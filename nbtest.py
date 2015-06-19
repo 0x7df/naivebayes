@@ -29,7 +29,20 @@ class TestFull(unittest.TestCase):
         wc = nbutil.count_words(nbutil.tokenize(s))
         self.assertEqual(wc, {'favorite': 1.0, 'food': 1.0, 'greg': 1.0, 'hello': 1.0, 'is': 2.0, 'my': 2.0, 'name': 1.0, 'pizza': 1.0})
 
-    
+    def test09(self):
+        proc = subprocess.Popen(["python", "nb.py", "test09_input.yml"], stdout=subprocess.PIPE)
+        allout = proc.communicate()[0]
+        refout = ""
+        proc = subprocess.Popen(["python", "nb.py", "test04_input.yml"], stdout=subprocess.PIPE)
+        refout += proc.communicate()[0]
+        proc = subprocess.Popen(["python", "nb.py", "test05_input.yml"], stdout=subprocess.PIPE)
+        refout += proc.communicate()[0]
+        proc = subprocess.Popen(["python", "nb.py", "test06_input.yml"], stdout=subprocess.PIPE)
+        refout += proc.communicate()[0]
+        proc = subprocess.Popen(["python", "nb.py", "test07_input.yml"], stdout=subprocess.PIPE)
+        refout += proc.communicate()[0]
+        self.assertEqual(refout, allout)
+ 
 
 if __name__ == '__main__':
     unittest.main()
