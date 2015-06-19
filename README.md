@@ -1,6 +1,6 @@
 # README #
 
-A very simple naive Bayes classifier.
+A very simple naive Bayes classifier based on http://blog.yhathq.com/posts/naive-bayes-in-python.html.
 
 ### How to test and run ###
 
