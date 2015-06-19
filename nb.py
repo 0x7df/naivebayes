@@ -1,3 +1,8 @@
+"""Main routine for the naive Bayes classifier.
+
+Required argument: filename of YAML input deck.
+"""
+
 import nbutil
 from sh import find
 import yaml
@@ -10,7 +15,6 @@ try:
     filename = sys.argv[1]
 except IndexError:
     sys.exit("Name of file to categorise required as argument to nb.py")
-    
 
 # read input
 stream = file(filename, 'r')
@@ -19,7 +23,7 @@ uinput = yaml.load(stream)
 
 # load the categorise function from the user-supplied module
 trainingmodfilename = uinput['categorisemodule']
-imp.load_source('trainingmod',trainingmodfilename)
+imp.load_source('trainingmod', trainingmodfilename)
 from trainingmod import categorise
 
 # setup some structures to store our data
@@ -67,14 +71,15 @@ for testfile in uinput['testfile']:
         log_prob[icat] = 0.
 
     for w, cnt in list(counts.items()):
-        # skip words that we haven't seen before, or words less than 3 letters long
+        # skip words that we haven't seen before, or words less than 3
+        # letters long
         if w not in vocab or len(w) <= 3:
             continue
 
         p_word = vocab[w] / sum(vocab.values())
         p_w_given = {}
         for icat in uinput['categories']:
-            p_w_given[icat] = (word_counts[icat].get(w, 0.0) / 
+            p_w_given[icat] = (word_counts[icat].get(w, 0.0) /
                                sum(word_counts[icat].values()))
 
         for icat in uinput['categories']:
@@ -82,4 +87,5 @@ for testfile in uinput['testfile']:
                 log_prob[icat] += math.log(cnt * p_w_given[icat] / p_word)
 
     for icat in uinput['categories']:
-        print("Score("+icat+"):", math.exp(log_prob[icat] + math.log(priors[icat])))
+        print("Score("+icat+"):", math.exp(log_prob[icat] +
+                                  math.log(priors[icat])))
