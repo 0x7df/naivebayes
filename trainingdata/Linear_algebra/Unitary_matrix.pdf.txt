@@ -1,0 +1,163 @@
+Unitary Matrix -- from Wolfram MathWorld
+
+Page 1 of 3
+Search Site
+
+Algebra
+Applied Mathematics
+
+Algebra > Linear Algebra > Matrices > Matrix Types
+History and Terminology > Mathematica Code
+MathWorld Contributors > Rowland, Todd
+
+Other Wolfram Sites:
+Wolfram Research
+Integrator
+
+Calculus and Analysis
+Discrete Mathematics
+Foundations of Mathematics
+
+Unitary Matrix
+
+Tones
+Functions Site
+
+Geometry
+
+Wolfram Science
+
+History and Terminology
+
+more…
+
+Number Theory
+Latest Mathematica Information >>
+
+Probability and Statistics
+Recreational Mathematics
+
+A square matrix
+
+is a unitary matrix if
+
+Download Mathematica Trial >>
+
+Topology
+
+(1)
+
+Alphabetical Index
+
+Show your math savvy with a
+MathWorld T-shirt.
+
+Interactive Entries
+Random Entry
+
+where
+
+denotes the conjugate transpose and
+
+Complete Mathematica
+Documentation >>
+
+is the matrix inverse. For example,
+
+Read the latest Technical Software
+News.
+
+New in MathWorld
+MathWorld Classroom
+
+(2)
+
+About MathWorld
+Send a Message to the Team
+Order book from Amazon
+
+12,636 entries
+Mon Oct 9 2006
+
+is a unitary matrix. A matrix
+function
+
+can be tested to see if it is unitary using the Mathematica
+
+UnitaryQ[m_List?MatrixQ] :=
+(Conjugate@Transpose@m.m == IdentityMatrix@Length@m)
+The definition of a unitary matrix guarantees that
+(3)
+where
+
+is the identity matrix. In particular, a unitary matrix is always invertible, and
+. Note that transpose is a much simpler computation than inverse. Unitary
+matrices leave the length of a complex vector unchanged. A similarity transformation of a
+
+http://mathworld.wolfram.com/UnitaryMatrix.html
+
+10/10/2006
+
+Unitary Matrix -- from Wolfram MathWorld
+
+Page 2 of 3
+
+Hermitian matrix with a unitary matrix gives
+(4)
+(5)
+Unitary matrices are normal matrices. If
+
+is a unitary matrix, then the permanent
+(6)
+
+(Minc 1978, p. 25, Vardi 1991).
+For real matrices, unitary is the same as orthogonal. In fact, there are some similarities
+between orthogonal matrices and unitary matrices. The rows of a unitary matrix are a
+unitary basis. That is, each row has length one, and their Hermitian inner product is zero.
+Similarly, the columns are also a unitary basis. In fact, given any unitary basis, the matrix
+whose rows are that basis is a unitary matrix. It is automatically the case that the columns
+are another unitary basis.
+The unitary matrices are precisely those matrices which preserve the Hermitian inner
+product
+(7)
+Also, the norm of the determinant of
+unitary matrices are connected. If
+
+is
+then
+
+. Unlike the orthogonal matrices, the
+is a special unitary matrix.
+
+The product of two unitary matrices is another unitary matrix. The inverse of a unitary
+matrix is another unitary matrix, and identity matrices are unitary. Hence the set of unitary
+matrices form a group, called the unitary group.
+SEE ALSO: Antihermitian Matrix, Clifford Algebra, Conjugate Transpose, Group
+
+Representation, Hermitian Inner Product, Hermitian Matrix, Normal Matrix, Orthogonal
+Group, Permanent , Special Unitary Matrix, Spin Group, Symmetric Matrix, Unimodular
+Matrix, Unit Matrix, Unitary Group. [Pages Linking Here]
+This entry contributed by Todd Rowland
+
+http://mathworld.wolfram.com/UnitaryMatrix.html
+
+10/10/2006
+
+Unitary Matrix -- from Wolfram MathWorld
+
+Page 3 of 3
+
+REFERENCES:
+Minc, H. §3.1 in Permanents. Reading, MA: Addison-Wesley, 1978.
+Vardi, I. Computational Recreations in Mathematica. Reading, MA: Addison-Wesley, 1991.
+
+CITE THIS AS:
+Rowland, Todd. "Unitary Matrix." From MathWorld-- A Wolfram Web Resource, created by Eric W. Weisstein.
+http://mathworld.wolfram.com/UnitaryMatrix.html
+
+© 1999 CRC Press LLC, © 1999-2006 Wolfram Research, Inc. | Terms of Use
+
+http://mathworld.wolfram.com/UnitaryMatrix.html
+
+10/10/2006
+

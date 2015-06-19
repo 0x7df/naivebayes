@@ -1,0 +1,61 @@
+DTIC STINET TR Accession: AD0634843 - NEUTRON IMPORTANCE AND VARIATIONAL FORMULATION IN REACTOR PH...
+
+Page 1 of 2
+
+Accession Number:
+AD0634843
+Citation Status:
+ACTIVE
+Title:
+NEUTRON IMPORTANCE AND VARIATIONAL FORMULATION IN REACTOR PHYSICS,
+Fields and Groups :
+180900 - FISSION REACTOR PHYSICS
+201000 - QUANTUM THEORY AND RELATIVITY
+Corporate Author:
+UPPSALA UNIV (SWEDEN) QUANTUM CHEMISTRY GROUP
+Personal Author(s):
+Nozawa, Reikichi
+Report Date:
+25 FEB 1966
+Media Count:
+48 Pages(s)
+Organization Type:
+6 - FOREIGN ACADEMIC AND NON-PROFIT
+Contract Number(s):
+AF 61(052)-874 (AF61052874)
+Report Number(s):
+Scientific-7 (Scientific7)
+ARL66-0120 (ARL660120)
+
+http://www.dtic.mil/dodsrch/docView?c=139BC2A8741F3FAC&dk=http%3A%2F%2Fstinet.dtic.mil%2Fstinet%2FXSLTServlet%3Fad... 15/11/2006
+
+DTIC STINET TR Accession: AD0634843 - NEUTRON IMPORTANCE AND VARIATIONAL FORMULATION IN REACTOR PH...
+
+Page 2 of 2
+
+Monitor Acronym(s):
+ARL (ARL)
+Monitor Series:
+66-0120 (660120)
+Descriptors:
+*NEUTRON FLUX, *REACTOR OPERATION, ITERATIONS, SWEDEN.
+Abstract:
+The neutron importance is studied as a physical concept for a time-dependent system considering the case where successive detections are made
+as well as the final detection. Successive detections make the importance equation inhomogeneous. Based on the physical interpretation of neutron
+importance, a new formulation of variational principles are proposed in a manner applicable to time-dependent systems. The proposed variational
+functionals are to be understood not as Lagrangian densities as in classical or quantum theory of fields but as total detection data in experiments. As an
+application, a method of Green's functions is developed to improve successively a trial flux. The modification factor for the source term in the diffusion
+equation is derived in a most elementary way. (Author)
+Distribution Limitation(s):
+01 - APPROVED FOR PUBLIC RELEASE
+Source Code:
+362130
+Document Location:
+DTIC AND NTIS
+Geopolitical Code:
+SW
+Citation Updated:
+04 JAN 2006
+
+http://www.dtic.mil/dodsrch/docView?c=139BC2A8741F3FAC&dk=http%3A%2F%2Fstinet.dtic.mil%2Fstinet%2FXSLTServlet%3Fad... 15/11/2006
+

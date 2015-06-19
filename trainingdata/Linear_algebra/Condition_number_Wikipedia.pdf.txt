@@ -1,0 +1,92 @@
+Condition number - Wikipedia, the free encyclopedia
+
+Page 1 of 3
+
+Condition number
+From Wikipedia, the free encyclopedia
+
+In numerical analysis, the condition number associated with a problem is a measure of that problem's amenability to digital computation, that is, how numerically
+well-posed the problem is. A problem with a low condition number is said to be well-conditioned, while a problem with a high condition number is said to be illconditioned.
+
+The condition number of a matrix
+For example, the condition number associated with the linear equation Ax = b gives a bound on how inaccurate the solution x will be after approximate solution. Note
+that this is before the effects of round -off error are taken into account; conditioning is a property of the matrix, not the algorithm or floating point accuracy of the
+computer used to solve the corresponding system. In particular, one should think of the condition number as being (very roughly) the rate at which the solution, x, will
+change with respect to a change in b. Thus, a small condition number will dampen out errors in b to lessen their effect on the solution, wheras a large condition
+number will enhance error in b. (As a consequence of this, even a system with a small condition number can have a large error in x if b is not very well known.)
+For this problem, the condition number, ?, is defined by
+,
+in any consistent norm. This number arises so often in numerical linear algebra that it is given a name, the condition number of a matrix :
+
+Of course, this definition depends on the choice of norm.
+n
+
+If
+
+is l2 norm then
+
+where s max(A) and s min(A) are maximal and minimal singular values of A respectively. Hence
+n
+
+If A is normal then
+
+http://en.wikipedia.org/wiki/Condition_number
+
+10/10/2006
+
+Condition number - Wikipedia, the free encyclopedia
+
+(
+n
+
+n
+
+If
+
+Page 2 of 3
+
+are maximal and minimal (by moduli) eigenvalues of A respectively)
+
+If A is unitary then
+?(A) = 1
+is
+
+norm and A is lower triangular non-singular (i.e.,
+
+) then
+
+The condition number in other contexts
+Condition numbers for singular-value decompositions , polynomial root finding, eigenvalue and many other problems may be defined.
+Generally, if a numerical problem is well-posed, it can be expressed as a function f mapping its data, which is an m-tuple of real numbers x, into its solution, an ntuple of real numbers f(x).
+Its condition number is then defined to be the maximum value of the ratio of the relative errors in the solution to the relative error in the data, over the problem
+domain:
+
+where e is some reasonably small value in the variation of data for the problem.
+If f is also differentiable, this is approximately
+
+External links
+http://en.wikipedia.org/wiki/Condition_number
+
+10/10/2006
+
+Condition number - Wikipedia, the free encyclopedia
+n
+
+Page 3 of 3
+
+Condition Number of a Matrix (http://numericalmethods.eng.usf.edu/mws/gen/04sle/mws_gen_sle_spe_adequacy.pdf) at Holistic Numerical Methods Institute
+
+Retrieved from " http://en.wikipedia.org/wiki/Condition_number "
+Category: Numerical analysis
+
+n
+n
+
+This page was last modified 02:42, 5 October 2006.
+All text is available under the terms of the GNU Free Documentation License. (See Copyrights for details.)
+Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc.
+
+http://en.wikipedia.org/wiki/Condition_number
+
+10/10/2006
+

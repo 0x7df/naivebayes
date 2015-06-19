@@ -1,0 +1,159 @@
+Search This Site
+
+Thermal Hydraulics and Fluid Dynamics Central
+Tell a
+Friend
+Search This Site
+TH Home
+CFD Information
+MathCad Solutions
+Natural Circulation
+Computer Codes
+Finite Element
+
+What is Thermal Hydraulics? Thermal Hydraulics (T/H) is the the study and/or
+analysis of a fluid that is influenced by the addition of heat. The fluid could be a
+multi-component, multi-phase fluid that is usually flowing or accelerating in a
+fixed structure, e.g.., piping system or large vessel. The heat can be added in
+many different ways. For example, heat can be added to the fluid from
+conduction through a heat exchanger or by radiation heat transfer from extremely
+hot rods. Because of the potentially complicated nature of thermal hydraulic
+engineering and analysis, the methods used to simulate the behavior of the
+multi-phase fluid flow are very complicated.
+
+Fluid Dynamics I
+Fluid Dynamics II
+Fluid Dynamics
+Calculations
+Fuel Rack Design
+Nuclear Related Papers
+Free Software
+Heat Transfer
+
+Hydrology
+
+Thermal Hydraulics Central is dedicated to providing the most up to date
+information in the area of thermal hydraulics and fluid dynamic engineering and
+analysis. The site has extensive information on fluid dynamics and heat transfer,
+which are integral technical specialties of thermal hydraulics. T/H Central also
+provides information on many areas of fluid flow, material properties, numerical
+methods, research, computer software and other related topics. Thermal
+Hydraulics Central provides free calculators and information for many fluid flow
+related areas. So look around and enjoy. If you know of a better information
+source, let us know at SiteManager@THCentral.com .
+
+Materials Property
+National Labs
+Nuclear Technology
+
+Nuclear Thermal
+Hydraulics
+
+Thermal-hydraulic evaluation and analysis is one of the many engineering
+services provided by EDA, Inc.. Thermal-hydraulic evaluation and analysis is a
+very specialized field and should be performed by experienced engineering
+personnel. EDA, Inc. has the experience and knowledge to complete the most
+challenging thermal-hydraulic assessments.
+
+Numerical Methods
+RELAP5
+Research
+Simulations
+Stability
+Topics
+
+Books
+Math Information
+Guide to Calculators
+
+Guide to
+Arithmetic
+Math History
+
+EDA, Inc. has experience in the following areas:
+Steady State fluid flow simulation with and without heat transfer, e. g.,
+feedwater and service water system balancing.
+Multi-Component, two-phase flow simulation, e. g., a) steam flow into a
+nitrogen filed containment, b) forces caused by a pump start after air is
+drawn into the pipe line by condensing steam.
+Transient two-phase simulation, e. g., a) simulating the behavior of a reactor
+power plant during a small break in the primary or secondary systems or
+during an anticipate transient without scram.
+Loss-of-Coolant-Accident simulations. These events are primarily evaluated
+for nuclear power plants. All aspects of thermal hydraulic simulation are
+explored including reactor kinetics and decay heat.
+
+American Family
+Computers
+
+Genealogy
+Other Sites
+Shopping
+
+Computer
+Shopping
+American Family
+Computers
+
+Genealogy
+
+These are just a few examples. To get more detailed experience for one of the
+EDA, Inc. principals, go to an EDA Resume.
+A Thermal-Hydraulic evaluation consists generally of three parts.
+A review of the problem and/or problem objectives should be performed so
+decisions on resources, such as computer tools, can be made
+successfully.. This, of course is the most crucial part of the evaluation
+process. The engineer should look at all aspects of the problem and/or
+mission to determine the proper tools and techniques one should use to
+achieve accurate results and minimize cost. It is really important that the
+proper/correct thermal-hydraulic computer programs are selected. For
+example, if the fluid in the system being evaluated is single phase at high
+pressure, the design computer program of choice may be a finite element
+computer program. Some of the methods and computer programs available
+for finite element analyses are provided on the Finite Element page. If the
+process being evaluated is, for example, a steam generator, the more
+appropriate choice may be a finite difference program, e. g., RELAP5.
+Some of the thermal hydraulic computer programs are presented on the
+
+thermal hydraulic Computer Program page. Many Thermal Hydraulic
+Computer Programs are available and it is imperative that the appropriate
+computer programs are use the first time. It is also important that these
+programs have the proper quality assurance performed. This includes the
+validation of the program to simulate the process and the validation of the
+user to be able to use the program to simulate the process. All these areas
+are important in the initial phases of the evaluation to ensure that cost is
+held to a minimum. In all cases, scope analyses should be completed to
+determine the initial estimates of analytical response and cost. In some
+cases these analyses reveal that a more detailed analysis is not required
+and the project cost may be reduced significantly. Many of these initial
+analyses can be performed using the calculators provided at the EDA, Inc.'s
+Calculator site.
+
+Once the calculations are finished, they must be reviewed for accuracy and
+for practicality. This review is usually accomplished by the QA reviewer
+following the procedures provided in the QA program. The quality of the
+practicality review is based on the experience level of the organization that
+has completed the calculation and on the experience level of the reviewing
+organization. Questions that should be answered even for large established
+companies are: a) Is there an adequate experience level of the performer
+and reviewer to provide a good safe and reliable product? and b) Were the
+evaluations performed according to necessary regulatory and company
+standards?
+
+The final product must be delivered in a form that is transferable, readable
+and defendable. For any given project, EDA, Inc. ensures proper QA for the
+software and provides experienced individuals so the product can be
+presented successfully in front of oversight and/or regulatory authorities.
+Additionally, the final recommended solution must be practical enough to
+successfully implement. In most cases it will be necessary for the analyst
+to interface with the system and construction engineers so the final product
+can be installed successfully. EDA, Inc personnel have many years of
+experience in implementing analytical solutions for operating systems.
+Contact EDA, Inc at SiteManager@edasolutions.com .
+
+| About Us | Feedback | Thermal Hydraulics Home |
+For comments send an email to: SiteManager@i-edainc.com
+Copyright © 2001-2002 EDA, Inc.. All rights reserved.
+Revised: November 03, 2003 .
+PW
+

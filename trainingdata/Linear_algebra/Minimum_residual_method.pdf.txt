@@ -1,0 +1,157 @@
+Minimal Residual Method -- from Wolfram MathWorld
+
+Page 1 of 3
+Search Site
+
+Algebra
+Applied Mathematics
+Calculus and Analysis
+Discrete Mathematics
+
+Applied Mathematics > Numerical Methods > Linear Systems > Iterative Methods
+MathWorld Contributors > Templates
+
+Other Wolfram Sites:
+Wolfram Research
+Integrator
+
+Minimal Residual Method
+
+Tones
+
+Foundations of Mathematics
+
+Functions Site
+
+Geometry
+
+Wolfram Science
+
+History and Terminology
+
+more…
+
+Number Theory
+Probability and Statistics
+Recreational Mathematics
+Topology
+Alphabetical Index
+Interactive Entries
+Random Entry
+New in MathWorld
+MathWorld Classroom
+About MathWorld
+Send a Message to the Team
+Order book from Amazon
+
+12,636 entries
+Mon Oct 9 2006
+
+The conjugate gradient method can be viewed as a special variant of the Lanczos
+method for positive definite symmetric systems. The minimal residual method
+(MINRES) and symmetric LQ method (SYMMLQ) methods are variants that can be
+applied to symmetric indefinite systems.
+The vector sequences in the conjugate gradient method correspond to a
+factorization of a tridiagonal matrix similar to the coefficient matrix. Therefore, a
+breakdown of the algorithm can occur corresponding to a zero pivot if the matrix is
+indefinite. Furthermore, for indefinite matrices the minimization property of the
+conjugate gradient method is no longer well-defined. The MINRES methods is a
+variant of the conjugate gradient method that avoids the LU decomposition and
+does not suffer from breakdown. MINRES minimizes the residual in the 2-norm. The
+convergence behavior of the conjugate gradient and MINRES methods for indefinite
+systems was analyzed by Paige et al. (1995).
+
+Latest Mathematica Information >>
+Download Mathematica Trial >>
+Complete Mathematica
+Documentation >>
+Show your math savvy with a
+MathWorld T-shirt.
+Read the latest Technical Software
+News.
+
+When
+is not positive definite, but symmetric, we can still construct an orthogonal
+basis for the Krylov subspace by three-term recurrence relations. Eliminating the
+search directions in the equations of the conjugate gradient method gives a
+recurrence
+(1)
+which can be written in matrix form as
+(2)
+
+http://mathworld.wolfram.com/MinimalResidualMethod.html
+
+10/10/2006
+
+Minimal Residual Method -- from Wolfram MathWorld
+where
+
+is an
+
+Page 2 of 3
+tridiagonal matrix.
+
+In this case we have the problem that
+no longer defines an inner product.
+However we can still try to minimize the residual in the 2-norm by obtaining
+(3)
+that minimizes
+(4)
+(5)
+Now we exploit the fact that if
+(6)
+then
+subspace
+
+is an orthonormal transformation with respect to the current Krylov
+
+(7)
+and this final expression can simply be seen as a minimum norm least squares
+problem.
+The element in the
+position of
+can be annihilated by a simple Givens
+rotation and the resulting upper bidiagonal system (the other subdiagonal elements
+having been removed in previous iteration steps) can simply be solved, which leads
+to the MINRES method (Paige and Saunders 1975).
+SEE ALSO: Biconjugate Gradient Method, Chebyshev Iteration, Conjugate Gradient
+
+Method on the Normal Equations Conjugate Gradient Method , Conjugate Gradient
+Squared Method, Flexible Generalized Minimal Residual Method, Generalized
+Minimal Residual Method , Linear System of Equations, Nonstationary Iterative
+Method, Preconditioner, Quasi-Minimal Residual Method Stationary Iterative
+Method, Symmetric LQ Method, Transpose-Free Quasi-Minimal Residual Method.
+[Pages Linking Here]
+
+http://mathworld.wolfram.com/MinimalResidualMethod.html
+
+10/10/2006
+
+Minimal Residual Method -- from Wolfram MathWorld
+
+Page 3 of 3
+
+This entry contributed by Noel Black and Shirley Moore, adapted from Barrett et al.
+(1994) (author's link)
+
+REFERENCES:
+Barrett, R.; Berry, M.; Chan, T. F.; Demmel, J.; Donato, J.; Dongarra, J.; Eijkhout, V.; Pozo, R.;
+Romine, C.; and Van der Vorst, H. Templates for the Solution of Linear Systems: Building Blocks for
+Iterative Methods, 2nd ed. Philadelphia, PA: SIAM, 1994.
+http://www.netlib.org/linalg/html_templates/Templates.html.
+Paige, C.; Parlett, B.; and van der Vorst, H. "Approximate Solutions and Eigenvalue Bounds from
+Krylov Subspaces." Numer. Lin. Alg. Appl. 29, 115 -134, 1995.
+Paige, C. and Saunders, M. "Solution of Sparse Indefinite Systems of Linear Equations." SIAM J.
+Numer. Anal. 12, 617-629, 1975.
+
+LAST MODIFIED: July 29, 2003
+CITE THIS AS:
+Black, Noel and Moore, Shirley. "Minimal Residual Method." From MathWorld--A Wolfram Web
+Resource, created by Eric W. Weisstein. http://mathworld.wolfram.com/MinimalResidualMethod.html
+
+© 1999-2006 Wolfram Research, Inc. | Terms of Use
+
+http://mathworld.wolfram.com/MinimalResidualMethod.html
+
+10/10/2006
+

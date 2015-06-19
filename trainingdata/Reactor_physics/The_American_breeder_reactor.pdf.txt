@@ -1,0 +1,236 @@
+The American Breeder Reactor
+COMMENT BY JAY BOUDREAU
+
+.
+
+rom its inception the breeder
+reactor has been described as
+a self-fueling energy machine,
+the answer to our energy
+needs in the coming century. The United
+States started up the world’s first breeder
+reactor in 1951 and followed with an
+operational pilot plant in 1963, the 20megawatt-electric (MWe) Experimental
+Breeder Reactor II (EBR II). In 1969 we
+completed the initial design for an intermediate size (300-MWe) breeder reactor
+to be built at Clinch River, Tennessee, as
+the major step toward a commercially
+viable power generation system. In 1971
+President Nixon established the liquid-metal fast breeder reactor (LMFBR)
+as the nation’s highest priority research
+and development effort. Yet today, ten
+years later, we have slipped from our
+world preeminence in breeder technology, and the direction and very future of
+the breeder development program in the
+United States is now uncertain.
+Meanwhile, the French, the British,
+and the Russians proceeded with their
+own original plans: the 250-MWe
+Phenix, the 250-MWe Prototype Fast
+Reactor (PFR), and the 350-MWe
+Bystrye Neitrony (BN-350) all came
+on--line about 1974. The French and the
+Russians have continued their programs.
+The Russian 600-MWe Bystrye
+Neitrony (BN-600) came on-line in 1979;
+their 1600-MWe Bystrye Neitrony
+(BN-1600) is scheduled for 1986. The
+1200-MWe French Super-Phenix is
+scheduled for completion in 1984. Today
+it is France who leads the world in
+breeder reactor technology.
+The slowdown and all-but demise of
+the American breeder reactor program
+have resulted partly from uranium fuel
+costs, partly from breeder reactor de-
+
+F
+
+118
+
+velopment costs, and partly from the
+politics of nonproliferation of nuclear
+weapons. Just the cost of producing
+plutonium fuel from a breeder is high
+enough to keep utility companies in the
+United States from being seriously interested in the breeder at this time. For
+example, the current market price of
+mined, processed uranium fuel (yellowcake), which is $25 per pound, would
+have to increase to nearly $165 per
+pound in today’s dollars before the
+breeder would be financially competitive
+with the light-water reactor. cost
+equivalence might take seventy-five to
+one hundred years unless crises arise in
+fossil fuels and imported oil. Consequently, today there is little market pressure to maintain the impetus of the
+breeder programs begun in the Nixon
+era.
+The cost of development and construction is another problem in the
+breeder reactor program. Currently, the
+capital cost of the breeder is significantly
+higher than that of the light-water reactor. Constructing a 1000-MWe
+light-water reactor would cost about
+$1.7 billion, while a fast breeder reactor
+system of comparable power could cost
+$3.4 billion. Because of the excessive
+cost, United States utility companies are
+reluctant to undertake the purchase of a
+breeder system without government subsidies. In France, where there is a shortage of domestic energy resources,
+breeder construction is subsidized as a
+matter of government policy. However,
+in this country opposition to such a
+policy has come from both political
+parties. For example, in a 1977 letter to
+the House of Representatives, Michigan
+Congressman David Stockman, who is
+now President Reagan’s Budget Direc-
+
+tor, denounced the Clinch River project
+as “totally incompatible with our free
+market approach to energy policy.”
+The politics of nuclear weapons proliferation is still another issue in the
+breeder program. Because of grave international concern about proliferation,
+President Carter in April 1977 called for
+indefinite deferral of construction of
+commercial breeder reactors. Breeders
+are considered hazardous because they
+produce rather large quantities of
+plutonium, the basic material of nuclear
+weapons. However, separation of
+plutonium from breeder reactor fuel requires sophisticated reprocessing, and
+fabrication of nuclear weapons requires
+still further technology. The International Fuel Cycle Evaluation report published in 1979 found that the breeder fuel
+cycle poses no greater threat of international weapons proliferation than does
+the light-water reactor system. In 1981
+an Iraqi reactor was destroyed by Israel
+in order to stop development of nuclear
+weapons in Iraq; that reactor was not a
+breeder but a light-water type. In the
+United States the proliferation-inspired
+moratorium has locked up our breeder
+program for four years; now, under a
+new administration, we are just beginning to take another look at the program. Whether the breeder development
+should simply pick up where it left off is
+open to question.
+On the technical side the case for
+completing the 350-MWe Clinch River
+breeder reactor as a demonstration,
+power-producing facility is debatable.
+The reason for building commercial
+plants of gradually increasing size is to
+learn about scaling. It is not possible, for
+example, to ensure successful construction and operation of a 1000-MWe
+LOS ALAMOS SCIENCE
+
+Program Gets a Second Chance
+COMMENT
+breeder facility by extrapolating from
+our experience with the 20-MWe Experimental Breeder Reactor II. Thus,
+Clinch River was to be a steppingstone,
+On the other hand, even during the
+Carter deferral of commercialization,
+funding for building and testing Clinch
+River’s large components continued. The
+Department of Energy constructed large
+facilities specifically designed to test
+pumps, heat exchangers, and other parts.
+By now the components have been largely tested, and most of what will be
+learned from building Clinch River will
+be how the components behave together
+in an operating plant. While this is
+valuable knowledge, its direct applicability is diminished by the fact that
+present plans for the next generation
+facility, familiarly known as Son of
+Clinch, do not retain the same design
+features. Therefore, from a developmental point of view, the Clinch River
+project would increase in value if its
+design were modified to include these
+new features.
+An even more important step toward
+commercialization would be construction of a larger, more advanced developmental plant. The concept for this larger
+plant is another result of the moratorium
+on breeder commercialization. When
+President Carter stopped the Clinch River project in 1977, he instituted a
+four-year conceptual design study to
+evaluate a variety of breeder designs that
+might minimize the threat of proliferation and enhance overall breeder effectiveness. The report, just issued to Congress last March, outlines a modern,
+streamlined, large developmental plant
+with state-of-the-art features not available when the Clinch River breeder was
+designed. This large developmental plant
+LOS ALAMOS SCIENCE
+
+has more advanced pumps, heat exchangers, steam generators, and cooling
+loops. Its design is close to what we now
+envision for commercial plants. However, technical considerations alone do
+not dictate the timing for such a plant.
+There are two questions. How can we
+finance the large developmental plant?
+And how should its construction tie in
+with the now revived Clinch River
+project? The large developmental plant
+is in the 1000-MWe range and, as mentioned before, would cost $3.4 billion in
+1981 dollars. One option would be to
+begin the large plant at some time in the
+future when expenditures for Clinch River have declined, But if too much time
+elapses, companies will not be able to
+afford to keep the existing cadre of
+experienced designers and reactor manufacturers on the payroll. The team will
+disband, and the price this country will
+pay is the lead time necessary to reassemble the team. No one really knows
+how many years this would take or what
+it would cost.
+So far, $1 billion in tax dollars has
+been spent on Clinch River; the total
+cost estimate in current dollars is $3.0 to
+$3.2 billion. The original cost estimate
+was $700 million. An associated reprocessing facility is also planned, and its
+development could cost as much as
+another $1 billion. To build the large
+plant concurrently would require an innovative financing scheme. One suggestion is a Congressionally chartered corporation composed of personnel from
+government, from national laboratories,
+and from industries and utilities. The
+corporation would be empowered to
+enter the private capital market to seek
+funding. The government could provide
+a loan guarantee and could possibly pay
+
+the interest on the loan. The term of the
+loan would commence during plant construction and would terminate when the
+loan had been repaid from revenue generated by power sales. Revenue from
+continued operation would be used to
+repay Treasury for its contribution of
+interest monies. Such a scheme could
+reduce to $800 million the government
+investment in the large plant.
+Two decades ago the breeder reactor
+was an experimental technology with
+great promise for solving future energy
+problems. The United States was a world
+leader in that technology. Now, when
+energy is a very immediate problem for
+most of the world, breeder reactors in
+France and in the Soviet Union are
+beginning to fulfill their promise. But we
+are still in the developmental stage; we
+have lost our sense of urgency about
+breeders; and our entire nuclear industry
+is just beginning to recover from the
+aftereffects of the Three Mile Island
+accident.
+Our country’s energy future is not at
+all secure; another series of crises over
+imported oil and new demands and higher prices for uranium could make the
+breeder reactor very attractive thirty
+years from now. From our own experience and from watching the European efforts, we know that development
+and commercial plant production take
+twenty years or more. We also know
+that the costs of development and construction are rising rapidly. Much of the
+preliminary testing of breeder reactor
+components is done. Now the
+moratorium is over. It seems a good time
+to go forward either with a revised
+intermediate project at Clinch River or
+with a new large developmental
+plant—or with both. ■
+119
+

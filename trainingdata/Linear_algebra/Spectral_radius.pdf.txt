@@ -1,0 +1,92 @@
+Spectral Radius -- from Wolfram MathWorld
+
+Page 1 of 1
+Search Site
+
+Algebra
+Applied Mathematics
+Calculus and Analysis
+Discrete Mathematics
+
+Algebra > Linear Algebra > Matrices > Matrix Eigenvalues
+
+Other Wolfram Sites:
+Wolfram Research
+
+Spectral Radius
+
+Integrator
+Tones
+
+Foundations of Mathematics
+
+Functions Site
+
+Geometry
+
+Wolfram Science
+
+History and Terminology
+
+more…
+
+Number Theory
+Probability and Statistics
+
+Let
+be an
+matrix with complex or real elements with eigenvalues
+Then the spectral radius
+of
+is
+
+, ...,
+
+.
+Latest Mathematica Information >>
+
+Recreational Mathematics
+
+Download Mathematica Trial >>
+
+Topology
+
+Complete Mathematica
+Documentation >>
+
+Alphabetical Index
+Interactive Entries
+Random Entry
+
+SEE ALSO: [Pages Linking Here]
+
+Show your math savvy with a
+MathWorld T-shirt.
+Stay connected with Mathematica.
+
+New in MathWorld
+MathWorld Classroom
+About MathWorld
+
+REFERENCES:
+
+Contribute an Entry
+Send a Message to the Team
+Order book from Amazon
+
+12,620 entries
+Sat Sep 9 2006
+
+Gradshteyn, I. S. and Ryzhik, I. M. Tables of Integrals, Series, and Products, 6th ed. San Diego, CA:
+Academic Press, pp. 1115-1116, 2000.
+
+CITE THIS AS:
+Weisstein, Eric W. "Spectral Radius." From MathWorld--A Wolfram Web Resource.
+http://mathworld.wolfram.com/SpectralRadius.html
+
+© 1999 CRC Press LLC, © 1999-2006 Wolfram Research, Inc. | Terms of Use
+
+http://mathworld.wolfram.com/SpectralRadius.html
+
+10/10/2006
+

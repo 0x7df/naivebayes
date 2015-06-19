@@ -1,0 +1,57 @@
+Normal matrix - Wikipedia, the free encyclopedia
+
+Page 1 of 2
+
+Normal matrix
+From Wikipedia, the free encyclopedia
+
+A complex square matrix A is a normal matrix if
+A * A = AA *
+where A* is the conjugate transpose of A. (If A is a real matrix, A *=A T and so is normal if A T A = AA T .)
+
+Examples
+All unitary, hermitian, and skew-hermitian matrices are normal. (For real matrices, this simplifies as orthogonal, symmetric, and skew-symmetric matrices are
+normal.) If A is unitary A* A = AA * = I. If A is hermitian, then A * = A and so AA * = AA = A *A.
+It is not the case that all normal matrices are either unitary or (skew-)hermitian; for example,
+
+is normal since
+
+but the matrix is not unitary or hermitian.
+
+Consequences
+http://en.wikipedia.org/wiki/Normal_matrix
+
+10/10/2006
+
+Normal matrix - Wikipedia, the free encyclopedia
+
+Page 2 of 2
+
+It is useful to think of normal matrices in analogy to complex numbers, invertible normal matrices in analogy to non-zero complex numbers, the conjugate transpose
+in analogy to the complex conjugate, unitary matrices in analogy to complex numbers of absolute value 1, hermitian matrices in analogy to real numbers and
+hermitian positive definite matrices in analogy to positive real numbers.
+The concept of normality is mainly important because normal matrices are precisely the ones to which the spectral theorem applies; in other words, normal matrices
+are precisely those matrices that can be represented by a diagonal matrix with respect to a properly chosen orthonormal basis of C n. Phrased differently: a matrix is
+normal if and only if its eigenspaces span Cn and are pairwise orthogonal with respect to the standard inner product of C n.
+In general, the sum or product of two normal matrices need not be normal. However, if A and B are normal with AB = BA , then both AB and A + B are also normal and
+furthermore we can simultaneously diagonalize A and B in the following sense: there exists a unitary matrix U such UAU * and UBU* are both diagonal matrices. In
+this case, the columns of U * are eigenvectors of both A and B and form an orthonormal basis of C n.
+If A is both a triangular matrix and a normal matrix, then A is diagonal. This can be seen by looking at the diagonal entries of A *A and AA *, where A is a normal,
+triangular matrix.
+If A is an invertible normal matrix, then there exists a unitary matrix U and a hermitian positive definite matrix R such that A = RU = UR . The matrices R and U are
+uniquely determined by A. This statement can be seen as an analog (and generalization) of the polar representation of non -zero complex numbers.
+The concept of normal matrices can be generalized to normal operators on Hilbert spaces and to normal elements in C-star algebras.
+Retrieved from " http://en.wikipedia.org/wiki/Normal_matrix"
+Category: Matrices
+
+n
+n
+
+This page was last modified 02:59, 21 September 2006.
+All text is available under the terms of the GNU Free Documentation License. (See Copyrights for details.)
+Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc.
+
+http://en.wikipedia.org/wiki/Normal_matrix
+
+10/10/2006
+

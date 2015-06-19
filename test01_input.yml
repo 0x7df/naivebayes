@@ -1,0 +1,5 @@
+# YAML
+categorisemodule: "./sample-data/categorisefunc.py"
+categories: ["crypto", "dino"]
+trainingdata: "./sample-data"
+testfile: ["./examples/Yeti.txt"]

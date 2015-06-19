@@ -1,0 +1,651 @@
+RADIATION
+
+Page 1 of 7
+
+RADIATION FIELD IN A SEMI-INFINITE ATMOSPHERE
+SUBJECTED TO COSINE VARYING COLLIMATED RADIATION
+Tõnu Viik
+Tartu Observatoorium (Tartu Observatory), 61602 Tõravere, Tartumaa, Eesti (Estonia)
+Abstract - Accurate numerical solutions are presented for the radiation field in a semi-infinite, two-dimensional, planeparallel, absorbing-emitting but non-scattering gray atmosphere subjected to cosine-varying collimated incident boundary
+radiation. We approximate the kernel of the integral equation for the emissive power by a sum of exponents. After this
+approximation the integral equation can be solved exactly. This approach allowed us to find the accurate values for the
+source function power and the radiative flux at arbitrary optical depths in the atmosphere.
+
+To compute the radiation field for the problem above one needs the package of FORTRAN-77 double precision codes
+EQBETA.FOR .
+Key words: 2D radiation transfer, H-function, emissive power, radiative flux
+
+1 INTRODUCTION
+There is a group of two-dimensional radiative transfer problems for which an exact solution can be found. These
+problems are connected with non-scattering media with the following types of boundary radiation: (1) cosine varying
+collimated radiation, (2) strip of collimated radiation, (3) cosine varying diffuse radiation, and (4) constant temperature
+strip. In these cases the two -dimensional problem can be reduced to one-dimensional integral equations by the method of
+separation of variables. These problems are considered in a series of papers by Breig and Crosbie (Breig, W.F. and
+Crosbie, A.L. Two-dimensional radiative equilibrium. J. Math. Anal. Appl., 1974, 46, 104-125.) where also a good
+review of literature on the subject is given. Their approach allowed to determine only the external radiation field.
+Here we generalize the results of Breig and Crosbie by applying the method of approximating the kernel of the integral
+equation for the Sobolev resolvent function (which essentially is the regular part of the respective Green function) by a
+series of exponents. The resulting approximate equation has an exact solution which is also represented by a series of
+exponents. This allows us to define the auxiliary functions g and h through the resolvent function Φ and thus define all
+the relevant functions.
+The following is given in detail in: T. Viik, Temperature Distribution in a Semi-Infinite Atmosphere Subjected to Cosine
+Varying Collimated Radiation, Proc. Estonian Acad. Sci. Phys. Math., 49 , 2000, pp.40-57.
+
+2 SOLUTION OF THE EQUATION OF RADIATIVE TRANSFER
+We are looking for the emissive power in a homogeneous non-scattering plane-parallel two -dimensional gray
+atmosphere which is in local thermodynamic equilibrium. The radiative transfer in such an atmosphere is described by
+the following equation
+
+∂I
+cosθ
+
+∂τz
+
+∂I
++sinθsinφ
+
+∂τy
+
+σ
++I=
+
+(1)
+
+T4,
+π
+
+where I is the intensity; θ, the polar angle measured from the inward normal to the atmosphere; φ,azimuthal angle
+measured from the τx−axis; σ, the Stefan-Boltzmann constant; T, the temperature in the atmosphere; σT 4,the emissive
+power. The optical depth τz is measured downward from the boundary of the atmosphere and together with τx and τy
+they form a right-hand rectangular co-ordinate system. We require that the energy is transferred only by radiation, i.e.
+there is no heat conduction or convection in the atmosphere.
+
+Applying of integrating factor techniques to Eq. (1) we obtain the formal solution for the intensities of downward and
+
+http://www.aai.ee/~viik/si_two~1.html
+
+03/05/2006
+
+RADIATION
+
+Page 2 of 7
+
+upward moving radiation in the form
+
+I +( τy,τz, µ)=I 0(τy+)exp( −τz /µ )+
+
+1
+π
+
+⌠
+⌡
+
+τz
+
+σT4(τy′ ,τz′ )exp(−(τz−τz ′)/µ)dτz′ /µ
+
+(2)
+
+0
+
+and
+
+I− (τ
+
+τ µ
+y, z , )=
+
+∞
+⌠
+σT4(τy′ ,τz ′)exp(−( τz′ −τz)/ µ )d τz ′/µ,
+⌡τ
+π
+z
+1
+
+(3)
+
+where τy+= τy−τz tanθsin φ, τy′= τy+( τz′ −τz)tanθsin φ, µ = cos θ and I 0+ is the intensity incident on the boundary of the
+atmosphere [ 1] .
+As far as we require the atmosphere to be in radiative equilibrium we may write
+
+4σT4(τy,τz)=
+
+⌠
+Id ω,
+⌡ π
+4
+
+(4)
+
+where ω is the solid angle.
+Substituting Eqs. (2) and (3) into Eq. (4) we obtain the equation for the emissive power
+
+⌠
+4σT 4(τy,τz ) =
+⌡
+1
+π
+
+⌠
+⌡
+
+2π
+0
+
+2π
+
+I 0+( τy+)exp( −τz/µ )d ω+
+
+1
+∞
+⌠
+⌠ σ 4τ ′τ′
+T ( y , z )exp(−| τz−τz ′| /µ )d τz′ dµ /µd φ.
+⌡0 ⌡
+0
+
+(5)
+
+According to our assumption the incident intensity may be expressed as
+
+I0+(τy+)=I 0[ 1+εexp(i βτy+)] δ( µ−µ0 )δ (φ),
+
+(6)
+
+where I 0 is a constant, ( µ0=cosθ0,φ) defines the direction of the incident collimated radiation, ε is the amplitude of the
+
+cosine wave and δ is the Dirac delta function. Boundary condition (6) means that the top of the atmosphere is illuminated
+strip-wise by a parallel beam at an angle θ0 while the strips are parallel to the x - axis and their widths are defined by the
+spatial frequency β as π/β in units of optical length τy+. The illumination in the direction parallel to the y - axis varies
+according to the cosine law. Next we apply the concept of separation of variables to Eq. (5) by assuming that
+
+σT 4(τy,τz )=
+
+1
+4
+
+I 0[ B β = 0 (τ,µ 0)+εBβ(τ,µ 0)exp(iβτy)] ,
+
+(7)
+
+where B β is the dimensionless emissive power and τ = τz. Using Eq. (7) in Eq. (5) gives us a simple integral equation for
+Bβ in the form
+
+Bβ(τ,µ0)=exp(−τ/µ 0)+ 1
+
+http://www.aai.ee/~viik/si_two~1.html
+
+⌠
+
+∞ E ( τ−τ′)B ( τ′,µ )d τ′ ,
+β
+1
+0
+
+(8)
+
+03/05/2006
+
+RADIATION
+
+Page 3 of 7
+2 ⌡0
+
+where the generalized exponential integral E1 is defined as [ 2]
+
+dt
+E1(τ,β)=
+
+⌠
+⌡
+
+∞
+
+exp(−| τ|
+
+1
+
+√ t2+β 2)
+
+.
+
+√ t2+β2
+
+(9)
+
+By substituting µ 0 for (t 2+β2) −1/2 in Eq. (8) and multiplying both sides of it by dt/√{t2+β2}, and last, integrating from 1 to
+∞ , we arrive at the integral equation for the resolvent function Φβ in the form
+
+Φβ (τ)=
+
+1
+2
+
+1
+E1(τ,β)+
+
+2
+
+⌠
+⌡
+
+∞
+0
+
+E1(τ−τ′)Φβ(τ′)dτ′ ,
+
+(10)
+
+where
+
+Φβ (τ)=
+
+1
+2
+
+⌠
+⌡
+
+Bβ  τ,
+
+
+∞
+
+√ t2+β2  dt
+.
+
+(11)
+
+1
+
+√ t2+β 2
+Next we introduce two functions h(τ,µ) and g(τ,µ) as follows [ 13]
+
+hβ (τ, µ)=1+
+
+⌠
+⌡
+
+∞
+τ
+
+Φβ (t)exp( −(t−τ)/ µ)dt
+
+(12)
+
+and
+
+gβ (τ,µ)=exp(−τ/µ)+
+
+⌠ τ
+Φβ(t)exp( −(τ−t)/µ)dt.
+⌡
+0
+
+(13)
+
+In the following we need a system of equations which connect those two functions with each other
+
+−µ
+
+∂ hβ (τ,µ )
+∂τ
+µ
+
++h β( τ, µ) = µΦβ (τ)+1, (14)
+
+∂gβ (τ,µ)
+∂τ
+
++g β( τ,µ ) = µΦβ (τ). (15)
+
+Eqs. (14) and (15) can easily be found from Eqs. (12) and (13) by differentiating them with respect to τ.
+Sobolev [
+
+18]
+
+has shown that the solution of Eq. (8) may be written in the form
+
+http://www.aai.ee/~viik/si_two~1.html
+
+03/05/2006
+
+RADIATION
+
+Page 4 of 7
+
+Bβ(τ,µ 0)=B β(0,µ0)
+
+
+⌠ τ
+
+exp(−τ/µ 0)+
+Φβ (t)exp(−(τ−t)/µ 0)dt ,
+
+⌡
+
+0
+
+(16)
+
+or, in our notation,
+
+Bβ( τ,µ 0)=B β(0,µ0)g β ( τ,µ 0)
+
+(17)
+
+Formally this completes the solution of the problem to determine the temperature distribution in a semi-infinite
+atmosphere subjected to collimated cosine varying radiation.
+Next we show how to find the emissive power at the boundary Bβ(0,µ 0) and the function gβ (τ,µ) at an arbitrary optical
+depth.
+It is obvious that if β = 0 then Eq. (8) reduces to the equation describing radiation transfer in an one-dimensional medium
+which have been successfully solved by introducing the Sobolev's resolvent function [ 2] and then approximating it by a
+sum of exponents. Since Eq. (8) is linear and the kernel is a sum of exponents we may try to use the same technique.
+First we change the variable u=(t2+β2)− 1/2 in Eq. (9) to reduce this formula to a more familiar form
+
+exp(−τ/u)
+E1( τ,β)=
+
+du
+
+p
+
+⌠
+⌡
+
+,
+
+√ 1−β2u2
+
+0
+
+(18)
+
+u
+
+where p=(1+β2) −1/2 .
+To solve Eq. (10) we express the generalized exponent integral in Eq. (18) as a sum of exponents
+
+N
+
+E1( τ,β)=2
+
+∑wµ
+
+− 1Ψ
+
+k k
+
+exp(−τ/µ k),
+
+k
+
+(19)
+
+k=1
+where the characteristic function is expressed as
+
+1
+Ψ k=
+
+.
+2
+
+(20)
+
+√ 1−β 2µk2
+
+In Eq. (19) w i and µ i are the weights and points of a Gauss quadrature rule in the interval ( 0,p) and N is the order of the
+
+quadrature [ 3] . The characteristic function Ψ (different from that which appears in the analysis by Breig and Crosbie [ 7]
+but nevertheless giving accurate results!) is not a polynomial but it has retained another important quality - it still is an
+even function of x.
+If we have approximated the general exponential integral as a sum of exponents then Eq. (10) accepts an exact solution as
+a sum of exponents [ 13 ]
+
+N
+
+http://www.aai.ee/~viik/si_two~1.html
+
+03/05/2006
+
+RADIATION
+
+Page 5 of 7
+
+Φ β(τ)=
+
+∑ a exp(−s τ).
+i
+
+(21)
+
+i
+
+i=1
+In order to determine the coefficients ai and s i in Eq. (21) we use Eq. (21) in Eq. (10) and by equating the similar
+exponents we obtain the characteristic equation
+
+N
+
+1 −2
+
+w iΨ (µ i,β )
+
+∑
+
+=0,
+
+(22)
+
+i=1,...,N.
+
+(23)
+
+1−µi2s2
+
+i=1
+and a linear algebraic system for coefficients ai
+
+N
+
+∑
+k=1
+
+ak
+
+−µ i− 1=0,
+
+1 −µ is k
+
+It is evident that Eq. (22) has exactly N pairs of non-zero solutions ± sk if only β ≠ 0. If β = 0 then s 1=± 0 is also a
+solution but as far as this takes us back to the thoroughly studied one -dimensional case, we shall not consider it here.
+The roots of the characteristic equation satisfy the following inequalities
+
+0 ≤ | s1| < µN −1 < | s2| < µN −1− 1 < ... < | sN | < µ 1− 1.
+As far as the roots are bracketed we may use any of the well-recommended root-finding algorithm, e.g. Brent's method
+[ 15] .
+In our approximation the functions hβ( τ,µ ) and g β( τ,µ ) (Eqs. (12) and (13)) may be written in the form
+
+N
+
+h β (τ,µ)=1+µ
+
+∑
+i=1
+
+aiexp(−siτ)
+(24)
+1+siµ
+
+and
+
+N
+
+g β( τ,µ )=exp(−τ/µ )+ µ
+
+∑
+
+ai[exp(−siτ)−exp(−τ/µ)]
+
+i=1
+
+.
+
+(25)
+
+1 −siµ
+
+It may happen that in certain cases we observe the apparent singularity at siµ = 1 but it can simply be removed by
+substituting the respective term in the sum for aiτexp(−τ/µ).
+
+Since the formula for the emissive power at the boundary is given by Sobolev [ 18] in the form
+
+Bβ(0,µ 0)=1+
+
+http://www.aai.ee/~viik/si_two~1.html
+
+⌠
+
+∞ Φ (τ)exp(−τ/µ )dτ,
+β
+0
+
+(26)
+
+03/05/2006
+
+RADIATION
+
+Page 6 of 7
+⌡0
+
+we have in our approximation
+
+N
+
+Bβ (0,µ 0)=H β (µ 0)=1+µ
+
+ai
+
+∑ 1+s µ
+
+.
+
+(27)
+
+i 0
+
+i=1
+
+This concludes the solution of Eq. (8).
+
+3 RADIATIVE FLUX
+In this section we consider the formulation of the equations for the z−component of radiative flux in the atmosphere and
+respective calculations. According to Breig and Crosbie the z −component of radiative flux can be shown to satisfy the
+relationship
+
+qz (τy, τ)=I 0Q β = 0 ( τ, µ0)+ εI 0Qβ ( τ,µ 0) exp(i βτy), (28)
+where the dimensionless radiative flux is given by
+
+Q β( τ,µ 0) = µ0exp( −τ/µ 0) +
+
+1
+2
+1
+2
+
+τ
+
+⌠
+⌡
+
+0
+
+⌠
+⌡
+
+E2( τ−τ′, β) B β( τ′ ,µ 0)d τ′−
+
+∞
+τ
+
+E2( τ′−τ, β) B β( τ′ ,µ 0)d τ′. (29)
+
+In Eq. (29) the generalized second exponential integral can be written as
+
+E2( τ, β) =
+
+⌠
+⌡
+
+p
+0
+
+du
+exp( − | τ| /u)
+
+.
+
+(30)
+
+( 1 −β 2u2) 3/2
+
+Substituting Eq. (30) into Eq. (29), changing the order of integration and taking into account Eqs. (2), (3), (14) and (15)
+we obtain
+
+Qβ ( τ, µ0 ) = µ 0exp( −τ/µ0) +
+p uψ1(µ,β)du
+µ 0Hβ ( µ0) ⌠
+[ g β( τ,µ 0) −g β( τ,u) ] −
+⌡0
+µ 0−u
+µ0H β ( µ 0) ⌠
+⌡
+
+p uψ 1(µ ,β)du
+0
+
+µ 0+u
+
+[ g β( τ,µ 0)+h β (τ,u)−1] , (31)
+
+where
+
+http://www.aai.ee/~viik/si_two~1.html
+
+03/05/2006
+
+RADIATION
+
+Page 7 of 7
+
+ψ1(µ,β)=
+
+1
+.
+
+(32)
+
+2( 1−β2 u2) 3/2
+
+The radiative flux at the boundary of an atmosphere is thus
+
+p uψ1(µ,β)H β(u)du
+Qβ ( 0,µ0) = µ 0−µ 0Hβ ( µ0) ⌠
+.
+⌡0
+µ +u
+
+(33)
+
+0
+
+File translated from T EX by T TH, version 2.88.
+On 17 Feb 2001, 12:51.
+
+http://www.aai.ee/~viik/si_two~1.html
+
+03/05/2006
+

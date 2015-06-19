@@ -1,0 +1,358 @@
+Final Report – Hybrid Monte Carlo-Deterministic Methods
+for Nuclear Reactor-Related Criticality Calculations
+DOE Project: DE-FG07-00ID13920
+Principal Investigator: Edward W. Larsen, University of Michigan
+Report Period: 5/1/2000 – 10/31/2003
+
+1.0 Project Summary
+The overall goal of this project is to develop, implement, and test new hybrid Monte
+Carlo-deterministic (or simply hybrid) methods for the more efficient and more accurate
+calculation of nuclear engineering criticality problems. These new methods will make use of two
+(philosophically and practically) very different techniques – the Monte Carlo technique, and the
+deterministic technique – which have been developed completely independently during the past
+50 years. The concept of this proposal is to merge these two approaches and develop
+fundamentally new computational techniques that enhance the strengths of the individual Monte
+Carlo and deterministic approaches, while minimizing their weaknesses.
+The Monte Carlo method does not suffer from the space-angle-energy grid truncation
+errors that affect deterministic schemes and is particularly advantageous for complex 3-D
+geometries. However, Monte Carlo criticality solutions have statistical errors, are error-prone in
+weakly coupled systems, and can be difficult to bias efficiently. This proposal aims to confront
+these difficulties by developing new “hybrid” schemes that use deterministic techniques to obtain
+more accurate Monte Carlo solutions. Two kinds of hybrid schemes have been developed along
+these lines for fixed-source neutron transport problems: (i) schemes that determine biasing
+parameters for the Monte Carlo simulation from approximate deterministic (usually, adjoint)
+calculations, and (ii) schemes that use more accurate functionals for desired responses, which
+make use of both deterministic (adjoint) and Monte Carlo (forward) information. Extending,
+testing, and optimizing these hybrid algorithms for criticality problems is the theoretical goal of
+this project. The practical goal is to achieve methods that can solve difficult, realistic Monte
+Carlo criticality problems more efficiently and reliably, and with significantly less user-input.
+1.1 Phase 1. Summary of Objectives and Accomplishments
+Phase 1 had a duration of 12 months. This phase covered the development of monoenergetic 1-D test codes to implement and test each of the basic concepts outlined below. The
+Phase 1 Performance Period was May 1, 2000 – April 30, 2001. Deliverable: A topical report at
+the end of Phase 1 to indicate: (i) the performance of the various methods outlined in the
+proposal for 1-D mono-energetic problems; (ii) whether a proof-of-principle has been developed.
+Objectives:
+The proposal will consider three main strategies for new hybrid methods: (i) a Variational
+approach, (ii) a Local Importance Function (LIFT) approach, and (iii) a Weight Windows
+
+1
+
+approach. A fourth general approach – of advantageously combining concepts from three
+different approaches – was also proposed.
+To describe the basic ideas underlying the variational approach, we express the general
+criticality problem as
+
+Lψ =
+
+1
+Fψ ,
+k
+
+(1)
+
+where L is the streaming+collision-scattering operator, F is the fission operator, k is the
+criticality eigenvalue of the system, and ψ is the eigenfunction. The simplified notation in Eq.
+(1) conceals a wealth of detail and complexity. Accurately and efficiently solving solving this
+equation for the eigenvalue k, for realistic problems, is the goal of this project. This eigenvalue
+problem, and other problems like it, lies at the root of nuclear engineering design and analysis.
+If the inner product of two functions ψ* and ψ is represented by
+∞
+
+(ψ*,ψ ) = ∫ 0 ∫ 4 π ∫ V ψ * ( r, Ω, E )ψ ( r, Ω, E ) dVdΩdE ,
+
+(2)
+
+then adjoint operators L* and F * can be defined satisfying (ψ*, Lψ ) = ( L*ψ*,ψ ) and
+(ψ*, Fψ ) = ( F *ψ*,ψ ) , and the adjoint problem to Eq. (1) is:
+
+L*ψ* =
+
+1 *
+F ψ* .
+k
+
+(3)
+
+Multiplying Eq. (1) by an arbitrary function g( r) and integrating over space, angle, and
+energy, we get:
+1 ( g, Lψ )
+=
+.
+k ( g, Fψ )
+
+(4)
+
+This equation is a main ingredient of conventional Monte Carlo simulations. Specifically, the
+function g is taken to be equal to unity, while the function ψ is obtained by simulating a very
+large number of particle histories and introducing the results of each history into the functional
+on the right side of Eq. (4). It is easy to show that if the Monte Carlo estimate Ψ of the exact
+eigenfunction ψ has error of O(ε) , then the error resulting from using Ψ in Eq. (4) is also O(ε) :
+( g, LΨ) 1
+= + O(ε) .
+( g, FΨ) k
+
+(5)
+
+The variational approach to hybrid Monte Carlo simulations makes use of a more
+sophisticated result. Let Ψ be an estimate of ψ [the solution of Eq. (1)] with an error of O(ε) ,
+and let Ψ* be an estimate of ψ* [the solution of Eq. (3)], with an error of O(δ ) . Then, it can be
+shown that
+( Ψ* , LΨ)
+( Ψ , FΨ)
+*
+
+=
+
+1
++ O(ε)O(δ ) .
+k
+
+(6)
+
+Thus, by having “first-order” estimates of both the adjoint and forward eigenfunction, one can
+achieve a much more accurate “second-order” estimate of k. In the variational variance reduction
+
+2
+
+(VVR) method, an inexpensive deterministic (typically a diffusion) calculation is performed to
+obtain a deterministic estimate Ψ* , defined on a grid; then one evaluates Ψ using Monte Carlo,
+and both estimates are introduced into the variational functional [left side of Eq. (6)]. The
+resulting calculation is more complicated, for several reasons: (1) Conventionally, the simple but
+relatively poor estimate Ψ* = g = 1 is used. In the variational approach, Ψ* is expected to be a
+reasonably accurate representation of the adjoint eigenfunction ψ*. Extra cost is associated with
+calculating this Ψ* ; (2) After calculating Ψ* and introducing it into the variational functional
+[left side of Eq. (6)], a reduced functional results, which depends on the specific pointwise
+representation of Ψ* . This reduced functional is more costly to evaluate using a Monte Carlo
+estimate of ψ than the standard functional, based on Ψ* = g = 1. Thus, extra time and cost (per
+particle history) must be spent evaluating the variational functional.
+However, the variational functional [left side of Eq. (6)] is expected to produce a more
+accurate estimate of k using fewer Monte Carlo particles than the standard functional [left side
+of Eq. (5)]. If the variational functional is sufficiently accurate, then given the same computing
+resources (time), it will produce a more accurate estimate of k than the standard functional.
+However, only evaluation and testing can determine if the increased accuracy of the variational
+functional outweighs the extra cost (per particle) of evaluating it.
+Two other approaches were to be considered: the Local Importance Function Transform
+(LIFT), and the Weight Window (WW) approaches. In both of these approaches, the forward
+Monte Carlo process is modified in a nonanalog way. In the LIFT approach, particles have a
+weight, and the “rules of the Monte Carlo game” are modified – the particle mean free path and
+the direction of flight after a scattering event are altered (in a way that introduces no error or bias
+into the estimate of k) to more advantageously “steer” Monte Carlo particles in phase space.
+In the WW approach, a different nonanalog scheme is employed. Now, at each location
+in space, an upper and a lower weight are assigned, and all Monte Carlo particles at that location
+will have a weight that lies between these specified upper and lower bounds. If a particle streams
+into a location with a weight that is too high, it is split; if the weight is too low, the particle is
+Russian-Rouletted.
+The VVR approach outlined above does not require Monte Carlo particles to be
+processed in a nonanalog fashion – but it permits this. The LIFT and WW approaches do require
+a nonanalog treatment of Monte Carlo particles. The LIFT and WW approaches use the same
+estimate of the adjoint Ψ* as in the VVR method; the LIFT method employs Ψ* to determine
+exactly how to alter the mean free path and scattering angle estimates; while the WW technique
+employs Ψ* to define the upper and lower weight windows.
+Performing the testing and evaluation of these concepts in 1-D was the goal of phase 1 of
+this project.
+Accomplishments:
+The fine details of the VVR method, the LIFT method, and the WW method were
+decided upon, and a 1-D monoenergetic code was written to implement, test, and compare these
+various concepts.
+Our testing showed that in 1-D, the VVR concept was extremely beneficial, showing
+huge gains (often well over a factor of 100) over conventional Monte Carlo estimates. The VVR
+
+3
+
+method is particularly well-suited for diffusive eigenvalue problems, characteristic of nuclear
+reactors. One reason is that an inexpensive adjoint calculation based on diffusion theory (rather
+than transport theory) is appropriate; this is the strategy that we adopted. This helped minimize
+the extra cost of obtaining a deterministic estimate of Ψ* . Also, for thick, diffusive problems, the
+angular dependence of the adjoint (and forward) angular fluxes is weak, which enabled us to use
+a simple first-order spherical harmonic representation of ψ * .
+Unfortunately, we did not observe such gains with the LIFT and WW approach.
+Investigations into the reasons for this suggested the following. (1) Our focus was on eigenvalue
+problems for relatively diffusive (highly scattering, optically thick) systems. In such problems,
+the LIFT method alters the rules of the Monte Carlo game by only a small amount, but the cost
+of implementation is not insignificant. Overall, we observed that the cost of implementing LIFT
+outweighed its marginal benefits for this class of diffusive problems. (2) The WW method also
+increased the cost of the calculation (per particle history), with insufficient gain in accuracy to
+yield an overall computational benefit.
+We also tried using LIFT and WW with VVR. Again we found that in general, the extra
+calculational expense of LIFT and WW was not overcome by a sufficient increase in the
+accuracy of the estimate of k to warrant the use of these techniques with VVR.
+Our results were written up and presented at several ANS meetings. Reference [1]
+described some preliminary work in which the VVR concept was applied – with success – to
+source-detector problems. Ref. [2] described early 1-D work on implementing and testing the
+VVR concept for criticality problems. Ref. [3] is theoretical in nature – it describes how the
+VVR concept relates to a new class of zero-variance methods. (The VVR method can be
+understood theoretically as a practical low-variance approximation to an idealized zero-variance
+method.) Ref. [4] describes the 1-D multigroup VVR method with extensive numerical results. In
+relatively simple, homogeneous-medium problems, the VVR method using a P1 adjoint yielded
+gains in the FOM ranging from the factors 10-1,000; using a P3 adjoint, gains in the FOM ranged
+from the factors 20-3,500. For heterogeneous-media problems, the VVR method using a P1
+adjoint yielded gains in the FOM ranging from the factors 10-50; using a P3 adjoint, gains in the
+FOM ranged from the factors 60-170. In the very worst cases, the speedups in the calculations
+using VVR were a factor of 10, and in most cases were much higher. These results were very
+encouraging. They showed that the principle of using a Monte Carlo scheme that is more costly
+per particle, but that employs a more accurate functional to estimate the quantity of interest, can
+lead to greatly reduced run times because of the fewer number of Monte Carlo particles needed
+to achieve the desired accuracy.
+1.2 Phase 2. Summary of Objectives and Accomplishments
+Phase 2 had a duration of 12 months. This phase covered the extension and testing of the
+methods developed in Phase 1 into multidimensional geometries. The Phase 2 performance
+period is May 1, 2001 – April 30, 2002. Deliverable: A topical report at the end of Phase 2
+indicated the performance of the various methods in multidimensional geometries.
+Objectives:
+
+4
+
+The objectives of this phase of the project were to develop a multidimensional code in
+which, guided by our 1-D results, we implement and test the most promising of the hybrid
+techniques considered in Phase 1.
+Accomplishments:
+We accomplished this goal and learned some interesting, but on hindsight not entirely
+unexpected, things. Our multidimensional 3-D code was based on a straightforward Cartesian
+grid in the three spatial variables x, y, and z. As in 1-D, we opted to use a diffusion code to
+estimate Ψ* . Unlike the situation in 1-D, in which diffusion codes (at least in one group) can be
+solved directly by Gaussian Elimination, 3-D diffusion problems require iterative solutions.
+Thus, in 3-D geometries, the cost of obtaining the deterministic estimate of Ψ* is relatively
+greater than in 1-D. Nevertheless, this cost was still minor, compared to the cost of the Monte
+Carlo part of the simulation.
+We also developed a generalization to the hybrid VVR technique, in which enhanced
+estimates of the eigenfunction ψ can be obtained. This requires an entirely different variational
+approach, but which conceptually fits into the already-developed VVR technique for estimating
+the eigenvalue k.
+In addition, we began the implementation and testing of the concept of using an estimate
+of the adjoint eigenfunction ψ * which is not obtained from a deterministic calculation, but rather
+from a Monte Carlo calculation. In general, this procedure does not yield a method that is more
+efficient than the original VVR method in which ψ * is estimated deterministically.
+Nevertheless, estimating ψ * using Monte Carlo has certain practical advantages:
+•
+
+The Monte Carlo adjoint VVR method is generally more efficient than the conventional
+Monte Carlo method for estimating k. Thus – without comparisons to the deterministic
+adjoint VVR method – the Monte Carlo adjoint VVR method represents generally a gain
+in efficiency.
+
+•
+
+Developing a Monte Carlo-only VVR code will be easier and require less programming
+effort than developing a pair of codes (one deterministic, one Monte Carlo) that must be
+run in tandem, or one dual-purpose code containing both deterministic and Monte Carlo
+methods.
+
+•
+
+A Monte Carlo-only VVR code would probably be more user-friendly. For instance, it
+would not require the user to understand the accuracy-limitations of a deterministic
+method that should be weighed in selecting a spatial grid. The user of such a code would
+not need to be familiar with both deterministic and Monte Carlo methods.
+
+•
+
+For especially difficult problems, such as ones containing voids and streaming regions –
+for which deterministic methods are prone to error – it may be advantageous to use a
+Monte Carlo adjoint in which one has confidence that the estimations will improve with
+computing time.
+
+We wrote up our results and again presented them at an ANS meeting. References [5] and
+[6] describe some of our early 3-D work. Ref. [5] presents the VVR method for obtaining
+5
+
+improved estimates of eigenfunctions, while Ref. [6] describes our first experience in using the
+VVR method with adjoint eigenfunctions that are estimated by Monte Carlo (rather than
+deterministically).
+1.3 Phase 3. Summary of Objectives and Accomplishments
+Phase 3 also had a duration of 12 months. This phase covered the extension and testing of
+the multidimensional methods into full energy-dependent simulations. The Phase 3 deliverable
+was a final report indicating: (i) the performance of the various methods in multidimensional
+geometries with the energy-dependent cross sections, (ii) the overall worth of the technical
+hybrid Monte Carlo-deterministic concept as applied to 3-D, energy-dependent criticality
+problems.
+Objectives:
+Our goals for this phase of the project were to complete the three most promising
+elements of the VVR work that we had seen in our earlier research: extensions to full 3-D
+multigroup problems of (i) the original VVR method (using a deterministic estimate of the
+adjoint function) for estimating k, (ii) the adjoint VVR method (using a Monte Carlo estimate of
+the adjoint function) for estimating k, and (iii) the new VVR method for estimating the
+eigenfunction ψ .
+Accomplishments:
+We accomplished these goals and wrote one major conference paper [7] and two fulllength journal articles [8] and [9].
+Reference [7] is an expanded version of Ref. [6], describing in greater detail – and with
+extra numerical results – the option of using the VVR method with a Monte Carlo rather than a
+deterministic estimate of Ψ* . Ref [8] is a full-length journal version of [7]. Ref. [9] is a fulllength journal article describing the VVR method as originally conceived – as a hybrid method
+in which Ψ* is estimated using a deterministic technique and Ψ is estimated using Monte Carlo
+– for 3-D multigroup problems, with many numerical results. These results are very encouraging
+– gains in the FOM by factors of 10 to 40 are observed.
+Our final comments and impressions of the results coming from this project are as
+follows.
+1. The concept of merging deterministic and Monte Carlo techniques for k-eigenvalue
+problems, using the VVR techniques described above, is sound and beneficial. Due to
+lack of time and resources, our multigroup VVR technique could not be extended to the
+full continuous-energy dependence of production Monte Carlo codes such as MCNP.
+Nevertheless, it is very clear that significant gains in the efficiency of Monte Carlo
+criticality codes can be obtained by using the concepts developed in this project.
+2. While the use of a hybrid Monte Carlo-deterministic method for k-eigenvalue problems is
+beneficial, it will require changes in procedure on the part of code users. The reason is
+6
+
+that each given problem will have to be set up and run for both a deterministic and a
+Monte Carlo calculation. This will require the code user to be conversant with both
+Monte Carlo and deterministic methods, since (for example) choices will have to be made
+in defining a spatial grid for the deterministic calculation. However, this extra degree of
+expertise will be compensated by the fact that the Monte Carlo simulation will run much
+more efficiently.
+3. A significant number of successful “hybrid” Monte Carlo-deterministic methods now
+exist for performing practical source-detector problems; a review article on this subject
+has recently been published [10]. In most of these techniques, a deterministic adjoint
+calculation is first performed, the results of which are used to (automatically) define
+biasing parameters for a subsequent nonanalog Monte Carlo calculation. The
+deterministic adjoint calculation in these techniques is aimed primarily at removing the
+task, from the Monte Carlo code user, of developing the multitude of biasing parameters
+that are needed to make Monte Carlo codes run for difficult source-detector problems.
+For difficult source-detector problems, determining these parameters can require hours,
+or even days – even for an experienced user. An added benefit is that computer-generated
+biasing parameters are often much more efficient than the ones obtained by humans.
+Thus, in effect, two birds are killed with one stone: (i) the task of obtaining Monte Carlo
+biasing parameters is taken over by the computer, and (ii) the computer-generated biasing
+parameters enable the Monte Carlo code to run more efficiently than the humangenerated ones. Thus, hybrid Monte Carlo-Deterministic methods are much more of a
+“black box” calculational tool than conventional Monte Carlo methods. These hybrid
+source-detector techniques are similar in many ways to the VVR method developed in
+this project: a deterministic adjoint calculation is first performed, and a subsequent Monte
+Carlo calculation is performed in a way which is made more efficient by the preliminary
+deterministic calculation. The work accomplished in this project is an extension of this
+idea to criticality problems – and to the use of a more accurate functional to calculate the
+quantity of interest – in our case, the eigenvalue k. If future computer codes are
+developed to facilitate the use of hybrid Monte Carlo-deterministic techniques for sourcedetector problems, then it is certain that similar codes could be developed to implement
+the VVR techniques developed in this project for k-eigenvalue problems.
+
+References & Presentations:
+1. J.D. Densmore and E.W. Larsen, “A New Variational Variance Reduction Method for
+Monte Carlo Source-Detector Problems,” Trans. Am. Nucl. Soc. 83, 336 (2000).
+2. J.D. Densmore and E.W. Larsen, “Variational Variance Reduction for Monte Carlo
+Criticality Calculations,” Trans. Am. Nucl. Soc. 84, 177 (2001).
+3. E.W. Larsen and J.D. Densmore, “New Zero-Variance Methods for Monte Carlo Criticality
+and Source-Detector Problems,” Trans. Am. Nucl. Soc. 84, 175 (2001).
+
+7
+
+4. J.D. Densmore and E.W. Larsen, “Variational Variance Reduction for Monte Carlo
+Criticality Problems,” Proc. ANS Topical Meeting: International Conference on
+Mathematical Methods to Nuclear Applications, September 9-13, 2001, Salt Lake City,
+Utah, CD (ISBN: 0-89448-661-6, ANS Order No. 700286) available from the American
+Nuclear Society, 555 N. Kensington Avenue, La Grange Park, IL 60525 (2001).
+5. J.D. Densmore and E.W. Larsen, “Variational Variance Reduction for Monte Carlo
+Eigenfunction Problems,” Trans. Am. Nucl. Soc. 87, 227 (2002).
+6. J.D. Densmore and E.W. Larsen, “Use of Monte Carlo Adjoint Simulations in VVR
+Criticality Calculations,” Trans. Am. Nucl. Soc. 87, 228 (2002).
+7. J.D. Densmore and E.W. Larsen, “Variational Variance Reduction for Criticality
+Calculations Using Monte Carlo Adjoint Fluxes,” Proc. ANS Topical Meeting: Nuclear,
+Mathematical, and Computational Sciences: A Century in Review – A Century Anew, April
+6-10, 2003, Gatlinburg, Tennessee, CD-ROM (ISBN: 0-89448-674-6, ANS Order No.
+700300) available from the American Nuclear Society, 555 N. Kensington Avenue, La
+Grange Park, IL 60525 (2003).
+8. J.D. Densmore and E.W. Larsen, “Variational Variance Reduction for Particle Transport
+Eigenvalue Calculations Using Monte Carlo Adjoint Simulation,” J. Comp. Phys. 192, 387
+(2003).
+9. J.D. Densmore and E.W. Larsen, “Variational Variance Reduction for Monte Carlo Eigenvalue and Eigenfunction Problems,” Nucl. Sci. Eng., to appear (2004).
+10. A. Haghighat and J. Wagner, “Monte Carlo Variance Reduction with Deterministic
+Importance Functions,” Prog. Nucl. Energy 42, 25 (2003).
+
+8
+

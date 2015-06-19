@@ -1,0 +1,143 @@
+Biconjugate Gradient Stabilized Method -- from Wolfram MathWorld
+
+Page 1 of 3
+Search Site
+
+Algebra
+Applied Mathematics
+Calculus and Analysis
+Discrete Mathematics
+
+Applied Mathematics > Numerical Methods > Linear Systems > Iterative Methods
+MathWorld Contributors > Templates
+
+Biconjugate Gradient Stabilized Method
+
+Other Wolfram Sites:
+Wolfram Research
+Integrator
+Tones
+
+Foundations of Mathematics
+
+Functions Site
+
+Geometry
+
+Wolfram Science
+
+History and Terminology
+
+more…
+
+Number Theory
+Probability and Statistics
+Recreational Mathematics
+Topology
+Alphabetical Index
+Interactive Entries
+Random Entry
+New in MathWorld
+MathWorld Classroom
+About MathWorld
+Send a Message to the Team
+Order book from Amazon
+
+12,636 entries
+Mon Oct 9 2006
+
+The biconjugate gradient stabilized method (BCGSTAB) was developed to solve
+nonsymmetric linear systems while avoiding the often irregular convergence
+patterns of the conjugate gradient squared method (Van der Vorst 1992). Instead
+of computing the conjugate gradient squared method sequence
+,
+BCGSTAB computes
+where
+is an th degree polynomial
+describing a steepest descent update.
+BCGSTAB often converges about as fast as the conjugate gradient squared method
+(CGS), sometimes faster and sometimes not. CGS can be viewed as a method in
+which the biconjugate gradient method (BCG) "contraction" operator is applied
+twice. BCGSTAB can be interpreted as the product of BCG and repeated application
+of the generalized minimal residual method. At least locally, a residual vector is
+minimized, which leads to a considerably smoother convergence behavior. On the
+other hand, if the local generalized minimal residual method step stagnates, then
+the Krylov subspace is not expanded, and BCGSTAB will break down. This is a
+breakdown situation that can occur in addition to the other breakdown possibilities
+in the underlying BCG algorithm. This type of breakdown may be avoided by
+combining BCG with other methods, i.e., by selecting other values for
+in the
+algorithm. One such alternative is BCGSTAB2 (Gutknecht 1993). More general
+approaches have been suggested by Sleijpen and Fokkema (1993).
+
+Latest Mathematica Information >>
+Download Mathematica Trial >>
+Complete Mathematica
+Documentation >>
+Show your math savvy with a
+MathWorld T-shirt.
+Read the latest Technical Software
+News.
+
+Note that BCGSTAB has two stopping tests: if the method has already converged at
+the first test on the norm of , the subsequent update would be numerically
+questionable. Additionally, stopping on the first test saves a few unnecessary
+operations, but this is of minor importance.
+BCGSTAB requires two matrix-vector products and four inner products, i.e., two
+
+http://mathworld.wolfram.com/BiconjugateGradientStabilizedMethod.html
+
+10/10/2006
+
+Biconjugate Gradient Stabilized Method -- from Wolfram MathWorld
+
+Page 2 of 3
+
+inner products more than the biconjugate gradient method or the conjugate
+gradient squared method (van der Vorst 2003).
+SEE ALSO: Biconjugate Gradient Method, Chebyshev Iteration, Conjugate Gradient
+
+Method on the Normal Equations Conjugate Gradient Method , Conjugate Gradient
+Squared Method, Flexible Generalized Minimal Residual Method, Generalized
+Minimal Residual Method , Linear System of Equations, Minimal Residual Method,
+Nonstationary Iterative Method, Preconditioner, Quasi-Minimal Residual Method
+Stationary Iterative Method, Symmetric LQ Method, Transpose-Free Quasi-Minimal
+Residual Method. [Pages Linking Here]
+Portions of this entry contributed by Noel Black and Shirley Moore, adapted from
+Barrett et al. (1994) (author's link)
+
+REFERENCES:
+Barrett, R.; Berry, M.; Chan, T. F.; Demmel, J.; Donato, J.; Dongarra, J.; Eijkhout, V.; Pozo, R.;
+Romine, C.; and Van der Vorst, H. Templates for the Solution of Linear Systems: Building Blocks for
+Iterative Methods, 2nd ed. Philadelphia, PA: SIAM, 1994.
+http://www.netlib.org/linalg/html_templates/Templates.html.
+Gutknecht, M. H. "Variants of Bi-CGSTAB for Matrices with Complex Spectrum." SIAM J. Sci. Comput.
+14, 1020-1033, 1993.
+Sleijpen, G. L. G. and Fokkema, D. R. "Bi -CGSTAB(l) for Linear Equations Involving Unsymmetric
+Matrices with Complex Spectrum." Elec. Trans. Numer. Anal. 1, 11-32, 1993.
+van der Vorst, H. "Bi-CGSTAB: A Fast and Smoothly Converging Variant of Bi-CG for the Solution of
+Nonsymmetric Linear Systems." SIAM J. Sci. Statist. Comput. 13, 631-644, 1992.
+van der Vorst, H. Iterative Krylov Methods for Large Linear Systems. Cambridge, England:
+Cambridge University Press, 2003.
+
+LAST MODIFIED: July 28, 2003
+CITE THIS AS:
+
+http://mathworld.wolfram.com/BiconjugateGradientStabilizedMethod.html
+
+10/10/2006
+
+Biconjugate Gradient Stabilized Method -- from Wolfram MathWorld
+
+Page 3 of 3
+
+Black, Noel; Moore, Shirley; and Weisstein, Eric W. "Biconjugate Gradient Stabilized Method." From
+MathWorld--A Wolfram Web Resource.
+http://mathworld.wolfram.com/BiconjugateGradientStabilizedMethod.html
+
+© 1999-2006 Wolfram Research, Inc. | Terms of Use
+
+http://mathworld.wolfram.com/BiconjugateGradientStabilizedMethod.html
+
+10/10/2006
+

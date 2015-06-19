@@ -1,0 +1,302 @@
+Exponential Monte Carlo Convergence of a Three-Dimensional
+Discrete Ordinates Solution
+Jeffrey A. Favorite and Henry Lichtenstein
+Los Alamos National Laboratory
+INTRODUCTION
+Recent work on obtaining exponential convergence for three-dimensional solutions to the
+spatially and angularly continuous monoenergetic transport equation with isotropic scattering
+using the reduced source method1,2 was promising.3 The method, however, used two separate
+estimates of the scalar flux, a Legendre expansion (in the spatial variables) and a quadrature of
+the angular flux. This introduced an inconsistency that may have lead to some convergence
+problems. To remove this inconsistency and provide a fairer test of the combined reduced
+source/Monte Carlo method, the method was applied to estimate the coefficients of a Legendre
+expansion of the solution of the discrete ordinates equations. In this case, no supplementary
+approximations were required.
+THE REDUCED SOURCE METHOD
+The monoenergetic neutral particle discrete ordinates equations in a homogeneous
+medium with isotropic scattering and no internal source can be written4
+ˆ
+
+M
+
+, m = 1, K , M
+m ⋅ ∇ψ m (r ) + Σ t ψ m (r ) − Σ s ∑ t m′ ψ m′ (r ) = 0
+
+,
+
+m′=1
+
+(1)
+
+with boundary condition
+ˆ
+Here, ˆ
+
+m
+
+m
+
+⋅ nˆ s ψ m (rs ) = S m (rs ) ,
+
+ˆ
+
+m
+
+⋅ nˆ s < 0 .
+
+and t m represent the ordinates and weights of the discrete ordinates quadrature set.
+
+(2)
+
+~ (r ) of the exact solution ψ (r ) of the discrete ordinates
+Given some estimate ψ
+m
+m
+~ (r ) is defined as the angular flux residual, ∆ψ (r ) . Using
+equations, the difference ψ m (r ) − ψ
+m
+m
+~ (r ) + ∆ψ (r ) in Eqs. (1) and (2) yields an equation for the angular flux residual:
+ψ m (r ) = ψ
+m
+m
+ˆ
+
+M
+
+ˆ
+m ⋅ ∇∆ψ m (r ) + Σ t ∆ψ m (r ) − Σ s ∑ t m′ ∆ψ m′ (r ) = −
+m′=1
+
+M
+
+~
+~
+~
+,
+m ⋅ ∇ψ m (r ) − Σ t ψ m (r ) + Σ s ∑ t m′ ψ m′ (r )
+
+m = 1, K, M
+
+m′=1
+
+(3)
+
+,
+
+with boundary condition
+m
+
+⋅ nˆ s ∆ψ m (rs ) = S m (rs ) − ˆ
+
+~ (r ) ,
+⋅ nˆ s ψ
+m
+s
+
+(4)
+⋅ nˆ s < 0 .
+~ 0 (r ), which is then used
+In the reduced source method, Eq. (1) is solved for an initial estimate ψ
+m
+ˆ
+
+m
+
+ˆ
+
+m
+
+on the right-hand sides of Eqs. (3) and (4) for the first order residual ∆ψ 1m (r ). Using the
+~ (r ) = ψ
+~ 0 (r ) + ∆ψ 1 (r ) on the right-hand sides of Eqs. (3) and (4) provides
+resulting estimate ψ
+m
+m
+m
+
+an equation for the second order residual ∆ψ 2m (r ) and a prescription for an iterative strategy.
+n
+
+~ (r ) = ψ
+~ 0 (r ) + ∆ψ n′ (r ).
+The angular flux estimate after n such iterations is ψ
+∑ m
+m
+m
+n′=1
+
+MONTE CARLO SCORING AND SAMPLING
+In the present application of the method, the discrete ordinates fluxes ψ m (r) are
+expanded in Legendre polynomials as follows:
+I
+
+J
+
+K
+
+ψ m ( x, y, z ) ≈ ∑∑∑ a m,ijk Pi ( 2Xx − 1) Pj ( 2Yy − 1) Pk ( 2Zz − 1) ,
+
+(5)
+
+i =0 j =0 k =0
+
+where the coefficients a m ,ijk are defined as
+a m,ijk ≡
+
+Y
+Z
+(2i + 1) (2 j + 1) (2k + 1) X
+dx
+dy
+dz ψ m ( x, y, z ) Pi ( 2Xx − 1) Pj ( 2Yy − 1) Pk ( 2Zz − 1) . (6)
+∫
+∫
+∫
+0
+0
+0
+X
+Y
+Z
+
+Using a generalized track length estimator, a particle track of length h along ray m contributes a
+score
+
+s (a m ,ijk ) =
+
+(2i + 1) (2 j + 1) (2k + 1) w
+X
+Y
+Z
+tm
+
+∫
+
+h
+
+0
+
+ds Pi ( 2 xX( s ) − 1) Pj ( 2 yY( s ) − 1) Pk ( 2 zZ( s ) − 1)
+
+(7)
+
+to the coefficient a m ,ijk (w is the particle’s weight). The angular quadrature weight t m appears in
+the denominator because the track length estimator is used to estimate weighted integrals of the
+scalar flux rather than the angular flux.
+The zero’th stage of the reduced source solution procedure, corresponding to an
+approximate solution of Eq. (1), is treated as a “conventional” (non-adaptive) Monte Carlo
+problem, except that the particles are constrained to travel along the pre-selected discrete
+ordinates. In subsequent (adaptive) stages, particles are started according to the residual sources
+Rmn (r ), defined as the right-hand sides of Eqs. (3) and (4), which together describe a system with
+
+a volume source and a source on each surface. The solution to these equations is obtained by
+solving the problem for each source independently and adding those solutions.
+Rather than sampling from the true (residual) source distribution Rmn (r ), which may be
+positive or negative, particles are sampled uniformly in the appropriate phase space (uniformly in
+the volume and isotropically in angle for the volume source; uniformly on the surface and
+isotropically over the inward-directed half of the angle set for the surface sources). The particle
+weight w, which is the ratio of the true density to the sampled density, is V Rmn (r ) for the volume
+source and
+
+1
+
+2
+
+A Rmn (rs ) for the surface sources. The particle weight can be negative.
+
+As in deterministic discrete ordinates methods, the incoming fluxes must be properly
+normalized to preserve the physical source strength. In the present application, this is
+accomplished by using a properly normalized value for S m (rs ) in Eq. (4).
+
+RESULTS
+The method was tested on a homogeneous three-dimensional slab of dimensions
+1 cm × 106 cm × 106 cm and material parameters Σt = 1 and Σs = 0.5. The external source of
+Eq. (2) was S m (rs ) = S m (0, y, z ) = µ m , µ m > 0. Figure 1 shows the results of the solution of the
+S8 equations using a standard quadrature set, 560 000 particles per stage (except the zero’th, in
+which only 80 000 particles were used), and Legendre expansions of order 10 in each direction
+with no Legendre product terms in Eq. (5) [e.g., a m,110 P1 ( 2Xx − 1) P1 ( 2Yy − 1) ]. For this simple
+problem, Fig. 1 clearly shows exponential convergence of four different residuals and of two
+estimates of the known source. The difference between two Monte Carlo scalar fluxes (volume
+midpoint and volume average) and those estimated by THREEDANT (Ref. 5) using the same S8
+quadrature set are shown for verification. For this problem, convergence was achieved after 10
+adaptive stages in 75.1 minutes.
+
+1.00E-02
+
+1.00E-03
+
+volume midpoint
+scalar flux "error"
+volume average
+scalar flux "error"
+
+1.00E-04
+
+x=0 face midpoint
+source error
+
+1.00E-05
+
+x=0 face average
+source error
+1.00E-06
+
+volume midpoint
+scalar flux residual
+volume average
+scalar flux residual
+
+1.00E-07
+
+x=0 face midpoint
+source residual
+
+1.00E-08
+
+x=0 face average
+source residual
+1.00E-09
+0
+
+2
+
+4
+
+6
+
+8
+
+10
+
+12
+
+14
+
+16
+
+18
+
+20
+
+Stage
+
+Figure 1. Exponential convergence of an S8 solution in a three-dimensional slab. The
+method reproduces the exact incoming flux to about 10–6 (face midpoint) and below 10–7 (face
+average). The method reproduces the THREEDANT approximate solution for the scalar flux to
+about 10–4 (volume midpoint and volume average). Residuals for these four values converge
+exponentially to about 10–8.
+
+1. J. H. HALTON, “Sequential Monte Carlo,” Proc. Camb. Phil. Soc., 58, 57–78 (1962).
+2. J. H. HALTON, “Sequential Monte Carlo Techniques for the Solution of Linear Systems,”
+Jour. Sci. Comp., 9, 213–257 (1994).
+3. J. A. FAVORITE, “Exponential Monte Carlo Convergence on a Homogeneous Right
+Parallelepiped Using the Reduced Source Method with Legendre Expansion,” Proc. Int.
+Conf. Mathematics and Computation, Reactor Physics and Environmental Analysis in
+Nuclear Applications, Madrid, Spain, September 27–30, 1999, to be published (1999).
+4. A. F. HENRY, Nuclear Reactor Analysis, Chap. 8, MIT Press, Cambridge, Massachusetts
+(1975).
+5. R. E. ALCOUFFE et. al., “DANTSYS: A Diffusion Accelerated Neutral Particle Transport
+Code System,” Code manual UC-705, LA-12969-M, Los Alamos National Lab., Revised
+March 1997.
+

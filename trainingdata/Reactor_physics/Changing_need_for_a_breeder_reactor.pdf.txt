@@ -1,0 +1,452 @@
+The Changing Need for a Breeder Reactor
+
+Page 1 of 7
+
+The Changing Need for a Breeder Reactor
+Richard Wilson
+When nuclear fission was discovered (Ref 1), and the possibility of a neutron chain reaction was
+demonstrated (Ref 2) there was euphoria about the possibility for unlocking the energy of the atomic
+nucleus for peaceful human development. The need to win a terrible war ensured that progress was first
+made in the field of military explosives, but the scientists continued to ponder the use of nuclear fission
+as an energy source to fuel mankind. One limitation was evident. Only the rare (0.7%) isotope of
+uranium, U-235, was fissionable by slow neutrons and would be burnt up in a reactor. Uranium
+appeared to be a scarce mineral with only three known suppliers: the Joachimstal mine in
+Czechoslovakia, soon to be overtaken by war; Union Minière d?Haute Katanga in the Congo; and the
+Eldorado mining company in Canada. It seemed that although the "nuclear age" had come, it was to be
+short lived.
+But other fissionable materials (with atomic weights A = 4N-1) were predicted by Bohr and Wheeler (Ref
+3) in 1939, and plutonium-239 was discovered by Seaborg, McMillan, Ramannod and Wahl in 1941.
+Soon thereafter, Seaborg and collaborators discovered the first (U-233) of many fissionable isotopes
+not a member of Bohr and Wheeler?s 4N-1 rule. In 1951 McMillan and Seaborg received the Nobel
+prize in chemistry for their work on the chemistry of the transuranic elements that included this
+discovery. This immediately led to a possibility which I will call for brevity "Fermi?s dream". By use of a
+breeder reactor it is possible to convert the waste U-238 into Pu-239 for burning. By this means 100
+times as much energy can be obtained from the same amount of raw fuel. I note that this dream was an
+endeavour to achieve high efficiency in fuel use ? a goal rediscovered by "environmentalists" (but not in
+the context of a breeder reactor), 30 years later. The development of a breeder reactor became a long
+term goal for all countries.
+Before 1975 there were, therefore, coherent plans for a nuclear fuel cycle in the world. One starts with
+uranium ore, chemically processing it to extract the uranium, enriching the natural uranium in the fissile
+isotope U-235, burning the U-235 in an electric power producing reactor, and finally reprocessing the
+spent fuel to recover residual U -235 and Pu-239 for use in subsequent reactors. A fast neutron reactor
+is capable of producing more plutonium fuel than the uranium fuel it burns, leading to a breeder reactor.
+In addition, if the reactor is a fast neutron reactor, other transuranic elements can also be broken up and
+destroyed by fission (Ref 4). All that would be left for subsequent waste disposal would be the fission
+products themselves, almost all with half lives of 30 years or less. The fast neutron reactor of
+preference was to be cooled with liquid sodium. With this coherent plan it was envisaged that the
+energy in all the uranium, not just in the U-235, could be unlocked. In its 1976 budget the US Energy
+Research and Development Administration allocated US$474 million to the breeder reactor, one third of
+the research and development budget and the largest sum ever for a civilian R&D project (Ref 5 ).
+In the early 1970s, problems appeared in the Fermi dream. It was realised that the existence of many
+tonnes of chemically separated plutonium might lead to the possibility of the theft, or "diversion", of
+enough fissionable material to make a nuclear bomb. The presence of "weapons grade" fissionable
+material in the hands of a small "rogue" country, or a terrorist group, is unacceptable and would be a
+nightmare. This led to a study sponsored by the Ford Foundation (Ref 6) and the subsequent decision
+of President Carter, on 7 April 1997, to abandon the plans in the USA to reprocess spent nuclear fuel
+and to slow the development of the breeder reactor. Other countries did not follow the US lead and
+continued to reprocess nuclear fuel. While there is argument and disagreement about the dangers of
+reprocessing, I argue here that reprocessing is not necessary for the future of nuclear power over the
+next half century. Fossil fuel supplies are more plentiful and cheaper than anticipated, supplies of
+uranium ore are adequate, and the cost of the experimental breeder reactors has been greater than
+expected. This conclusion seems to differ from that of many others (Ref 7). Reprocessing may be
+desirable ? but not for fuel resource reasons.
+This paper will explore the various consequences of the changes of the last 25 years, and I claim that
+the data demonstrate that there is no urgency for a breeder reactor. Moreover, I believe that nuclear
+
+http://www.world-nuclear.org/sym/1999/wilson.htm
+
+03/07/2006
+
+The Changing Need for a Breeder Reactor
+
+Page 2 of 7
+
+power could regain its competitiveness and have a long-term future without a breeder reactor. However,
+there may be good environmental reasons for including a fast neutron reactor system as part of the
+world?s nuclear power complex.
+The Availability of Uranium and Other Fuels
+Twenty-nine years ago, Benedict (Ref 8) reported that we had "only" 500 000 tonnes of uranium at a
+price of US$8 per pound (which was the going price at the time), although he estimated that there were
+20 million tonnes of uranium if we were willing to pay the price of US$100 per pound (Table 1). If one
+had paid the higher price for the uranium, the total cost for operating an LWR would have been 0.5 US
+cents per kWh (Table 2). At that time, the busbar cost of nuclear power was less than 1 US cent per
+kWh. The demand for energy ? particularly electricity ? was doubling every nine years, and it was
+predicted that the supply of the premium fuels, oil and gas, was only adequate for 20 years. Benedict?s
+conclusion, and that of most of the nuclear industry, at that time was that a doubling of busbar cost
+would be unacceptable and that it was of vital importance to develop a breeder reactor as soon as
+possible so that the cost of nuclear powered electricity did not increase.
+However, the total quantity of uranium resources (column 2 of Table 1) does not seem to have changed
+(Ref 9), (Ref 10). Figure 1 shows the distribution of uranium reserves versus price from the OECD Red
+Book (Ref 10), and Figure 2 shows the comparison with Benedict?s paper. The subsequent columns of
+Table 1 are merely physical calculations from the first two columns. Similarly, in 1998 the Uranium
+Institute reported that we have about 18 million tonnes of uranium in ore, proven reserves, reasonably
+assured supplies, and possible supplies, at prices up to US$200 per kgU. There is considerably more
+uranium now known at the lower prices, but otherwise Table 2 is as accurate today as it was 28 years
+ago, and for reasons outlined below it may be pessimistic as to the overall uranium reserve. (It is in fact
+remarkable that the cost curve, in absolute terms, has not changed much. Since there has been
+inflation, the cost of uranium has gone down in "real" terms, as have the costs of many other fuels.)
+However, the interpretation of these data on uranium supply has changed.
+In addition, the availability of fuels for a programme of thermal reactors, whether today?s light water
+(moderated and cooled) reactors or graphite moderated (and helium cooled) reactors, is better than
+Benedict suggested. A general rule about prices of any fuel has evolved. The time for depletion of
+reserves has stayed between 15 to 30 years for nearly a century! (Coal reserves which seem to be
+enough for 300 years are an exception). If enough fuel exists for 30 years there is little incentive for
+exploration, but if the amount falls below 15 years the profit motive ensures that exploration restarts.
+The present and anticipated use of nuclear power provides little incentive to explore for uranium. One
+can anticipate that if and when exploration restarts more uranium will be found ? probably in the higher
+cost range. Related to this is the possibility that uranium can be extracted from seawater at a cost of
+perhaps US$200 per pound, which translates to 1 US cent per kWh. Although this is above the "cut-off"
+of Benedict?s table, it now seems reasonable.
+The Thorium Cycle
+All present reactors could be run on thorium fuels. Indeed, 40 years ago Indian Point unit 1 was
+designed explicitly to allow this (Ref 12). There are several ideas for a fuel chain that uses thorium
+(since it is not closed, I use modern terminology and refuse to call the chain a cycle). There are,
+according to present estimates, six times as large thorium reserves as uranium reserves. I know of no
+good estimates for the increased fuel chain cost but it is unlikely to be as much as 0.5 US cents per
+kWh. While the full advantage of a thorium cycle would only be gained by reprocessing the fuel and
+extracting the U-233 (with the same objections to reprocessing as already noted) some advantage in
+fuel use can be gained by using a mixture of U-235, U-238 and thorium. The use of a thorium fuel in
+LWRs (in a once through system) might then postpone for a little longer the need for a plutonium
+breeder reactor that uses fast neutrons (Ref 13), (Ref 14),(Ref 15 ) .
+Increased Cost of Both LWRs and Sodium Cooled Reactors
+I first insist that nuclear energy (using LWRs) was in the past very competitive and presumably could be
+again. This position is not a matter of optimism brought on by believing results from a model, but is one
+of accepting historical fact. Twenty-five years ago, Maine Yankee nuclear power plant had just been
+completed for a total cost of US$180 million (Ref 16 ) (although another US$20 million was spent at the
+last moment to modify the cooling system ? a cost not demanded of any coal fired plant), or US$200 per
+kWe of installed capacity. Electricity from Connecticut Yankee nuclear power plant was 0.55 US cents
+
+http://www.world-nuclear.org/sym/1999/wilson.htm
+
+03/07/2006
+
+The Changing Need for a Breeder Reactor
+
+Page 3 of 7
+
+per kWh (including paying off the mortgage), and from Yankee Rowe 0.9 US cents per kWh (Ref 17).
+Twenty-seven years ago, Benedict (Ref 8) (Table 2) estimated average operating costs that were a little
+lower than this value, and capital costs that were about 25% higher than for Maine Yankee. Taking no
+credit for learning, we could do as well if we could return to the optimism and procedures of 25 years
+ago. Allowing for inflation, the operating cost could be less than 1 US cent per kWh, and, by keeping
+construction times down, the capital cost could be less than 2 US cents per kWh.
+Yet the average operating cost of nuclear plants in the USA today is 1.9 US cents/kWh (Ref 18). For a
+well-operated plant the cost is smaller, although still higher than 25 years ago, in the range of 1.4
+(South Texas) to 1.5 (Seabrook) and 1.7 (Palo Verde) US cents per kWh. The construction cost is
+US$1690 per kWe installed for a new GE reactor being built in Taiwan in about four years (leading to a
+charge for the capital of about 4 US cents per kWh). These costs are still very high, and could be more
+if construction takes longer than four years.
+In 1955 enthusiasts (including my cousin Derek Smith who worked on breeder reactors from his PhD in
+1955 until his retirement around 1990) thought that a sodium cooled fast neutron reactor might be as
+cheap or cheaper than a light water cooled thermal reactor. The working temperature can be higher and
+the thermal efficiency perhaps 40% instead of 30%. Sodium is far less corrosive than water. It does not
+attack steel and make it rust. On the contrary it removes oxides. It boils at a higher temperature than
+water enabling a high thermal efficiency without using high pressures. Even in 1973 the cost differential
+was not thought to be big. But the shutdown of all operating experimental breeder reactors suggests
+that even their operating costs are higher than the operating costs of LWRs.
+Various factors have increased the cost of nuclear power until now, in the USA, the busbar cost
+(including paying off the mortgage) is about 5 US cents/kWh, nearly 10 times the 1973 figure. Even this
+high cost is competitive with most non-fossil fuel alternatives, although not with fossil fuels. The fuel
+cost increase which Benedict found unacceptable is only 10% of this busbar cost and an even smaller
+fraction of the retail cost which includes transmission and distribution costs (and some other items) of a
+few cents per kWh. The charge on my electricity bill is 9 US cents per kWh, compared with which 0.5
+cents per kWh is small. Therefore we can afford to use the more expensive uranium resource without
+appreciably increasing the final electricity cost. Using Benedict?s figures, a worldwide LWR system
+could produce about 4 x 10 15 kWh (4.6 x 10 5 GW-years) of electricity, or enough for over a century at
+an optimistic postulated year 2030 demand of 2500 GW-years. This suggests that scarcity of affordable
+uranium is not an issue at present. An early (within 50 years) deployment of a breeder reactor must be
+justified by more than this.
+These considerations therefore suggest that a breeder may not be cost effective for some time to come.
+Reduced Demand for Energy
+In 1970, the demand for energy was increasing. In particular, electricity use was doubling every nine
+years. US President Kennedy had publicly advocated cheap energy as a stepping stone to prosperity.
+Although electricity production, and various end uses of energy, were becoming more efficient (power
+station efficiencies of 8% in 1900 improved to 30?40% in 1970), it was considered politically and morally
+acceptable to "spend" energy in order to live a more comfortable life. In 1970, oil and gas prices were
+dropping.
+Although other factors influenced the subsequent change, the change in public perception has usually
+been attributed to the Arab oil embargo and consequent oil price shock of October 1973. Previously,
+there was a perception not only that electricity was cheap but that it would get cheaper. This changed
+dramatically in 1973 ? and even more at the start of the Iraq?Iran war in 1979 ? when it became popular
+to believe that fuels of all sorts would become more expensive. This led to a public willingness to
+consider improvements in end use efficiency. It was in 1979 that my local hardware store ran out of
+fibreglass insulation.
+Increase in the Resources of Gas and Oil
+It has always been popular to cry "doom". In 1850, distinguished scholars wrote about the coming
+shortage of coal ? expected to run out within 30 years. In England of December 1947, for example,
+there was a temporary shortage of coal ? due in part to a shortage of miners returning from the war and
+in part to a cold spell which shut down trans-Pennine railroads. There was electricity rationing. Not
+surprisingly, this was a time of enthusiasm for alternative energy sources. But then the oil fields of the
+
+http://www.world-nuclear.org/sym/1999/wilson.htm
+
+03/07/2006
+
+The Changing Need for a Breeder Reactor
+
+Page 4 of 7
+
+Middle East ? already known to be extensive when Winston Churchill organised the British purchase of
+a controlling interest in the Anglo?Iranian oil company in 1912 ? were found to be extensive and cheap,
+as oil was discovered in countries such as Kuwait.
+But in 1973 the prophets of doom seemed to have more facts on their side. The geologist M King
+Hubbert (Ref 19) argued that we had already discovered 90% of the oil to be discovered in the USA,
+and it was expected that we would have discovered most of the oil in the rest of the world within another
+30 years. Reserves seemed to be available for only 20 years. Hubbert was right about the USA. US
+domestic oil output has continuously declined since 1970. But the amounts in the rest of the world
+continue to confound the sceptics. At a meeting in Vienna in 1978, a British cabinet minister stated
+categorically that production of oil from the North Sea would never exceed 1 million barrels a day and
+would be played out in the 1990s. Far from it. They are now producing 4 million barrels a day. It is
+noteworthy that a large part of this increase arises because of improved technology of secondary and
+tertiary recovery.
+In 1973 the conventional wisdom was that natural gas came, and only came, as a by-product of oil
+drilling. The supply of natural gas seemed less secure than that of oil. But that has been perhaps the
+biggest and certainly the most important surprise of all. Natural gas has been found in many places
+previously thought to be unlikely. Natural gas is a premium fuel both for environmental and efficiency
+reasons. In the last 20 years, a combined cycle natural gas system has been introduced that increases
+the efficiency from 40% to 60%. There are no sulphur oxides and it is easier to control the nitrogen
+oxides. The effect of natural gas burning on air pollution is less than the effect of burning oil, and far
+less than the effect of burning coal. The CO 2 emissions from natural gas are a factor of four less ? partly
+(a factor of two) because only half the energy comes from burning the carbon, and partly from the
+improved efficiency. Natural gas combined cycle generation is leading the deregulation of the electricity
+sector in the USA. For example, it is anticipated that within a year or so natural gas will generate 60% of
+the electricity in the eastern USA.
+Nuclear Fuel Use Improvements
+Nuclear fuel can stay in a reactor longer than was the case 25 years ago, when burnups of 20 000
+MWd/t were usual. Although reactors were designed with the idea that 1% of the fuel rods might fail
+(develop leaks), the radioactivity that consequently was around the plant and released to the public
+caused concern (some would say unnecessary concern), and premature fuel changes were common.
+Since the 1970s there have been major improvements in fuel rod integrity and burnups of 40 000 MWd/t
+are usual. There is discussion of making fuels with even higher burnups (probably involving a higher
+initial uranium enrichment). This can increase the time between fuel change outages (which improves
+efficiency and reduces cost) and in addition enable more of the initial fuel and bred fuel to be used.
+Fast Neutron Reactor Improvements
+Improvements have also been made in fast neutron reactor technology. Whereas in 1970 fuel burnups
+in metal fuel were limited to 1%, and the plans were to use oxide fuel or nitride fuel, the Argonne
+National Laboratory IFR programme has demonstrated 20% burnup with metal fuel combined with
+"fissium" or fission products. This improves the efficiency and also the safety. With the high thermal
+conductivity of the metal fuel, there is less stored energy and the reactor can shut down at a
+temperature far below the boiling point of sodium ? thereby avoiding the troubling Bethe?Tait accident.
+Proponents claim that the sodium cooled fast neutron reactor possesses many important features of
+intrinsic safety ? including of course the presence of sodium to prevent the escape of dangerous iodine
+in an accident situation. This also lends itself to easy pyroprocessing and electrolytic processing,
+whereby the plutonium in the fuel is never separated free from fission products. This gives it a
+considerable degree of proliferation resistance.
+Understanding the History
+The above paragraphs make the case that the increase in fuel cost by using more expensive uranium
+ores is a small fraction of the 1999 electricity cost. But there is a possibility, which is technically
+obviously feasible although practically remote, that some of the reasons for the cost increases of
+nuclear electricity will be reversed. I will address this possibility here. It has been said that anyone who
+does not understand history is condemned to repeat it. For this reason alone it is important to go
+carefully over the decisions about nuclear energy that were made in the past and to re-examine them.
+This, alas, is rarely done. Even important committees (Ref 20) duck the issue and important people
+
+http://www.world-nuclear.org/sym/1999/wilson.htm
+
+03/07/2006
+
+The Changing Need for a Breeder Reactor
+
+Page 5 of 7
+
+merely mention it (Ref 21). I argue that understanding the history of the nuclear power programme is a
+primary responsibility of the nuclear industry as a whole ? and by nuclear industry I include all
+segments. Academic researchers, both physicists and nuclear engineers, equipment manufacturers,
+electricity utility companies, regulators, legislators, and even the critics. I outline in question form a set
+of issues that still puzzle me:
+l
+
+Is it correct that liquid sodium cooled reactors might be the conventional reactors if Admiral
+Rickover had not rejected them for the nuclear navy after a small sodium leak? What are the
+consequences of this thought?
+
+l
+
+We have had a number of fast neutron reactors throughout the world, including a "commercial"
+one ? Fermi-1 at Laguna Beach operated by Detroit Edison. The reactor worked and was
+successfully repaired after an accident. Why was it dismantled? Was it too expensive to operate?
+Why would any other fast neutron reactor be better?
+
+l
+
+Nuclear electricity was competitive with electricity from other technologies. What has changed?
+Can it be changed back? Can it be partially changed back? Should it be changed back? Can it
+be put on a new economic track?
+
+l
+
+What were the reasons for the choices of nuclear reactor types in the 1960s, and in particular the
+rejection of some promising types? Do the reasons for rejection still apply?
+
+l
+
+It is particularly interesting to discover the reasons for the cost increases, both in construction
+cost and operating cost of an LWR. Why has the cost of building and running an LWR gone up?
+
+l
+
+Is the cost increase all due to demands by the public, and if so can public perception be
+changed? (Ref 22)
+
+l
+
+Can we (technically) make nuclear energy cheap again?
+
+l
+
+A large cost is attributed to steam generators (heat exchangers) which fail more than was
+anticipated. Yet mass produced modular heat exchangers exist for automobiles at one-tenth the
+cost. Can we learn from this?
+
+In 1973 nuclear power advocates expected that as more nuclear power plants were built and operated
+both the construction cost and the operating cost would follow the decreases predicted by a learning
+curve. But the reverse has been the case ? the costs have followed a "forgetting curve" (Ref 23). Some
+improvements (in fuel fabrication for example) have been made as noted above. But these must have
+been swamped by cost increases elsewhere. What are they?
+Some people argue that the increased cost has been caused by the need for increased safety. But the
+safety of nuclear power in 1973 was probably better than for other comparable industrial facilities, has
+been steadily improved since then, and new designs promise further improvements. It is important to
+realise that the safety improvements have mostly come from improved analysis ? which is (in principle)
+cheap compared with hardware modifications.
+I have seen no careful study of the cost increases. Indeed, in 1984 when the Energy Engineering Board
+of the US National Academy of Sciences proposed a study of the subject it was opposed by the utility
+industry, perhaps for fear of adversely influencing "prudency hearings" that were in progress before
+public utility commissions (Ref 24). PUCs were calling expenditures on nuclear power plants in excess
+of estimates as "imprudent" and disallowing them in the rate base (although I know of no similar action
+for a coal fired power plant).
+Various ideas include the following:
+l
+
+In 1970 manufacturers built turnkey plants or otherwise sold cheap reactors as loss leaders, but
+turnkey operations can only account for a small proportion of the capital cost.
+
+http://www.world-nuclear.org/sym/1999/wilson.htm
+
+03/07/2006
+
+The Changing Need for a Breeder Reactor
+
+Page 6 of 7
+
+l
+
+Construction costs generally have risen since 1970 even when corrected for inflation.
+
+l
+
+It may be that in 1972 we had good management and good technical people; but why has
+management got worse when that has not been true for other technologies?
+
+l
+
+Operating costs rose rapidly in the 1970s because the rate of expansion of nuclear energy
+exceeded the rate of training of good personnel.
+
+l
+
+A sudden rise in costs came in the late 1970s after the accident at Three Mile Island. Although
+mandated retrofits have been blamed for cost increases, this applies to existing plants and not to
+new construction.
+
+Most people seem to agree that the principal present limitation in nuclear power development is related
+to diminished public acceptance of the technology. Decreased confidence and increased risk aversion
+drives excessive regulation, and this in turn increases the cost. As noted above, this increased cost
+often reaches a factor of three even after correction for inflation. It is highly likely that nuclear power
+plants are safer today than they were in 1972. It would be hard to argue, however, that the actual safety
+improvements that have occurred have been the cause of the threefold increase in cost. Most
+improvements have resulted from more careful thought, using such approaches as event -tree analysis,
+but without excessive hardware expense.
+Many people have suggested that the problem is that the regulation is more than needed for adequate
+safety, and this over-regulation increases the cost (Ref 25). In particular, many claim that regulation is
+too prescriptive and not based upon performance. A few of the arguments related to over-prescriptive
+regulations are as follows:
+l
+
+The response to many regulations is to increase staff. The staff numbers at the Dresden-2 power
+plant went from 250 in 1975 to over 1300 today (Ref 26). This increased staffing costs money:
+0.8 cents per kWh, and it is far from clear that adding personnel improves safety.
+
+l
+
+Shut downs (always costly) for failure to meet technical specifications occur even though the
+technical specifications have little effect upon safety.
+
+l
+
+Any delay in licensing can seriously increase the capital cost, as interest payments incurred
+during construction accrue.
+
+A demand for safety-grade equipment in parts of the plant that have little impact on safety is
+unnecessarily expensive. The problem is not unique to the USA. In the UK, British Nuclear Fuels had to
+spend a lot of money making the THORP reprocessing plant as earthquake proof as an operating
+reactor, yet the inventory of dangerous material is far less than in a reactor, and the danger of recriticality is remote (Ref 27).
+In other papers (Ref 28) (Ref 29) and in Congressional testimony (Ref 30 ) I addressed the problem of
+excessive regulation; reasons why it inevitably appears and what can be done to avoid the problem. I
+argued that the Nuclear Regulatory Commission strongly exceeded its authority and caused vast
+unnecessary expense in their shut down of the Millstone reactors in 1996. There may be hope. The
+Chairman of the NRC recently addressed this question (Ref 31) and emphasised this area as a vital
+area of research and subsequent implementation. I hope that some action will be forthcoming.
+Environmental Factors
+The USA now emits 11% more CO 2 than in 1990. At the Kyoto Climate Change Conference the USA
+promised to reduce CO2 emissions to 8% below 1990 levels in 10 years, which is a decrease of 19%
+below present levels. If all the electricity now generated by nuclear power were to be generated by coal,
+CO 2 emissions would increase by another 8%, making it more difficult to meet this commitment if
+nuclear power was abandoned.
+
+http://www.world-nuclear.org/sym/1999/wilson.htm
+
+03/07/2006
+
+The Changing Need for a Breeder Reactor
+
+Page 7 of 7
+
+About 30 years ago Dr Glenn Seaborg, then Chairman of the US Atomic Energy Commission (AEC),
+testified to the Joint Committee of Atomic Energy (JCAE) of the US Congress that nuclear power would
+be comparatively benign environmentally (in particular, not producing appreciable quantities of CO2 )
+and also produce electricity at a modest cost. This optimism was nationwide and worldwide. Since that
+time opposition to nuclear power has arisen, and nuclear power at the present moment is not being
+considered by most governments in the world as an option to meet energy and environmental aims and
+desires. Nuclear power could help the world and in particular the USA to meet the commitments made
+at Kyoto. Nuclear power would also be a simple way of avoiding the health effects of air pollution (Ref
+32). But for neither do we need the breeder reactor.
+But we may need reprocessing and the breeder reactor for another environmentalist reason: the
+perceived objections to disposal of high level nuclear waste. I believe that these objections are
+technically unsound, but they are psychologically real and it is unlikely that they will disappear in the
+short term. The problem of nuclear waste might be changed if the volume were changed and if its long
+lifetime was reduced by transmutation. This could be plutonium recycle, burning in a fast neutron
+reactor ( but not breeding until it were necessary), or accelerator transmutation. It is these
+environmentalist issues that may eventually demand the breeder reactor, assuming that the cost, safety
+and proliferation issues can be solved.
+Breeders for the Longer Term
+For a time horizon greater than 50 to 100 years a breeder reactor is probably essential. After this time
+there may well be a large population increase, and if fuel use per capita in developing countries
+approaches that of developed ones, a huge appetite for electricity. Since more of the energy in the fuel
+can be used it would be economic to use fuels with costs much more than US$200 per tonne. All in all,
+a factor of 1000 increase in effective fuel supply seems not unreasonable. It would be impudent to
+project the existence of the human race beyond the 100 000 years implied by these factors.
+The cost estimates for a liquid metal breeder reactor are certainly smaller than the cost estimates for a
+fusion reactor, and are (and may remain) smaller than for renewables. A breeder programme deserves
+by this reckoning at least as much funding as the fusion reactor which is still far in the future. But it may
+be desirable (although not necessary) in the intermediate term also. It is now 50 years since the start of
+the nuclear age and it can be said that we are only just beginning to understand how to make a viable
+LWR programme. A breeder reactor development programme (including real operating demonstration
+plants) may give enough experience to overcome some of the cost (and weapons proliferation)
+problems and enable us to have the safety and environmental advantages of a metal fuel reactor and a
+coolant that soaks up stray fission products.
+Conclusion
+Allowing for a price increase of 0.5 US cents per kWh to enable us to use more expensive uranium ore,
+it appears we could have a future for nuclear power at several times the present level for 50 years
+without a breeder reactor, and possibly for many, many more. Any large scale breeder programme must
+be justified on a longer time scale or on definite cost or environmental advantages. It would be wise to
+redirect any research programme to these ends. After perhaps half a century it would be wise to be
+ready to use breeder and other alternate fuel cycles.
+Acknowledgement
+The author is grateful for helpful comments from Drs Shafer, Landis and Wolfe.
+Restore Frames | Sym Home | Programme | Back | Forward
+© copyright The Uranium Institute 1999 SYM979899
+
+http://www.world-nuclear.org/sym/1999/wilson.htm
+
+03/07/2006
+

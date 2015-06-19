@@ -1,0 +1,109 @@
+IAEA-SM-354/89P
+
+XA9951336
+
+MONTE-CARLO COMPUTATIONS OF EFFICIENCY, SELF-ATTENUATION AND
+COINCIDENCE CORRECTIONS IN LOW-LEVEL GAMMA-SPECTROMETRY
+C. DOVLETE and P. P. POVINEC
+International Atomic Energy Agency, Marine Environment Laboratory, Monaco
+The standard efficiency calibration of germanium detectors for gamma-ray
+spectrometry required a lengthy effort with multiple-energy sources for many necessary
+geometries. In order to reduce the experimental effort and to improve the accuracy of
+efficiency calibration, Monte Carlo simulation is an attractive means because any sourcedetector configuration and any sample matrix can be modeled over the energy interval of
+interest [1,2].
+In this paper we present the procedure used at IAEA-MEL for efficiency calibration
+of new large volume germanium detectors for various measurement geometries, including
+self-attenuation and coincidence corrections.
+The first step in this procedure is to adjust model detector parameters in order to
+obtain the best agreement between experimentally derived and calculated efficiencies for a
+given calibration sample. Thus we obtain efficiencies experimentally using the calibration
+sample which contains two suitable, coincidence-free, gamma lines. One of them must be
+below the 60 keV and the other, preferably above 600 keV.
+In order to theoretically evaluate the efficiency, matrix and coincidence corrections,
+we use the extensively tested GESPECOR method and algorithms [2]. According to this
+methodology, the efficiency and the correction factors are computed using a realistic Monte
+Carlo simulation method. Then based on the experimental and theoretical results for a given
+geometry we adjust the detector parameters used in theoretical Monte Carlo efficiency
+computations in order to achieve the best agreement between experimental and calculated
+efficiency values. With these adjusted detector parameters we can then calculate the
+efficiencies for various geometries and matrix samples.
+In fact our procedure needs only one calibration sample for all measuring
+geometries. However, if the composition and/or the density of the sample to be measured
+differ from the corresponding values of our calibration sample, self-attenuation corrections
+should be applied to the efficiency. These corrections depend on the sample geometry,
+composition and density, and on detector parameters. Of course, the corrections are higher
+for large volume, high Z and high density samples, for low energy photons. In the case of a
+nuclide decaying through a cascade of successive photon emissions, measured close to a high
+efficiency detector, coincidence-summing effects can be important.
+The efficiency, self-attenuation and coincidence corrections computations were
+performed for a 680 cm^ HPGe detector characterised by the parameters presented in Table
+1.
+The variation of self-attenuation correction with energy is presented for a particular
+sediment sample for the energy range 30-3500 keV.
+The self-attenuation correction presented in Fig.l has to be applied to estimate
+detection efficiencies for sediment samples (density 1.3 g/cm^) using the efficiency
+calibration data previously calculated for water (1.0 g/cm^).
+The necessary self-attenuation correction for a sediment sample (sample density=1.3
+g/cm^) is presented for the energy range 30-3500 keV
+Finally, we present the results of computations performed for a 680 cm^ HPGe
+detector (Table 1) and sediment samples for the efficiencies and the energy-dependent selfattenuation factor for the energy range 30-3500 keV. As an example, a self-attenuation
+correction (Fig.l) has to be applied to estimate detection efficiencies for sediment samples
+(density 1.3 g/cm^) using the efficiency calibration data calculated for water (1.0 g/cm3).
+
+398
+
+1.00
+
+0.75
+
+i---
+
+0.50
+
+0.25
+1000
+
+100
+Energy (keV)
+
+Fig. 1 Self-attenuation correction factor versus energy
+
+Detector parameters
+Detector radius
+Detector length
+Inner contact: Radius
+Inner contact: Length
+Detector holder material
+Thickness of Ge dead layer
+Distance from the active face
+to entrance window
+End cap diameter
+Window thickness
+
+cm
+4.53
+9.59
+0.7
+7.2
+0.2
+0.05
+0.5
+9.2
+0.1
+
+Table 1. Detector parameters
+Also we have calculated the necessary coincidence corrections for a few frequently
+encountered radionuclides, with coincidence problems, such as Co-60, Cs-134, Y-88, Ag110m, Eu-155, Sb-125, etc. As expected the resulting coincidence corrections are important
+and must be taken into account in order to obtain accurate results.
+REFERENCES
+[1]
+[2]
+
+Kamboj, S., Kahn, B. Evaluation of Monte-Carlo simulation of photon counting
+efficiency for germanium detectors, Health Physics (1996) 512-519.
+Sima, O., Arnold, D., Self-attenuation and coincidence-summing corrections
+calculated by Monte Carlo simulations for gamma-spectrometric measurements with
+well-type Germanium detectors, Applied Radiation and Isotopes, 47 (1996) 889-893.
+
+399
+

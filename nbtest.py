@@ -13,15 +13,15 @@ def tstfun(infile, cryptoscore, dinoscore):
 class TestFull(unittest.TestCase):
  
     def test01(self):
-        (out, mystr) = tstfun("test01_input.yaml", "25239.08993198242", "2601.7664705783586")
+        (out, mystr) = tstfun("test01_input.yml", "25239.08993198242", "2601.7664705783586")
         self.assertEqual(out,mystr)
 
     def test02(self):
-        (out, mystr) = tstfun("test02_input.yaml", "1617656.2932267354", "1.7777297062779534e+26")
+        (out, mystr) = tstfun("test02_input.yml", "1617656.2932267354", "1.7777297062779534e+26")
         self.assertEqual(out,mystr)
 
     def test03(self):
-        (out, mystr) = tstfun("test03_input.yaml", "832.0706697339581", "5482.325210726829")
+        (out, mystr) = tstfun("test03_input.yml", "832.0706697339581", "5482.325210726829")
         self.assertEqual(out,mystr)
 
     def test_count_words(self):

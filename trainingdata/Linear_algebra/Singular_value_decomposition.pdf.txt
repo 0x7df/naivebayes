@@ -1,0 +1,178 @@
+Singular Value Decomposition -- from Wolfram MathWorld
+
+Page 1 of 3
+Search Site
+
+Algebra
+Applied Mathematics
+
+Algebra > Linear Algebra > Matrices > Matrix Decomposition
+History and Terminology > Mathematica Commands
+MathWorld Contributors > Derwent
+
+Other Wolfram Sites:
+Wolfram Research
+Integrator
+
+Calculus and Analysis
+Discrete Mathematics
+Foundations of Mathematics
+
+Singular Value Decomposition
+
+Tones
+Functions Site
+
+Geometry
+
+Wolfram Science
+
+History and Terminology
+
+more…
+
+Number Theory
+Latest Mathematica Information >>
+
+Probability and Statistics
+Recreational Mathematics
+
+If a matrix
+
+Topology
+
+matrix
+
+Alphabetical Index
+
+not have an eigen decomposition. However, if
+is an
+real matrix with
+,
+then
+can be written using a so-called singular value decomposition of the form
+
+Interactive Entries
+Random Entry
+
+has a matrix of eigenvectors
+
+that is not invertible (for example, the
+
+has the noninvertible system of eigenvectors
+
+), then
+
+New in MathWorld
+
+does
+
+(1)
+
+Download Mathematica Trial >>
+Complete Mathematica
+Documentation >>
+Show your math savvy with a
+MathWorld T-shirt.
+Read the latest Technical Software
+News.
+
+MathWorld Classroom
+About MathWorld
+Send a Message to the Team
+Order book from Amazon
+
+12,636 entries
+Mon Oct 9 2006
+
+Note that there are several conflicting notational conventions in use in the
+literature. Press (et al. 1992) define
+to be an
+matrix,
+as
+, and
+. However, Mathematica defines
+as an
+,
+as
+, and
+as
+both systems,
+and
+have orthogonal columns so that
+
+as
+. In
+
+(2)
+and
+(3)
+(where the two identity matrices may have different dimensions), and
+only along the diagonal.
+For a complex matrix
+the form
+
+has entries
+
+, the singular value decomposition is a decomposition into
+
+http://mathworld.wolfram.com/SingularValueDecomposition.html
+
+10/10/2006
+
+Singular Value Decomposition -- from Wolfram MathWorld
+
+Page 2 of 3
+(4)
+
+where
+and
+are unitary matrices,
+is the conjugate transpose of , and
+is
+a diagonal matrix whose elements are the singular values of the original matrix. If
+is a complex matrix, then there always exists such a decomposition with positive
+singular values (Golub and Van Loan 1996, pp. 70 and 73).
+Singular value decomposition is implemented in Mathematica as
+SingularValueDecomposition[m] starting in Mathematica Version 5.0, which
+returns a list U, D, V , where U and V are matrices and D is a diagonal matrix
+made up of the singular values of .
+SEE ALSO: Cholesky Decomposition, Eigen Decomposition, Eigen Decomposition
+
+Theorem, Eigenvalue, Eigenvector, LU Decomposition , Matrix Decomposition, Matrix
+Decomposition Theorem, QR Decomposition, Singular Value, Unitary Matrix.
+[Pages Linking Here]
+
+REFERENCES:
+Gentle, J. E. "Singular Value Factorization." §3.2.7 in Numerical Linear Algebra for Applications in
+Statistics. Berlin: Springer -Verlag, pp. 102-103, 1998.
+Golub, G. H. and Van Loan, C. F. "The Singular Value Decomposition" and "Unitary Matrices." §2.5.3
+and 2.5.6 in Matrix Computations, 3rd ed. Baltimore, MD: Johns Hopkins University Press, pp. 70-71
+and 73, 1996.
+Nash, J. C. "The Singular-Value Decomposition and Its Use to Solve Least-Squares Problems." Ch. 3
+in Compact Numerical Methods for Computers: Linear Algebra and Function Minimisation, 2nd ed.
+Bristol, England: Adam Hilger, pp. 30 -48, 1990.
+Press, W. H.; Flannery, B. P.; Teukolsky, S. A.; and Vetterling, W. T. "Singular Value
+Decomposition." §2.6 in Numerical Recipes in FORTRAN: The Art of Scientific Computing, 2nd ed.
+Cambridge, England: Cambridge University Press, pp. 51 -63, 1992.
+
+LAST MODIFIED: April 26, 2006
+CITE THIS AS:
+
+http://mathworld.wolfram.com/SingularValueDecomposition.html
+
+10/10/2006
+
+Singular Value Decomposition -- from Wolfram MathWorld
+
+Page 3 of 3
+
+Weisstein, Eric W. "Singular Value Decomposition." From MathWorld--A Wolfram Web Resource.
+http://mathworld.wolfram.com/SingularValueDecomposition.html
+
+© 1999 CRC Press LLC, © 1999-2006 Wolfram Research, Inc. | Terms of Use
+
+http://mathworld.wolfram.com/SingularValueDecomposition.html
+
+10/10/2006
+

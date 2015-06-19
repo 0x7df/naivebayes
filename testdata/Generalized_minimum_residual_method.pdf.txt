@@ -1,0 +1,201 @@
+Generalized Minimal Residual Method -- from Wolfram MathWorld
+
+Page 1 of 4
+Search Site
+
+Algebra
+Applied Mathematics
+Calculus and Analysis
+Discrete Mathematics
+
+Applied Mathematics > Numerical Methods > Linear Systems > Iterative Methods
+MathWorld Contributors > Templates
+
+Generalized Minimal Residual Method
+
+Other Wolfram Sites:
+Wolfram Research
+Integrator
+Tones
+
+Foundations of Mathematics
+
+Functions Site
+
+Geometry
+
+Wolfram Science
+
+History and Terminology
+
+more…
+
+Number Theory
+Probability and Statistics
+Recreational Mathematics
+Topology
+Alphabetical Index
+Interactive Entries
+Random Entry
+
+The generalized minimal residual (GMRES) method (Saad and Schultz, 1986) is an
+extension of the minimal residual method (MINRES), which is only applicable to
+symmetric systems, to unsymmetric systems. Like MINRES, it generates a sequence
+of orthogonal vectors, but in the absence of symmetry this can no longer be done
+with short recurrences; instead, all previously computed vectors in the orthogonal
+sequence have to be retained. For this reason, "restarted" versions of the method
+are used.
+
+New in MathWorld
+MathWorld Classroom
+
+In the conjugate gradient method, the residuals form an orthogonal basis for the
+space
+
+Latest Mathematica Information >>
+Download Mathematica Trial >>
+Complete Mathematica
+Documentation >>
+Show your math savvy with a
+MathWorld T-shirt.
+Read the latest Technical Software
+News.
+
+About MathWorld
+Send a Message to the Team
+Order book from Amazon
+
+12,636 entries
+Mon Oct 9 2006
+
+In GMRES, this basis is formed explicitly:
+The reader may recognize this as a modified Gram-Schmidt orthonormalization.
+Applied to the Krylov sequence
+this orthogonalization is called the "Arnoldi
+method" (Arnoldi 1951). The inner product coefficients
+and
+are
+stored in an upper Hessenberg matrix.
+The GMRES iterates are constructed as
+
+where the coefficients
+
+have been chosen to minimize the residual norm
+
+http://mathworld.wolfram.com/GeneralizedMinimalResidualMethod.html
+
+10/10/2006
+
+Generalized Minimal Residual Method -- from Wolfram MathWorld
+
+Page 2 of 4
+
+. The GMRES algorithm has the property that this residual norm can be
+computed without the iterate having been formed. Thus, the expensive action of
+forming the iterate can be postponed until the residual norm is deemed small
+enough.
+In this scheme, UPDATE
+
+replaces the following computations:
+
+The generalized minimal residual method is designed to solve nonsymmetric linear
+systems (Saad and Schultz 1986) The most popular form of GMRES is based on a
+modified Gram-Schmidt orthonormalization procedure and uses restarts to control
+storage requirements.
+If no restarts are used, GMRES (like any orthogonalizing Krylov subspace method)
+will converge in no more than steps (assuming exact arithmetic). Of course this is
+of no practical value when is large; moreover, the storage and computational
+requirements in the absence of restarts are prohibitive. Indeed, the crucial element
+for successful application of GMRES( ) revolves around the decision of when to
+restart; that is, the choice of . Unfortunately, there exist examples for which the
+method stagnates and convergence takes place only at the th step. For such
+systems, any choice of
+less than fails to converge.
+Saad and Schultz (1986) have proven several useful results. In particular, they
+show that if the coefficient matrix
+is real and nearly positive definite, then a
+"reasonable" value for may be selected. Implications of the choice of
+are
+discussed below.
+A common implementation of GMRES is suggested by Saad and Schultz (1986) and
+relies on using modified Gram-Schmidt orthonormalization. Householder
+transformations, which are relatively costly but stable, have also been proposed.
+The Householder approach results in a three-fold increase in work associated with
+inner products and vector updates (not with matrix vector products); however,
+convergence may be better, especially for ill-conditioned systems (Walker 1988).
+From the point of view of parallelism, Gram -Schmidt orthonormalization may be
+preferred, giving up some stability for better parallelization properties (Demmel et
+al. 1993). Here we adopt the modified Gram -Schmidt approach.
+The major drawback to GMRES is that the amount of work and storage required per
+iteration rises linearly with the iteration count. Unless one is fortunate enough to
+obtain extremely fast convergence, the cost will rapidly become prohibitive. The
+usual way to overcome this limitation is by restarting the iteration. After a chosen
+number of iterations , the accumulated data are cleared and the intermediate
+
+http://mathworld.wolfram.com/GeneralizedMinimalResidualMethod.html
+
+10/10/2006
+
+Generalized Minimal Residual Method -- from Wolfram MathWorld
+
+Page 3 of 4
+
+results are used as the initial data for the next
+iterations. This procedure is
+repeated until convergence is achieved. The difficulty is in choosing an appropriate
+value for . If
+is too small, GMRES( ) may be slow to converge, or fail to
+converge entirely. A value of
+that is larger than necessary involves excessive
+work (and uses more storage). Unfortunately, there are no definite rules governing
+the choice of ; choosing when to restart is a matter of experience.
+For a discussion of GMRES for vector and shared memory computers see Dongarra
+et al. (1991). For more general architectures, see Demmel et al. (1993).
+SEE ALSO: Biconjugate Gradient Method, Chebyshev Iteration, Conjugate Gradient
+
+Method on the Normal Equations Conjugate Gradient Method , Conjugate Gradient
+Squared Method, Flexible Generalized Minimal Residual Method, Linear System of
+Equations, Minimal Residual Method, Nonstationary Iterative Method,
+Preconditioner, Quasi-Minimal Residual Method Stationary Iterative Method,
+Symmetric LQ Method, Transpose-Free Quasi-Minimal Residual Method.
+[Pages Linking Here]
+This entry contributed by Noel Black and Shirley Moore, adapted from Barrett et al.
+(1994) (author's link)
+
+REFERENCES:
+Arnoldi, W. "The Principle of Minimized Iterations in the Solution of the Matrix Eigenvalue Problem."
+Quart. Appl. Math. 9, 17-29, 1951.
+Barrett, R.; Berry, M.; Chan, T. F.; Demmel, J.; Donato, J.; Dongarra, J.; Eijkhout, V.; Pozo, R.;
+Romine, C.; and Van der Vorst, H. Templates for the Solution of Linear Systems: Building Blocks for
+Iterative Methods, 2nd ed. Philadelphia, PA: SIAM, 1994.
+http://www.netlib.org/linalg/html_templates/Templates.html.
+Demmel, J.; Heath, M.; and van der Vorst, H. "Parallel Numerical Linear Algebra." In Acta Numerica,
+Vol. 2. Cambridge, England: Cambridge University Press, 1993.
+Dongarra, J.; Duff, I.; Sorensen, D.; and van der Vorst, H. Solving Linear Systems on Vector and
+Shared Memory Computers. Philadelphia, PA: SIAM, 1991.
+Saad, Y. and Schultz, M. "GMRES: A Generalized Minimal Residual Algorithm for Solving
+Nonsymmetric Linear Systems." SIAM J. Sci. Statist. Comput. 7, 856-869, 1986.
+
+http://mathworld.wolfram.com/GeneralizedMinimalResidualMethod.html
+
+10/10/2006
+
+Generalized Minimal Residual Method -- from Wolfram MathWorld
+
+Page 4 of 4
+
+Walker, H. F. "Implementation of the GMRES Method using Householder Transformations." SIAM J.
+Sci. Statist. Comput. 9, 152 -163, 1988.
+
+LAST MODIFIED: July 29, 2003
+CITE THIS AS:
+Black, Noel and Moore, Shirley. "Generalized Minimal Residual Method." From MathWorld--A Wolfram
+Web Resource, created by Eric W. Weisstein .
+http://mathworld.wolfram.com/GeneralizedMinimalResidualMethod.html
+
+© 1999-2006 Wolfram Research, Inc. | Terms of Use
+
+http://mathworld.wolfram.com/GeneralizedMinimalResidualMethod.html
+
+10/10/2006
+

@@ -1,0 +1,143 @@
+Matrix Diagonalization -- from Wolfram MathWorld
+
+Page 1 of 3
+Search Site
+
+Algebra
+Applied Mathematics
+
+Algebra > Linear Algebra > Matrices > Matrix Operations
+Algebra > Linear Algebra > Matrices > Matrix Decomposition
+Algebra > Linear Algebra > Matrices > Matrix Eigenvalues
+
+Other Wolfram Sites:
+Wolfram Research
+Integrator
+
+Calculus and Analysis
+Discrete Mathematics
+Foundations of Mathematics
+
+Matrix Diagonalization
+
+Tones
+Functions Site
+
+Geometry
+
+Wolfram Science
+
+History and Terminology
+
+more…
+
+Number Theory
+Latest Mathematica Information >>
+
+Probability and Statistics
+Recreational Mathematics
+Topology
+Alphabetical Index
+Interactive Entries
+Random Entry
+New in MathWorld
+
+Matrix diagonalization is the process of taking a square matrix and converting it into
+a special type of matrix--a so-called diagonal matrix--that shares the same
+fundamental properties of the underlying matrix. Matrix diagonalization is
+equivalent to transforming the underlying system of equations into a special set of
+coordinate axes in which the matrix takes this canonical form. Diagonalizing a
+matrix is also equivalent to finding the matrix's eigenvalues, which turn out to be
+precisely the entries of the diagonalized matrix. Similarly, the eigenvectors make up
+the new set of axes corresponding to the diagonal matrix.
+
+Download Mathematica Trial >>
+Complete Mathematica
+Documentation >>
+Show your math savvy with a
+MathWorld T-shirt.
+Read the latest Technical Software
+News.
+
+MathWorld Classroom
+About MathWorld
+Send a Message to the Team
+Order book from Amazon
+
+12,635 entries
+Tue Oct 10 2006
+
+The remarkable relationship between a diagonalized matrix, eigenvalues, and
+eigenvectors follows from the beautiful mathematical identity (the eigen
+decomposition) that a square matrix
+can be decomposed into the very special
+form
+(1)
+where is a matrix composed of the eigenvectors of , is the diagonal matrix
+constructed from the corresponding eigenvalues, and
+is the matrix inverse of
+According to the eigen decomposition theorem, an initial matrix equation
+
+.
+
+(2)
+can always be written
+(3)
+
+http://mathworld.wolfram.com/MatrixDiagonalization.html
+
+10/10/2006
+
+Matrix Diagonalization -- from Wolfram MathWorld
+
+(at least as long as
+gives
+
+Page 2 of 3
+
+is a square matrix), and premultiplying both sides by
+
+(4)
+Since the same linear transformation
+is being applied to both
+and
+the original system is equivalent to solving the transformed system
+
+, solving
+
+(5)
+where
+and
+. This provides a way to canonicalize a system into
+the simplest possible form, reduce the number of parameters from
+for an
+arbitrary matrix to for a diagonal matrix, and obtain the characteristic properties
+of the initial matrix. This approach arises frequently in physics and engineering,
+where the technique is oft used and extremely powerful.
+SEE ALSO: Diagonal Matrix, Eigen Decomposition, Eigen Decomposition Theorem,
+
+Eigenvalue, Eigenvector, Jacobi Transformation, Matrix. [Pages Linking Here]
+
+REFERENCES:
+Arfken, G. "Diagonalization of Matrices." §4.6 in Mathematical Methods for Physicists, 3rd ed.
+Orlando, FL: Academic Press, pp. 217-229, 1985.
+
+LAST MODIFIED: December 11, 2002
+CITE THIS AS:
+Weisstein, Eric W. "Matrix Diagonalization." From MathWorld--A Wolfram Web Resource.
+http://mathworld.wolfram.com/MatrixDiagonalization.html
+
+http://mathworld.wolfram.com/MatrixDiagonalization.html
+
+10/10/2006
+
+Matrix Diagonalization -- from Wolfram MathWorld
+
+Page 3 of 3
+
+© 1999 CRC Press LLC, © 1999-2006 Wolfram Research, Inc. | Terms of Use
+
+http://mathworld.wolfram.com/MatrixDiagonalization.html
+
+10/10/2006
+

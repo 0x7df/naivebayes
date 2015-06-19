@@ -1,0 +1,243 @@
+Eigenvalue -- from Wolfram MathWorld
+
+Page 1 of 5
+Search Site
+
+Algebra
+Applied Mathematics
+Calculus and Analysis
+Discrete Mathematics
+
+Algebra > Linear Algebra > Matrices > Matrix Eigenvalues
+Algebra > Linear Algebra > Matrices > Matrix Decomposition
+
+Other Wolfram Sites:
+Wolfram Research
+Integrator
+
+Eigenvalue
+
+Tones
+
+Foundations of Mathematics
+
+Functions Site
+
+Geometry
+
+Wolfram Science
+
+History and Terminology
+
+more…
+
+Number Theory
+Probability and Statistics
+Recreational Mathematics
+Topology
+Alphabetical Index
+Interactive Entries
+Random Entry
+New in MathWorld
+MathWorld Classroom
+About MathWorld
+Send a Message to the Team
+Order book from Amazon
+
+12,636 entries
+Mon Oct 9 2006
+
+Eigenvalues are a special set of scalars associated with a linear system of equations
+(i.e., a matrix equation) that are sometimes also known as characteristic roots,
+characteristic values (Hoffman and Kunze 1971), proper values, or latent roots
+(Marcus and Minc 1988, p. 144).
+The determination of the eigenvalues and eigenvectors of a system is extremely
+important in physics and engineering, where it is equivalent to matrix
+diagonalization and arises in such common applications as stability analysis, the
+physics of rotating bodies, and small oscillations of vibrating systems, to name only
+a few. Each eigenvalue is paired with a corresponding so-called eigenvector (or, in
+general, a corresponding right eigenvector and a corresponding left eigenvector;
+there is no analogous distinction between left and right for eigenvalues).
+The decomposition of a square matrix
+into eigenvalues and eigenvectors is known
+in this work as eigen decomposition, and the fact that this decomposition is always
+possible as long as the matrix consisting of the eigenvectors of
+is square is
+known as the eigen decomposition theorem.
+Let
+
+be a linear transformation represented by a matrix
+such that
+
+Latest Mathematica Information >>
+Download Mathematica Trial >>
+Complete Mathematica
+Documentation >>
+Show your math savvy with a
+MathWorld T-shirt.
+Read the latest Technical Software
+News.
+Mathematica 5.1 outperforms
+specialist programs for most matrix
+operations.
+Compute Eigenvalues symbolically
+and numerically--as well as any
+other matrix operation--with
+Mathematica for Students --starting
+at $44.95.
+Mathematica offers hundreds of
+linear algebra functions. Try it today!
+
+. If there is a vector
+
+(1)
+for some scalar , then
+eigenvector .
+
+http://mathworld.wolfram.com/Eigenvalue.html
+
+is called the eigenvalue of
+
+with corresponding (right)
+
+10/10/2006
+
+Eigenvalue -- from Wolfram MathWorld
+Letting
+
+Page 2 of 5
+be a
+
+square matrix
+
+(2)
+
+with eigenvalue , then the corresponding eigenvectors satisfy
+
+(3)
+
+which is equivalent to the homogeneous system
+
+(4)
+
+Equation (4) can be written compactly as
+(5)
+where is the identity matrix. As shown in Cramer's rule, a linear system of
+equations has nontrivial solutions iff the determinant vanishes, so the solutions of
+equation (5) are given by
+(6)
+This equation is known as the characteristic equation of
+known as the characteristic polynomial.
+For example, for a
+
+http://mathworld.wolfram.com/Eigenvalue.html
+
+, and the left-hand side is
+
+matrix, the eigenvalues are
+
+10/10/2006
+
+Eigenvalue -- from Wolfram MathWorld
+
+Page 3 of 5
+
+(7)
+which arises as the solutions of the characteristic equation
+(8)
+If all eigenvalues are different, then plugging these back in gives
+independent equations for the components of each corresponding eigenvector,
+and the system is said to be nondegenerate. If the eigenvalues are -fold
+degenerate, then the system is said to be degenerate and the eigenvectors are not
+linearly independent. In such cases, the additional constraint that the eigenvectors
+be orthogonal,
+(9)
+where
+is the Kronecker delta , can be applied to yield
+thus allowing solution for the eigenvectors.
+
+additional constraints,
+
+Eigenvalues may be computed in Mathematica using Eigenvalues[matrix].
+Eigenvectors and eigenvalues can be returned together using the command
+Eigensystem[matrix].
+Assume we know the eigenvalue for
+(10)
+Adding a constant times the identity matrix to
+
+,
+(11)
+
+so the new eigenvalues equal the old plus . Multiplying
+
+by a constant
+(12)
+
+so the new eigenvalues are the old multiplied by .
+
+http://mathworld.wolfram.com/Eigenvalue.html
+
+10/10/2006
+
+Eigenvalue -- from Wolfram MathWorld
+
+Page 4 of 5
+
+Now consider a similarity transformation of
+
+. Let
+
+be the determinant of
+
+, then
+(13)
+(14)
+
+so the eigenvalues are the same as for
+
+.
+
+SEE ALSO: Brauer's Theorem, Characteristic Equation, Characteristic Polynomial,
+
+Complex Matrix, Condition Number, Eigen Decomposition, Eigen Decomposition
+Theorem, Eigenfunction, Eigenvector, Frobenius Theorem, Gerschgorin Circle
+Theorem, Lyapunov's First Theorem, Lyapunov's Second Theorem, Matrix
+Diagonalization, Ostrowski's Theorem, Perron's Theorem, Perron-Frobenius
+Theorem, Poincaré Separation Theorem, Random Matrix, Real Matrix, Schur's
+Inequalities, Similarity Transformation, Sturmian Separation Theorem, Sylvester's
+Inertia Law, Wielandt's Theorem. [Pages Linking Here]
+
+REFERENCES:
+Arfken, G. "Eigenvectors, Eigenvalues." §4.7 in Mathematical Methods for Physicists, 3rd ed.
+Orlando, FL: Academic Press, pp. 229-237, 1985.
+Hoffman, K. and Kunze, R. "Characteristic Values." §6.2 in Linear Algebra, 2nd ed. Englewood Cliffs,
+NJ: Prentice-Hall, p. 182, 1971.
+Kaltofen, E. "Challenges of Symbolic Computation: My Favorite Open Problems." J. Symb. Comput.
+29, 891-919, 2000.
+Marcus, M. and Minc, H. Introduction to Linear Algebra. New York: Dover, p. 145, 1988.
+Nash, J. C. "The Algebraic Eigenvalue Problem." Ch. 9 in Compact Numerical Methods for
+Computers: Linear Algebra and Function Minimisation, 2nd ed. Bristol, England: Adam Hilger, pp.
+102-118, 1990.
+Press, W. H.; Flannery, B. P.; Teukolsky, S. A.; and Vetterling, W. T. "Eigensystems." Ch. 11 in
+Numerical Recipes in FORTRAN: The Art of Scientific Computing, 2nd ed. Cambridge, England:
+Cambridge University Press, pp. 449-489, 1992.
+
+http://mathworld.wolfram.com/Eigenvalue.html
+
+10/10/2006
+
+Eigenvalue -- from Wolfram MathWorld
+
+Page 5 of 5
+
+LAST MODIFIED: December 10, 2004
+CITE THIS AS:
+Weisstein, Eric W. "Eigenvalue." From MathWorld--A Wolfram Web Resource.
+http://mathworld.wolfram.com/Eigenvalue.html
+
+© 1999 CRC Press LLC, © 1999-2006 Wolfram Research, Inc. | Terms of Use
+
+http://mathworld.wolfram.com/Eigenvalue.html
+
+10/10/2006
+

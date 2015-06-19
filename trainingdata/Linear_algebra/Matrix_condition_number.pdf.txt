@@ -1,0 +1,186 @@
+PlanetMath: matrix condition number
+
+Page 1 of 3
+(more info)
+
+.NET math class library
+
+C# numerical methods with matrix, vector,
+BLAS, LAPACK, statistics.
+
+AIMMS Modeling System
+
+The power of linear and nonlinear
+programming at hand (free trial)
+
+Ads by Goooooogle
+
+Math for the people, by the people.
+Login
+
+Advertise on this site
+
+find
+
+Encyclopedia | Requests | Forums | Docs | Wiki | Random | RSS
+
+matrix condition number
+
+(Definition)
+
+create new user
+name:
+
+Matrix Condition Number
+
+pass:
+login
+
+The condition number for matrix inversion with respect to a matrix norm
+
+of a square matrix
+
+is defined by
+
+forget your password?
+
+Main Menu
+sections
+
+Encyclopædia
+Papers
+Books
+Expositions
+meta
+
+Requests (235)
+Orphanage
+Unclass'd
+Unproven (391)
+Corrections (279)
+Classification
+talkback
+
+Polls
+Forums
+Feedback
+Bug Reports
+downloads
+
+if
+
+is non-singular; and
+
+if
+
+is singular.
+
+The condition number is a measure of stability or sensitivity of a matrix (or the linear system it represents) to
+numerical operations. In other words, we may not be able to trust the results of computations on an ill-conditioned
+matrix.
+Matrices with condition numbers near 1 are said to be well-conditioned . Matrices with condition numbers much
+greater than one (such as around
+for a
+Hilbert matrix) are said to be ill-conditioned .
+If
+
+is the condition number of
+
+singular matrices, normalized by
+
+, then
+
+measures a sort of inverse distance from
+
+. Precisely, if
+
+is invertible, and
+
+to the set of
+, then
+
+also be invertible. On the other hand, in the case of the -norm, there always exists a singular matrix
+(so the distance estimate is sharp).
+
+must
+such that
+
+Snapshots
+
+http://planetmath.org/encyclopedia/MatrixConditionNumber.html
+
+10/10/2006
+
+PlanetMath: matrix condition number
+
+PM Book
+information
+
+News
+Docs
+Wiki
+ChangeLog
+TODO List
+Legalese
+About
+
+Page 2 of 3
+
+Bibliography
+1
+
+Golub and Van Loan. Matrix Computations , 3rd edition. Johns Hopkins University Press, 1996.
+
+"matrix condition number" is owned by stevecheng. [ full author list (2) | owner history (1) ]
+(view preamble)
+
+View style:
+
+HTML with images
+
+reload
+
+See Also: matrix condition number is greater or equal to
+Other names: matrix condition number, condition number
+Also defines: ill-conditioned, well-conditioned
+Cross-references: estimate , invertible , distance, sort, Hilbert matrix, words, operations, represents, matrix, measure, singular, non-singular,
+square matrix, matrix norm, matrix inversion
+There are 6 references to this entry.
+This is version 7 of matrix condition number, born on 2002-09-28, modified 2006-10-07.
+Object id is 3480, canonical name is MatrixConditionNumber.
+Accessed 26096 times total.
+
+Classification:
+AMS MSC: 65F35 (Numerical analysis :: Numerical linear algebra :: Matrix norms, conditioning, scaling)
+15A12 (Linear and multilinear algebra; matrix theory :: Conditioning of matrices)
+
+Pending Errata and Addenda
+None.
+[ View all 4 ]
+Discussion
+Style: Threaded
+
+Expand: 1
+
+Order: Newest first
+
+http://planetmath.org/encyclopedia/MatrixConditionNumber.html
+
+reload
+
+forum policy
+
+10/10/2006
+
+PlanetMath: matrix condition number
+
+Page 3 of 3
+
+No messages.
+Interact
+rate | post | correct | update request | add derivation | add example | add (any)
+
+http://planetmath.org/encyclopedia/MatrixConditionNumber.html
+
+10/10/2006
+

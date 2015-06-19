@@ -1,0 +1,319 @@
+4.6 Multidimensional Integrals
+
+155
+
+Carnahan, B., Luther, H.A., and Wilkes, J.O. 1969, Applied Numerical Methods (New York:
+Wiley), §§2.9–2.10.
+Ralston, A., and Rabinowitz, P. 1978, A First Course in Numerical Analysis, 2nd ed. (New York:
+McGraw-Hill), §§4.4–4.8.
+
+Integrals of functions of several variables, over regions with dimension greater
+than one, are not easy. There are two reasons for this. First, the number of function
+evaluations needed to sample an N -dimensional space increases as the N th power
+of the number needed to do a one-dimensional integral. If you need 30 function
+evaluations to do a one-dimensional integral crudely, then you will likely need on
+the order of 30000 evaluations to reach the same crude level for a three-dimensional
+integral. Second, the region of integration in N -dimensional space is defined by
+an N − 1 dimensional boundary which can itself be terribly complicated: It need
+not be convex or simply connected, for example. By contrast, the boundary of a
+one-dimensional integral consists of two numbers, its upper and lower limits.
+The first question to be asked, when faced with a multidimensional integral,
+is, “can it be reduced analytically to a lower dimensionality?” For example,
+so-called iterated integrals of a function of one variable f (t) can be reduced to
+one-dimensional integrals by the formula
+
+0
+
+x
+
+
+
+ t2
+ t3
+dtn−1 · · ·
+dt2
+f (t1 )dt1
+0
+0
+0
+ x
+1
+=
+(x − t)n−1 f (t)dt
+(n − 1)! 0
+
+dtn
+
+tn
+
+(4.6.1)
+
+Alternatively, the function may have some special symmetry in the way it depends
+on its independent variables. If the boundary also has this symmetry, then the
+dimension can be reduced. In three dimensions, for example, the integration of a
+spherically symmetric function over a spherical region reduces, in polar coordinates,
+to a one-dimensional integral.
+The next questions to be asked will guide your choice between two entirely
+different approaches to doing the problem. The questions are: Is the shape of the
+boundary of the region of integration simple or complicated? Inside the region, is
+the integrand smooth and simple, or complicated, or locally strongly peaked? Does
+the problem require high accuracy, or does it require an answer accurate only to
+a percent, or a few percent?
+If your answers are that the boundary is complicated, the integrand is not
+strongly peaked in very small regions, and relatively low accuracy is tolerable, then
+your problem is a good candidate for Monte Carlo integration. This method is very
+straightforward to program, in its cruder forms. One needs only to know a region
+with simple boundaries that includes the complicated region of integration, plus a
+method of determining whether a random point is inside or outside the region of
+integration. Monte Carlo integration evaluates the function at a random sample of
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+4.6 Multidimensional Integrals
+
+156
+
+Chapter 4.
+
+Integration of Functions
+
+If, on the basis of the above guidelines, you decide to pursue the repeated onedimensional integration approach, here is how it works. For definiteness, we will
+consider the case of a three-dimensional integral in x, y, z-space. Two dimensions,
+or more than three dimensions, are entirely analogous.
+The first step is to specify the region of integration by (i) its lower and upper
+limits in x, which we will denote x 1 and x2 ; (ii) its lower and upper limits in y at
+a specified value of x, denoted y 1 (x) and y2 (x); and (iii) its lower and upper limits
+in z at specified x and y, denoted z 1 (x, y) and z2 (x, y). In other words, find the
+numbers x1 and x2 , and the functions y 1 (x), y2 (x), z1 (x, y), and z2 (x, y) such that
+  
+I≡
+dx dy dzf (x, y, z)
+
+=
+
+
+
+x2
+
+x1
+
+dx
+
+
+
+y2 (x)
+
+dy
+
+y1 (x)
+
+z2 (x,y)
+
+z1 (x,y)
+
+(4.6.2)
+dz f (x, y, z)
+
+For example, a two-dimensional integral over a circle of radius one centered on
+the origin becomes
+
+
+
+
+1
+
+−1
+
+dx
+
+√
+1−x2
+√
+− 1−x2
+
+dy f (x, y)
+
+(4.6.3)
+
+Now we can define a function G(x, y) that does the innermost integral,
+
+G(x, y) ≡
+
+z2 (x,y)
+
+z1 (x,y)
+
+f (x, y, z)dz
+
+(4.6.4)
+
+and a function H(x) that does the integral of G(x, y),
+
+H(x) ≡
+
+y2 (x)
+
+y1 (x)
+
+G(x, y)dy
+
+(4.6.5)
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+points, and estimates its integral based on that random sample. We will discuss it in
+more detail, and with more sophistication, in Chapter 7.
+If the boundary is simple, and the function is very smooth, then the remaining
+approaches, breaking up the problem into repeated one-dimensional integrals, or
+multidimensional Gaussian quadratures, will be effective and relatively fast [1]. If
+you require high accuracy, these approaches are in any case the only ones available
+to you, since Monte Carlo methods are by nature asymptotically slow to converge.
+For low accuracy, use repeated one-dimensional integration or multidimensional
+Gaussian quadratures when the integrand is slowly varying and smooth in the region
+of integration, Monte Carlo when the integrand is oscillatory or discontinuous, but
+not strongly peaked in small regions.
+If the integrand is strongly peaked in small regions, and you know where those
+regions are, break the integral up into several regions so that the integrand is smooth
+in each, and do each separately. If you don’t know where the strongly peaked regions
+are, you might as well (at the level of sophistication of this book) quit: It is hopeless
+to expect an integration routine to search out unknown pockets of large contribution
+in a huge N -dimensional space. (But see §7.8.)
+
+157
+
+4.6 Multidimensional Integrals
+
+y
+
+x
+Figure 4.6.1.
+Function evaluations for a two-dimensional integral over an irregular region, shown
+schematically. The outer integration routine, in y, requests values of the inner, x, integral at locations
+along the y axis of its own choosing. The inner integration routine then evaluates the function at
+x locations suitable to it. This is more accurate in general than, e.g., evaluating the function on a
+Cartesian mesh of points.
+
+and finally our answer as an integral over H(x)
+
+I=
+
+x2
+
+x1
+
+H(x)dx
+
+(4.6.6)
+
+To implement equations (4.6.4)–(4.6.6) in a program, one needs three separate
+copies of a basic one-dimensional integration routine (and of any subroutines called
+by it), one each for the x, y, and z integrations. If you try to make do with only
+one copy, then it will call itself recursively, since (e.g.) the function evaluations
+of H for the x integration will themselves call the integration routine to do the y
+integration (see Figure 4.6.1). In our example, let us suppose that we plan to use the
+one-dimensional integrator qgaus of §4.5. Then we make three identical copies and
+call them qgausx, qgausy, and qgausz. The basic program for three-dimensional
+integration then is as follows:
+
+C
+
+SUBROUTINE quad3d(x1,x2,ss)
+REAL ss,x1,x2,h
+EXTERNAL h
+USES h,qgausx
+Returns as ss the integral of a user-supplied function func over a three-dimensional region
+specified by the limits x1, x2, and by the user-supplied functions y1, y2, z1, and z2, as
+defined in (4.6.2).
+call qgausx(h,x1,x2,ss)
+return
+END
+FUNCTION f(zz)
+REAL f,zz,func,x,y,z
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+outer integration
+
+inner integration
+
+158
+
+C
+
+C
+
+Integration of Functions
+
+COMMON /xyz/ x,y,z
+USES func
+Called by qgausz. Calls func.
+z=zz
+f=func(x,y,z)
+return
+END
+FUNCTION g(yy)
+REAL g,yy,f,z1,z2,x,y,z
+EXTERNAL f
+COMMON /xyz/ x,y,z
+USES f,qgausz,z1,z2
+Called by qgausy. Calls qgausz.
+REAL ss
+y=yy
+call qgausz(f,z1(x,y),z2(x,y),ss)
+g=ss
+return
+END
+FUNCTION h(xx)
+REAL h,xx,g,y1,y2,x,y,z
+EXTERNAL g
+COMMON /xyz/ x,y,z
+USES g,qgausy,y1,y2
+Called by qgausx. Calls qgausy.
+REAL ss
+x=xx
+call qgausy(g,y1(x),y2(x),ss)
+h=ss
+return
+END
+
+The necessary user-supplied functions have the following calling sequences:
+FUNCTION
+FUNCTION
+FUNCTION
+FUNCTION
+FUNCTION
+
+func(x,y,z)
+y1(x)
+y2(x)
+z1(x,y)
+z2(x,y)
+
+The 3-dimensional function to be integrated
+
+CITED REFERENCES AND FURTHER READING:
+Stroud, A.H. 1971, Approximate Calculation of Multiple Integrals (Englewood Cliffs, NJ: PrenticeHall). [1]
+Dahlquist, G., and Bjorck, A. 1974, Numerical Methods (Englewood Cliffs, NJ: Prentice-Hall),
+§7.7, p. 318.
+Johnson, L.W., and Riess, R.D. 1982, Numerical Analysis, 2nd ed. (Reading, MA: AddisonWesley), §6.2.5, p. 307.
+Abramowitz, M., and Stegun, I.A. 1964, Handbook of Mathematical Functions, Applied Mathematics Series, Volume 55 (Washington: National Bureau of Standards; reprinted 1968 by
+Dover Publications, New York), equations 25.4.58ff.
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+C
+
+Chapter 4.
+

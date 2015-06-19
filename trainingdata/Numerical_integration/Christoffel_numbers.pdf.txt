@@ -1,0 +1,113 @@
+Christoffel Number -- from Wolfram MathWorld
+
+Page 1 of 2
+Search Site
+
+Algebra
+Applied Mathematics
+Calculus and Analysis
+Discrete Mathematics
+
+Applied Mathematics > Numerical Methods > Numerical Integration
+
+Other Wolfram Sites:
+Wolfram Research
+
+Christoffel Number
+
+Integrator
+Tones
+
+Foundations of Mathematics
+
+Functions Site
+
+Geometry
+
+Wolfram Science
+
+History and Terminology
+
+more…
+
+Number Theory
+Probability and Statistics
+
+One of the quantities
+satisfy
+
+appearing in the Gauss-Jacobi mechanical quadrature. They
+Latest Mathematica Information >>
+
+Recreational Mathematics
+
+Download Mathematica Trial >>
+
+Topology
+
+(1)
+
+Alphabetical Index
+
+Show your math savvy with a
+MathWorld T-shirt.
+
+Interactive Entries
+Random Entry
+
+Complete Mathematica
+Documentation >>
+
+and are given by
+
+New in MathWorld
+MathWorld Classroom
+
+(2)
+
+About MathWorld
+Contribute an Entry
+
+(3)
+
+Send a Message to the Team
+Order book from Amazon
+
+12,611 entries
+Sat Aug 5 2006
+
+(4)
+(5)
+where
+
+is the higher coefficient of
+
+.
+
+SEE ALSO: Cotes Number, Gauss-Jacobi Mechanical Quadrature, Hermite's
+
+Interpolating Polynomial. [Pages Linking Here]
+
+http://mathworld.wolfram.com/ChristoffelNumber.html
+
+09/08/2006
+
+Christoffel Number -- from Wolfram MathWorld
+
+Page 2 of 2
+
+REFERENCES:
+Szegö, G. Orthogonal Polynomials, 4th ed. Providence, RI: Amer. Math. Soc., pp. 47-48, 1975.
+Yakimiw, E. "Accurate Computation of Weights in Classical Gauss-Christoffel Quadrature." J. Comput.
+Phys. 129, 406-430, 1996.
+
+CITE THIS AS:
+Weisstein, Eric W. "Christoffel Number." From MathWorld--A Wolfram Web Resource.
+http://mathworld.wolfram.com/ChristoffelNumber.html
+
+© 1999 CRC Press LLC, © 1999-2006 Wolfram Research, Inc. | Terms of Use
+
+http://mathworld.wolfram.com/ChristoffelNumber.html
+
+09/08/2006
+

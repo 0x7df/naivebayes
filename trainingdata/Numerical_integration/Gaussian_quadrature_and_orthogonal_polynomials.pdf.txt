@@ -1,0 +1,1513 @@
+140
+
+Chapter 4.
+
+Integration of Functions
+
+so that
+
+
+x=∞
+
+x=a
+
+
+f (x)dx =
+
+t=e−a
+
+t=0
+
+f (− log t)
+
+dt
+t
+
+(4.4.8)
+
+SUBROUTINE midexp(funk,aa,bb,s,n)
+INTEGER n
+REAL aa,bb,s,funk
+EXTERNAL funk
+This routine is an exact replacement for midpnt, except that bb is assumed to be inﬁnite
+(value passed not actually used). It is assumed that the function funk decreases exponentially rapidly at inﬁnity.
+INTEGER it,j
+REAL ddel,del,sum,tnm,x,func,a,b
+func(x)=funk(-log(x))/x
+b=exp(-aa)
+a=0.
+if (n.eq.1) then
+The rest of the routine is exactly like midpnt and is omitted.
+
+CITED REFERENCES AND FURTHER READING:
+Acton, F.S. 1970, Numerical Methods That Work; 1990, corrected edition (Washington: Mathematical Association of America), Chapter 4.
+Dahlquist, G., and Bjorck, A. 1974, Numerical Methods (Englewood Cliffs, NJ: Prentice-Hall),
+§7.4.3, p. 294.
+Stoer, J., and Bulirsch, R. 1980, Introduction to Numerical Analysis (New York: Springer-Verlag),
+§3.7, p. 152.
+
+4.5 Gaussian Quadratures and Orthogonal
+Polynomials
+In the formulas of §4.1, the integral of a function was approximated by the sum
+of its functional values at a set of equally spaced points, multiplied by certain aptly
+chosen weighting coefficients. We saw that as we allowed ourselves more freedom
+in choosing the coefficients, we could achieve integration formulas of higher and
+higher order. The idea of Gaussian quadratures is to give ourselves the freedom to
+choose not only the weighting coefficients, but also the location of the abscissas at
+which the function is to be evaluated: They will no longer be equally spaced. Thus,
+we will have twice the number of degrees of freedom at our disposal; it will turn out
+that we can achieve Gaussian quadrature formulas whose order is, essentially, twice
+that of the Newton-Cotes formula with the same number of function evaluations.
+Does this sound too good to be true? Well, in a sense it is. The catch is a
+familiar one, which cannot be overemphasized: High order is not the same as high
+accuracy. High order translates to high accuracy only when the integrand is very
+smooth, in the sense of being “well-approximated by a polynomial.”
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+The user-transparent implementation would be
+
+4.5 Gaussian Quadratures and Orthogonal Polynomials
+
+141
+
+
+a
+
+b
+
+W (x)f (x)dx ≈
+
+N
+
+
+wj f (xj )
+
+(4.5.1)
+
+j=1
+
+is exact if f (x) is a polynomial. For example, to do the integral
+
+
+1
+
+−1
+
+exp(− cos2 x)
+√
+dx
+1 − x2
+
+(4.5.2)
+
+(not a very natural looking integral, it must be admitted), we might well be interested
+in a Gaussian quadrature formula based on the choice
+1
+W (x) = √
+1 − x2
+
+(4.5.3)
+
+in the interval (−1, 1). (This particular choice is called Gauss-Chebyshev integration,
+for reasons that will become clear shortly.)
+Notice that the integration formula (4.5.1) can also be written with the weight
+function W (x) not overtly visible: Define g(x) ≡ W (x)f (x) and v j ≡ wj /W (xj ).
+Then (4.5.1) becomes
+
+
+b
+a
+
+g(x)dx ≈
+
+N
+
+
+vj g(xj )
+
+(4.5.4)
+
+j=1
+
+Where did the function W (x) go? It is lurking there, ready to give high-order
+accuracy to integrands of the form polynomials times W (x), and ready to deny highorder accuracy to integrands that are otherwise perfectly smooth and well-behaved.
+When you find tabulations of the weights and abscissas for a given W (x), you have
+to determine carefully whether they are to be used with a formula in the form of
+(4.5.1), or like (4.5.4).
+Here is an example of a quadrature routine that contains the tabulated abscissas
+and weights for the case W (x) = 1 and N = 10. Since the weights and abscissas
+are, in this case, symmetric around the midpoint of the range of integration, there
+are actually only five distinct values of each:
+SUBROUTINE qgaus(func,a,b,ss)
+REAL a,b,ss,func
+EXTERNAL func
+Returns as ss the integral of the function func between a and b, by ten-point GaussLegendre integration: the function is evaluated exactly ten times at interior points in the
+range of integration.
+INTEGER j
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+There is, however, one additional feature of Gaussian quadrature formulas that
+adds to their usefulness: We can arrange the choice of weights and abscissas to make
+the integral exact for a class of integrands “polynomials times some known function
+W (x)” rather than for the usual class of integrands “polynomials.” The function
+W (x) can then be chosen to remove integrable singularities from the desired integral.
+Given W (x), in other words, and given an integer N , we can find a set of weights
+wj and abscissas xj such that the approximation
+
+142
+
+Chapter 4.
+
+Integration of Functions
+
+The above routine illustrates that one can use Gaussian quadratures without
+necessarily understanding the theory behind them: One just locates tabulated weights
+and abscissas in a book (e.g., [1] or [2]). However, the theory is very pretty, and it
+will come in handy if you ever need to construct your own tabulation of weights and
+abscissas for an unusual choice of W (x). We will therefore give, without any proofs,
+some useful results that will enable you to do this. Several of the results assume that
+W (x) does not change sign inside (a, b), which is usually the case in practice.
+The theory behind Gaussian quadratures goes back to Gauss in 1814, who
+used continued fractions to develop the subject. In 1826 Jacobi rederived Gauss’s
+results by means of orthogonal polynomials. The systematic treatment of arbitrary
+weight functions W (x) using orthogonal polynomials is largely due to Christoffel in
+1877. To introduce these orthogonal polynomials, let us fix the interval of interest
+to be (a, b). We can define the “scalar product of two functions f and g over a
+weight function W ” as
+ b
+W (x)f (x)g(x)dx
+(4.5.5)
+f |g ≡
+a
+
+The scalar product is a number, not a function of x. Two functions are said to be
+orthogonal if their scalar product is zero. A function is said to be normalized if its
+scalar product with itself is unity. A set of functions that are all mutually orthogonal
+and also all individually normalized is called an orthonormal set.
+We can find a set of polynomials (i) that includes exactly one polynomial of
+order j, called p j (x), for each j = 0, 1, 2, . . . , and (ii) all of which are mutually
+orthogonal over the specified weight function W (x). A constructive procedure for
+finding such a set is the recurrence relation
+p−1 (x) ≡ 0
+p0 (x) ≡ 1
+
+(4.5.6)
+
+pj+1 (x) = (x − aj )pj (x) − bj pj−1 (x)
+
+j = 0, 1, 2, . . .
+
+where
+xpj |pj 
+pj |pj 
+pj |pj 
+bj =
+pj−1 |pj−1 
+
+aj =
+
+j = 0, 1, . . .
+(4.5.7)
+j = 1, 2, . . .
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+REAL dx,xm,xr,w(5),x(5)
+The abscissas and weights.
+SAVE w,x
+DATA w/.2955242247,.2692667193,.2190863625,.1494513491,.0666713443/
+DATA x/.1488743389,.4333953941,.6794095682,.8650633666,.9739065285/
+xm=0.5*(b+a)
+xr=0.5*(b-a)
+ss=0
+Will be twice the average value of the function, since the ten
+do 11 j=1,5
+weights (ﬁve numbers above each used twice) sum to 2.
+dx=xr*x(j)
+ss=ss+w(j)*(func(xm+dx)+func(xm-dx))
+enddo 11
+ss=xr*ss
+Scale the answer to the range of integration.
+return
+END
+
+4.5 Gaussian Quadratures and Orthogonal Polynomials
+
+143
+
+ p (x )
+0 1
+ p1 (x1 )
+
+..
+
+.
+
+...
+...
+
+ 	b
+
+w1
+a W (x)p0 (x)dx
+  w2  
+
+0
+ .  = 
+
+..
+  ..  
+
+.
+
+
+p0 (xN )
+p1 (xN )
+..
+.
+
+pN −1 (x1 ) . . . pN −1 (xN )
+
+wN
+
+(4.5.8)
+
+0
+
+Equation (4.5.8) simply solves for those weights such that the quadrature (4.5.1)
+gives the correct answer for the integral of the first N orthogonal polynomials. Note
+that the zeros on the right-hand side of (4.5.8) appear because p 1 (x), . . . , pN −1 (x)
+are all orthogonal to p 0 (x), which is a constant. It can be shown that, with those
+weights, the integral of the next N −1 polynomials is also exact, so that the quadrature
+is exact for all polynomials of degree 2N − 1 or less. Another way to evaluate the
+weights (though one whose proof is beyond our scope) is by the formula
+wj =
+
+pN −1 |pN −1 
+pN −1 (xj )pN (xj )
+
+(4.5.9)
+
+where pN (xj ) is the derivative of the orthogonal polynomial at its zero x j .
+The computation of Gaussian quadrature rules thus involves two distinct phases:
+(i) the generation of the orthogonal polynomials p 0 , . . . , pN , i.e., the computation of
+the coefficients aj , bj in (4.5.6); (ii) the determination of the zeros of p N (x), and
+the computation of the associated weights. For the case of the “classical” orthogonal
+polynomials, the coefficients a j and bj are explicitly known (equations 4.5.10 –
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+The coefficient b 0 is arbitrary; we can take it to be zero.
+The polynomials defined by (4.5.6) are monic, i.e., the coefficient of their
+leading term [xj for pj (x)] is unity. If we divide each p j (x) by the constant
+[pj |pj ]1/2 we can render the set of polynomials orthonormal. One also encounters
+orthogonal polynomials with various other normalizations. You can convert from
+a given normalization to monic polynomials if you know that the coefficient of
+xj in pj is λj , say; then the monic polynomials are obtained by dividing each p j
+by λj . Note that the coefficients in the recurrence relation (4.5.6) depend on the
+adopted normalization.
+The polynomial p j (x) can be shown to have exactly j distinct roots in the
+interval (a, b). Moreover, it can be shown that the roots of p j (x) “interleave” the
+j − 1 roots of pj−1 (x), i.e., there is exactly one root of the former in between each
+two adjacent roots of the latter. This fact comes in handy if you need to find all the
+roots: You can start with the one root of p 1 (x) and then, in turn, bracket the roots
+of each higher j, pinning them down at each stage more precisely by Newton’s rule
+or some other root-finding scheme (see Chapter 9).
+Why would you ever want to find all the roots of an orthogonal polynomial
+pj (x)? Because the abscissas of the N -point Gaussian quadrature formulas (4.5.1)
+and (4.5.4) with weighting function W (x) in the interval (a, b) are precisely the roots
+of the orthogonal polynomial p N (x) for the same interval and weighting function.
+This is the fundamental theorem of Gaussian quadratures, and lets you find the
+abscissas for any particular case.
+Once you know the abscissas x 1 , . . . , xN , you need to find the weights w j ,
+j = 1, . . . , N . One way to do this (not the most efficient) is to solve the set of
+linear equations
+
+144
+
+Chapter 4.
+
+Integration of Functions
+
+4.5.14 below) and phase (i) can be omitted. However, if you are confronted with a
+“nonclassical” weight function W (x), and you don’t know the coefficients a j and
+bj , the construction of the associated set of orthogonal polynomials is not trivial.
+We discuss it at the end of this section.
+
+This task can range from easy to difficult, depending on how much you already
+know about your weight function and its associated polynomials. In the case of
+classical, well-studied, orthogonal polynomials, practically everything is known,
+including good approximations for their zeros. These can be used as starting guesses,
+enabling Newton’s method (to be discussed in §9.4) to converge very rapidly.
+Newton’s method requires the derivative p N (x), which is evaluated by standard
+relations in terms of p N and pN −1 . The weights are then conveniently evaluated by
+equation (4.5.9). For the following named cases, this direct root-finding is faster,
+by a factor of 3 to 5, than any other method.
+Here are the weight functions, intervals, and recurrence relations that generate
+the most commonly used orthogonal polynomials and their corresponding Gaussian
+quadrature formulas.
+Gauss-Legendre:
+W (x) = 1
+
+−1<x<1
+
+(j + 1)Pj+1 = (2j + 1)xPj − jPj−1
+
+(4.5.10)
+
+Gauss-Chebyshev:
+W (x) = (1 − x2 )−1/2
+
+−1<x<1
+
+Tj+1 = 2xTj − Tj−1
+
+(4.5.11)
+
+Gauss-Laguerre:
+W (x) = xα e−x
+
+0<x<∞
+
+α
+α
+(j + 1)Lα
+j+1 = (−x + 2j + α + 1)Lj − (j + α)Lj−1
+
+(4.5.12)
+
+Gauss-Hermite:
+W (x) = e−x
+
+2
+
+−∞<x<∞
+
+Hj+1 = 2xHj − 2jHj−1
+Gauss-Jacobi:
+W (x) = (1 − x)α (1 + x)β
+
+−1<x<1
+
+(4.5.13)
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+Computation of the Abscissas and Weights
+
+4.5 Gaussian Quadratures and Orthogonal Polynomials
+(α,β)
+
+(α,β)
+
+cj Pj+1 = (dj + ej x)Pj
+
+(α,β)
+
+− fj Pj−1
+
+145
+(4.5.14)
+
+where the coefficients c j , dj , ej , and fj are given by
+cj = 2(j + 1)(j + α + β + 1)(2j + α + β)
+
+ej = (2j + α + β)(2j + α + β + 1)(2j + α + β + 2)
+
+(4.5.15)
+
+fj = 2(j + α)(j + β)(2j + α + β + 2)
+We now give individual routines that calculate the abscissas and weights for
+these cases. First comes the most common set of abscissas and weights, those of
+Gauss-Legendre. The routine, due to G.B. Rybicki, uses equation (4.5.9) in the
+special form for the Gauss-Legendre case,
+wj =
+
+2
+(1 − x2j )[PN (xj )]2
+
+(4.5.16)
+
+The routine also scales the range of integration from (x 1 , x2 ) to (−1, 1), and provides
+abscissas xj and weights wj for the Gaussian formula
+
+
+x2
+x1
+
+1
+
+f (x)dx =
+
+N
+
+
+wj f (xj )
+
+(4.5.17)
+
+j=1
+
+SUBROUTINE gauleg(x1,x2,x,w,n)
+INTEGER n
+REAL x1,x2,x(n),w(n)
+DOUBLE PRECISION EPS
+PARAMETER (EPS=3.d-14)
+EPS is the relative precision.
+Given the lower and upper limits of integration x1 and x2, and given n, this routine returns
+arrays x(1:n) and w(1:n) of length n, containing the abscissas and weights of the GaussLegendre n-point quadrature formula.
+INTEGER i,j,m
+DOUBLE PRECISION p1,p2,p3,pp,xl,xm,z,z1
+High precision is a good idea for this routine.
+m=(n+1)/2
+The roots are symmetric in the interval, so we
+xm=0.5d0*(x2+x1)
+only have to ﬁnd half of them.
+xl=0.5d0*(x2-x1)
+do 12 i=1,m
+Loop over the desired roots.
+z=cos(3.141592654d0*(i-.25d0)/(n+.5d0))
+Starting with the above approximation to the ith root, we enter the main loop of reﬁnement by Newton’s method.
+continue
+p1=1.d0
+p2=0.d0
+do 11 j=1,n
+Loop up the recurrence relation to get the Legp3=p2
+endre polynomial evaluated at z.
+p2=p1
+p1=((2.d0*j-1.d0)*z*p2-(j-1.d0)*p3)/j
+enddo 11
+p1 is now the desired Legendre polynomial. We next compute pp, its derivative, by
+a standard relation involving also p2, the polynomial of one lower order.
+pp=n*(z*p1-p2)/(z*z-1.d0)
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+dj = (2j + α + β + 1)(α2 − β 2 )
+
+146
+
+Chapter 4.
+
+Newton’s method.
+Scale the root to the desired interval,
+and put in its symmetric counterpart.
+Compute the weight
+and its symmetric counterpart.
+
+Next we give three routines that use initial approximations for the roots given
+by Stroud and Secrest [2]. The first is for Gauss-Laguerre abscissas and weights, to
+be used with the integration formula
+
+0
+
+C
+
+*
+
+1
+
+∞
+
+xα e−x f (x)dx =
+
+N
+
+
+wj f (xj )
+
+(4.5.18)
+
+j=1
+
+SUBROUTINE gaulag(x,w,n,alf)
+INTEGER n,MAXIT
+REAL alf,w(n),x(n)
+DOUBLE PRECISION EPS
+PARAMETER (EPS=3.D-14,MAXIT=10)
+Increase EPS if you don’t have this precision.
+USES gammln
+Given alf, the parameter α of the Laguerre polynomials, this routine returns arrays x(1:n)
+and w(1:n) containing the abscissas and weights of the n-point Gauss-Laguerre quadrature
+formula. The smallest abscissa is returned in x(1), the largest in x(n).
+INTEGER i,its,j
+REAL ai,gammln
+DOUBLE PRECISION p1,p2,p3,pp,z,z1
+High precision is a good idea for this routine.
+do 13 i=1,n
+Loop over the desired roots.
+if(i.eq.1)then
+Initial guess for the smallest root.
+z=(1.+alf)*(3.+.92*alf)/(1.+2.4*n+1.8*alf)
+else if(i.eq.2)then
+Initial guess for the second root.
+z=z+(15.+6.25*alf)/(1.+.9*alf+2.5*n)
+else
+Initial guess for the other roots.
+ai=i-2
+z=z+((1.+2.55*ai)/(1.9*ai)+1.26*ai*alf/
+(1.+3.5*ai))*(z-x(i-2))/(1.+.3*alf)
+endif
+do 12 its=1,MAXIT
+Reﬁnement by Newton’s method.
+p1=1.d0
+p2=0.d0
+do 11 j=1,n
+Loop up the recurrence relation to get the Laguerre
+p3=p2
+polynomial evaluated at z.
+p2=p1
+p1=((2*j-1+alf-z)*p2-(j-1+alf)*p3)/j
+enddo 11
+p1 is now the desired Laguerre polynomial. We next compute pp, its derivative, by
+a standard relation involving also p2, the polynomial of one lower order.
+pp=(n*p1-(n+alf)*p2)/z
+z1=z
+z=z1-p1/pp
+Newton’s formula.
+if(abs(z-z1).le.EPS)goto 1
+enddo 12
+pause ’too many iterations in gaulag’
+x(i)=z
+Store the root and the weight.
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+z1=z
+z=z1-p1/pp
+if(abs(z-z1).gt.EPS)goto 1
+x(i)=xm-xl*z
+x(n+1-i)=xm+xl*z
+w(i)=2.d0*xl/((1.d0-z*z)*pp*pp)
+w(n+1-i)=w(i)
+enddo 12
+return
+END
+
+Integration of Functions
+
+4.5 Gaussian Quadratures and Orthogonal Polynomials
+
+147
+
+w(i)=-exp(gammln(alf+n)-gammln(float(n)))/(pp*n*p2)
+enddo 13
+return
+END
+
+
+ −1 = 0,
+H
+
+
+0 =
+H
+
+1
+π 1/4
+
+
+ j+1
+H
+
+,
+
+
+
+2 
+
+j 
+
+Hj −
+Hj−1
+=x
+j+1
+j+1
+
+(4.5.19)
+
+The formula for the weights becomes
+wj =
+
+2
+
+
+
+[HN (xj )]2
+
+(4.5.20)
+
+while the formula for the derivative with this normalization is
+
+ j =
+H
+
+
+
+ j−1
+2j H
+
+(4.5.21)
+
+The abscissas and weights returned by gauher are used with the integration formula
+
+
+∞
+
+e
+−∞
+
+−x2
+
+f (x)dx =
+
+N
+
+
+wj f (xj )
+
+(4.5.22)
+
+j=1
+
+SUBROUTINE gauher(x,w,n)
+INTEGER n,MAXIT
+REAL w(n),x(n)
+DOUBLE PRECISION EPS,PIM4
+PARAMETER (EPS=3.D-14,PIM4=.7511255444649425D0,MAXIT=10)
+Given n, this routine returns arrays x(1:n) and w(1:n) containing the abscissas and
+weights of the n-point Gauss-Hermite quadrature formula. The largest abscissa is returned
+in x(1), the most negative in x(n).
+Parameters: EPS is the relative precision, PIM4 = 1/π 1/4 , MAXIT = maximum iterations.
+INTEGER i,its,j,m
+DOUBLE PRECISION p1,p2,p3,pp,z,z1
+High precision is a good idea for this routine.
+m=(n+1)/2
+The roots are symmetric about the origin, so we have to ﬁnd only half of them.
+do 13 i=1,m
+Loop over the desired roots.
+if(i.eq.1)then
+Initial guess for the largest root.
+z=sqrt(float(2*n+1))-1.85575*(2*n+1)**(-.16667)
+else if(i.eq.2)then
+Initial guess for the second largest root.
+z=z-1.14*n**.426/z
+else if (i.eq.3)then
+Initial guess for the third largest root.
+z=1.86*z-.86*x(1)
+else if (i.eq.4)then
+Initial guess for the fourth largest root.
+z=1.91*z-.91*x(2)
+else
+Initial guess for the other roots.
+z=2.*z-x(i-2)
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+Next is a routine for Gauss-Hermite abscissas and weights. If we use the
+“standard” normalization of these functions, as given in equation (4.5.13), we find
+that the computations overflow for large N because of various factorials that occur.
+
+ j . They
+We can avoid this by using instead the orthonormal set of polynomials H
+are generated by the recurrence
+
+148
+
+Integration of Functions
+
+endif
+do 12 its=1,MAXIT
+Reﬁnement by Newton’s method.
+p1=PIM4
+p2=0.d0
+do 11 j=1,n
+Loop up the recurrence relation to get the Hermite polyp3=p2
+nomial evaluated at z.
+p2=p1
+p1=z*sqrt(2.d0/j)*p2-sqrt(dble(j-1)/dble(j))*p3
+enddo 11
+p1 is now the desired Hermite polynomial. We next compute pp, its derivative, by
+the relation (4.5.21) using p2, the polynomial of one lower order.
+pp=sqrt(2.d0*n)*p2
+z1=z
+z=z1-p1/pp
+Newton’s formula.
+if(abs(z-z1).le.EPS)goto 1
+enddo 12
+pause ’too many iterations in gauher’
+x(i)=z
+Store the root
+x(n+1-i)=-z
+and its symmetric counterpart.
+w(i)=2.d0/(pp*pp)
+Compute the weight
+w(n+1-i)=w(i)
+and its symmetric counterpart.
+enddo 13
+return
+END
+
+Finally, here is a routine for Gauss-Jacobi abscissas and weights, which
+implement the integration formula
+
+
+1
+
+−1
+
+C
+
+(1 − x)α (1 + x)β f (x)dx =
+
+N
+
+
+wj f (xj )
+
+(4.5.23)
+
+j=1
+
+SUBROUTINE gaujac(x,w,n,alf,bet)
+INTEGER n,MAXIT
+REAL alf,bet,w(n),x(n)
+DOUBLE PRECISION EPS
+PARAMETER (EPS=3.D-14,MAXIT=10)
+Increase EPS if you don’t have this precision.
+USES gammln
+Given alf and bet, the parameters α and β of the Jacobi polynomials, this routine returns
+arrays x(1:n) and w(1:n) containing the abscissas and weights of the n-point Gauss-Jacobi
+quadrature formula. The largest abscissa is returned in x(1), the smallest in x(n).
+INTEGER i,its,j
+REAL alfbet,an,bn,r1,r2,r3,gammln
+DOUBLE PRECISION a,b,c,p1,p2,p3,pp,temp,z,z1
+High precision is a good idea for this routine.
+Loop over the desired roots.
+do 13 i=1,n
+if(i.eq.1)then
+Initial guess for the largest root.
+an=alf/n
+bn=bet/n
+r1=(1.+alf)*(2.78/(4.+n*n)+.768*an/n)
+r2=1.+1.48*an+.96*bn+.452*an*an+.83*an*bn
+z=1.-r1/r2
+else if(i.eq.2)then
+Initial guess for the second largest root.
+r1=(4.1+alf)/((1.+alf)*(1.+.156*alf))
+r2=1.+.06*(n-8.)*(1.+.12*alf)/n
+r3=1.+.012*bet*(1.+.25*abs(alf))/n
+z=z-(1.-z)*r1*r2*r3
+else if(i.eq.3)then
+Initial guess for the third largest root.
+r1=(1.67+.28*alf)/(1.+.37*alf)
+r2=1.+.22*(n-8.)/n
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+1
+
+Chapter 4.
+
+4.5 Gaussian Quadratures and Orthogonal Polynomials
+
+*
+
+1
+*
+
+r3=1.+8.*bet/((6.28+bet)*n*n)
+z=z-(x(1)-z)*r1*r2*r3
+else if(i.eq.n-1)then
+Initial guess for the second smallest root.
+r1=(1.+.235*bet)/(.766+.119*bet)
+r2=1./(1.+.639*(n-4.)/(1.+.71*(n-4.)))
+r3=1./(1.+20.*alf/((7.5+alf)*n*n))
+z=z+(z-x(n-3))*r1*r2*r3
+else if(i.eq.n)then
+Initial guess for the smallest root.
+r1=(1.+.37*bet)/(1.67+.28*bet)
+r2=1./(1.+.22*(n-8.)/n)
+r3=1./(1.+8.*alf/((6.28+alf)*n*n))
+z=z+(z-x(n-2))*r1*r2*r3
+else
+Initial guess for the other roots.
+z=3.*x(i-1)-3.*x(i-2)+x(i-3)
+endif
+alfbet=alf+bet
+do 12 its=1,MAXIT
+Reﬁnement by Newton’s method.
+temp=2.d0+alfbet
+Start the recurrence with P0 and P1 to avoid a divip1=(alf-bet+temp*z)/2.d0
+sion by zero when α + β = 0 or −1.
+p2=1.d0
+do 11 j=2,n
+Loop up the recurrence relation to get the Jacobi
+p3=p2
+polynomial evaluated at z.
+p2=p1
+temp=2*j+alfbet
+a=2*j*(j+alfbet)*(temp-2.d0)
+b=(temp-1.d0)*(alf*alf-bet*bet+temp*
+(temp-2.d0)*z)
+c=2.d0*(j-1+alf)*(j-1+bet)*temp
+p1=(b*p2-c*p3)/a
+enddo 11
+pp=(n*(alf-bet-temp*z)*p1+2.d0*(n+alf)*
+(n+bet)*p2)/(temp*(1.d0-z*z))
+p1 is now the desired Jacobi polynomial. We next compute pp, its derivative, by a
+standard relation involving also p2, the polynomial of one lower order.
+z1=z
+z=z1-p1/pp
+Newton’s formula.
+if(abs(z-z1).le.EPS)goto 1
+enddo 12
+pause ’too many iterations in gaujac’
+x(i)=z
+Store the root and the weight.
+w(i)=exp(gammln(alf+n)+gammln(bet+n)-gammln(n+1.)gammln(n+alfbet+1.))*temp*2.**alfbet/(pp*p2)
+enddo 13
+return
+END
+
+Legendre polynomials are special cases of Jacobi polynomials with α = β = 0,
+but it is worth having the separate routine for them, gauleg, given above. Chebyshev
+polynomials correspond to α = β = −1/2 (see §5.8). They have analytic abscissas
+and weights:
+
+xj = cos
+π
+wj =
+N
+
+π(j − 12 )
+N
+
+
+(4.5.24)
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+*
+
+149
+
+150
+
+Chapter 4.
+
+Integration of Functions
+
+Case of Known Recurrences
+
+
+
+
+x
+
+
+
+p0
+p1
+..
+.
+pN−2
+pN−1
+
+
+
+
+
+1
+a1
+..
+.
+
+a0
+  b1
+ 
+=
+ 
+ 
+
+ 
+1
+..
+.
+aN−2
+bN−1
+
+bN−2
+
+1
+aN−1
+
+ 
+ 
+·
+ 
+ 
+
+p0
+p1
+..
+.
+
+
+
+
+
+0
+0
+..
+.
+
+
+
+ 
+
+ 
+
++
+
+ 
+
+  0 
+pN−2
+pN
+pN−1
+
+or
+(4.5.25)
+
+xp = T · p + pN eN−1
+
+Here T is a tridiagonal matrix, p is a column vector of p0 , p1 , . . . , pN−1 , and eN−1 is a unit
+vector with a 1 in the (N − 1)st (last) position and zeros elsewhere. The matrix T can be
+symmetrized by a diagonal similarity transformation D to give
+
+
+J = DTD−1
+
+√a0
+ b1
+
+=
+
+
+
+√
+
+b1
+a1
+..
+.
+
+
+
+√
+
+b2
+..
+√ .
+bN−2
+
+√aN−2
+bN−1
+
+√
+
+bN−1
+aN−1
+
+
+
+
+
+
+
+(4.5.26)
+
+The matrix J is called the Jacobi matrix (not to be confused with other matrices named
+after Jacobi that arise in completely different problems!). Now we see from (4.5.25) that
+pN (xj ) = 0 is equivalent to xj being an eigenvalue of T. Since eigenvalues are preserved
+by a similarity transformation, xj is an eigenvalue of the symmetric tridiagonal matrix J.
+Moreover, Wilf [4] shows that if vj is the eigenvector corresponding to the eigenvalue xj ,
+normalized so that v · v = 1, then
+2
+wj = µ0 vj,1
+
+(4.5.27)
+
+where
+
+µ0 =
+
+b
+
+a
+
+W (x) dx
+
+(4.5.28)
+
+and where vj,1 is the first component of v. As we shall see in Chapter 11, finding all
+eigenvalues and eigenvectors of a symmetric tridiagonal matrix is a relatively efficient and
+well-conditioned procedure. We accordingly give a routine, gaucof, for finding the abscissas
+and weights, given the coefficients aj and bj . Remember that if you know the recurrence
+relation for orthogonal polynomials that are not normalized to be monic, you can easily convert
+it to monic form by means of the quantities λj .
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+Turn now to the case where you do not know good initial guesses for the zeros of your
+orthogonal polynomials, but you do have available the coefficients aj and bj that generate
+them. As we have seen, the zeros of pN (x) are the abscissas for the N -point Gaussian
+quadrature formula. The most useful computational formula for the weights is equation
+(4.5.9) above, since the derivative pN can be efficiently computed by the derivative of (4.5.6)
+in the general case, or by special relations for the classical polynomials. Note that (4.5.9) is
+valid as written only for monic polynomials; for other normalizations, there is an extra factor
+of λN /λN−1 , where λN is the coefficient of xN in pN .
+Except in those special cases already discussed, the best way to find the abscissas is not
+to use a root-finding method like Newton’s method on pN (x). Rather, it is generally faster
+to use the Golub-Welsch [3] algorithm, which is based on a result of Wilf [4]. This algorithm
+notes that if you bring the term xpj to the left-hand side of (4.5.6) and the term pj+1 to the
+right-hand side, the recurrence relation can be written in matrix form as
+
+4.5 Gaussian Quadratures and Orthogonal Polynomials
+
+C
+
+151
+
+Orthogonal Polynomials with Nonclassical Weights
+This somewhat specialized subsection will tell you what to do if your weight function
+is not one of the classical ones dealt with above and you do not know the aj ’s and bj ’s
+of the recurrence relation (4.5.6) to use in gaucof. Then, a method of finding the aj ’s
+and bj ’s is needed.
+The procedure of Stieltjes is to compute a0 from (4.5.7), then p1 (x) from (4.5.6).
+Knowing p0 and p1 , we can compute a1 and b1 from (4.5.7), and so on. But how are we
+to compute the inner products in (4.5.7)?
+The textbook approach is to represent each pj (x) explicitly as a polynomial in x and
+to compute the inner products by multiplying out term by term. This will be feasible if we
+know the first 2N moments of the weight function,
+ b
+xj W (x)dx
+j = 0, 1, . . . , 2N − 1
+(4.5.29)
+µj =
+a
+
+However, the solution of the resulting set of algebraic equations for the coefficients aj and bj
+in terms of the moments µj is in general extremely ill-conditioned. Even in double precision,
+it is not unusual to lose all accuracy by the time N = 12. We thus reject any procedure
+based on the moments (4.5.29).
+Sack and Donovan [5] discovered that the numerical stability is greatly improved if,
+instead of using powers of x as a set of basis functions to represent the pj ’s, one uses some
+other known set of orthogonal polynomials πj (x), say. Roughly speaking, the improved
+stability occurs because the polynomial basis “samples” the interval (a, b) better than the
+power basis when the inner product integrals are evaluated, especially if its weight function
+resembles W (x).
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+SUBROUTINE gaucof(n,a,b,amu0,x,w)
+INTEGER n,NMAX
+REAL amu0,a(n),b(n),w(n),x(n)
+PARAMETER (NMAX=64)
+USES eigsrt,tqli
+Computes the abscissas and weights for a Gaussian quadrature formula from the Jacobi
+matrix. On input, a(1:n) and b(1:n) are the coeﬃcients of the recurrence relation for
+	
+the set of monic orthogonal polynomials. The quantity µ0 ≡ ab W (x) dx is input as amu0.
+The abscissas x(1:n) are returned in descending order, with the corresponding weights
+in w(1:n). The arrays a and b are modiﬁed. Execution can be speeded up by modifying
+tqli and eigsrt to compute only the ﬁrst component of each eigenvector.
+INTEGER i,j
+REAL z(NMAX,NMAX)
+do 12 i=1,n
+if(i.ne.1)b(i)=sqrt(b(i))
+Set up superdiagonal of Jacobi matrix.
+do 11 j=1,n
+Set up identity matrix for tqli to compute eigenvectors.
+if(i.eq.j)then
+z(i,j)=1.
+else
+z(i,j)=0.
+endif
+enddo 11
+enddo 12
+call tqli(a,b,n,NMAX,z)
+call eigsrt(a,z,n,NMAX)
+Sort eigenvalues into descending order.
+do 13 i=1,n
+x(i)=a(i)
+w(i)=amu0*z(1,i)**2
+Equation (4.5.12).
+enddo 13
+return
+END
+
+152
+
+Chapter 4.
+
+Integration of Functions
+
+So assume that we know the modified moments
+
+νj =
+
+b
+a
+
+πj (x)W (x)dx
+
+j = 0, 1, . . . , 2N − 1
+
+(4.5.30)
+
+where the πj ’s satisfy a recurrence relation analogous to (4.5.6),
+
+π0 (x) ≡ 1
+
+(4.5.31)
+
+πj+1 (x) = (x − αj )πj (x) − βj πj−1 (x)
+
+j = 0, 1, 2, . . .
+
+and the coefficients αj , βj are known explicitly. Then Wheeler [6] has given an efficient
+O(N 2 ) algorithm equivalent to that of Sack and Donovan for finding aj and bj via a set
+of intermediate quantities
+σk,l = pk |πl 
+
+k, l ≥ −1
+
+(4.5.32)
+
+Initialize
+σ−1,l = 0
+σ0,l = νl
+a0 = α0 +
+b0 = 0
+
+l = 1, 2, . . . , 2N − 2
+l = 0, 1, . . . , 2N − 1
+ν1
+ν0
+
+(4.5.33)
+
+Then, for k = 1, 2, . . . , N − 1, compute
+σk,l = σk−1,l+1 − (ak−1 − αl )σk−1,l − bk−1 σk−2,l + βl σk−1,l−1
+l = k, k + 1, . . . , 2N − k − 1
+σk−1,k
+σk,k+1
++
+ak = αk −
+σk−1,k−1
+σk,k
+σk,k
+bk =
+σk−1,k−1
+
+(4.5.34)
+
+Note that the normalization factors can also easily be computed if needed:
+p0 |p0  = ν0
+pj |pj  = bj pj−1 |pj−1 
+
+j = 1, 2, . . .
+
+(4.5.35)
+
+You can find a derivation of the above algorithm in Ref. [7].
+Wheeler’s algorithm requires that the modified moments (4.5.30) be accurately computed.
+In practical cases there is often a closed form, or else recurrence relations can be used. The
+algorithm is extremely successful for finite intervals (a, b). For infinite intervals, the algorithm
+does not completely remove the ill-conditioning. In this case, Gautschi [8,9] recommends
+reducing the interval to a finite interval by a change of variable, and then using a suitable
+discretization procedure to compute the inner products. You will have to consult the
+references for details.
+We give the routine orthog for generating the coefficients aj and bj by Wheeler’s
+algorithm, given the coefficients αj and βj , and the modified moments νj . To conform to
+the usual FORTRAN convention for dimensioning subscripts, the indices of the σ matrix are
+increased by 2, i.e., sig(k,l) = σk−2,l−2 , while the indices of the vectors α, β, a and
+b are increased by 1.
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+π−1 (x) ≡ 0
+
+4.5 Gaussian Quadratures and Orthogonal Polynomials
+
+SUBROUTINE orthog(n,anu,alpha,beta,a,b)
+INTEGER n,NMAX
+REAL a(n),alpha(2*n-1),anu(2*n),b(n),beta(2*n-1)
+PARAMETER (NMAX=64)
+Computes the coeﬃcients aj and bj , j = 0, . . . N − 1, of the recurrence relation for
+monic orthogonal polynomials with weight function W (x) by Wheeler’s algorithm. On input,
+alpha(1:2*n-1) and beta(1:2*n-1) are the coeﬃcients αj and βj , j = 0, . . . 2N − 2,
+of the recurrence relation for the chosen basis of orthogonal polynomials. The modiﬁed
+moments νj are input in anu(1:2*n). The ﬁrst n coeﬃcients are returned in a(1:n) and
+b(1:n).
+INTEGER k,l
+REAL sig(2*NMAX+1,2*NMAX+1)
+do 11 l=3,2*n
+Initialization, Equation (4.5.33).
+sig(1,l)=0.
+enddo 11
+do 12 l=2,2*n+1
+sig(2,l)=anu(l-1)
+enddo 12
+a(1)=alpha(1)+anu(2)/anu(1)
+b(1)=0.
+Equation (4.5.34).
+do 14 k=3,n+1
+do 13 l=k,2*n-k+3
+sig(k,l)=sig(k-1,l+1)+(alpha(l-1)-a(k-2))*sig(k-1,l)b(k-2)*sig(k-2,l)+beta(l-1)*sig(k-1,l-1)
+enddo 13
+a(k-1)=alpha(k-1)+sig(k,k+1)/sig(k,k)-sig(k-1,k)/sig(k-1,k-1)
+b(k-1)=sig(k,k)/sig(k-1,k-1)
+enddo 14
+return
+END
+
+As an example of the use of orthog, consider the problem [7] of generating orthogonal
+polynomials with the weight function W (x) = − log x on the interval (0, 1). A suitable set
+of πj ’s is the shifted Legendre polynomials
+πj =
+
+(j!)2
+Pj (2x − 1)
+(2j)!
+
+(4.5.36)
+
+The factor in front of Pj makes the polynomials monic. The coefficients in the recurrence
+relation (4.5.31) are
+αj =
+βj =
+
+1
+2
+
+j = 0, 1, . . .
+
+1
+4(4 − j −2 )
+
+while the modified moments are
+νj =
+
+
+1
+
+j = 1, 2, . . .
+
+(−1)j (j!)2
+
+j(j + 1)(2j)!
+
+j=0
+j≥1
+
+(4.5.37)
+
+(4.5.38)
+
+A call to orthog with this input allows one to generate the required polynomials to machine
+accuracy for very large N , and hence do Gaussian quadrature with this weight function. Before
+Sack and Donovan’s observation, this seemingly simple problem was essentially intractable.
+
+Extensions of Gaussian Quadrature
+There are many different ways in which the ideas of Gaussian quadrature have
+been extended. One important extension is the case of preassigned nodes: Some
+points are required to be included in the set of abscissas, and the problem is to choose
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+*
+
+153
+
+154
+
+Chapter 4.
+
+Integration of Functions
+
+CITED REFERENCES AND FURTHER READING:
+Abramowitz, M., and Stegun, I.A. 1964, Handbook of Mathematical Functions, Applied Mathematics Series, Volume 55 (Washington: National Bureau of Standards; reprinted 1968 by
+Dover Publications, New York), §25.4. [1]
+Stroud, A.H., and Secrest, D. 1966, Gaussian Quadrature Formulas (Englewood Cliffs, NJ:
+Prentice-Hall). [2]
+Golub, G.H., and Welsch, J.H. 1969, Mathematics of Computation, vol. 23, pp. 221–230 and
+A1–A10. [3]
+Wilf, H.S. 1962, Mathematics for the Physical Sciences (New York: Wiley), Problem 9, p. 80. [4]
+Sack, R.A., and Donovan, A.F. 1971/72, Numerische Mathematik, vol. 18, pp. 465–478. [5]
+Wheeler, J.C. 1974, Rocky Mountain Journal of Mathematics, vol. 4, pp. 287–296. [6]
+Gautschi, W. 1978, in Recent Advances in Numerical Analysis, C. de Boor and G.H. Golub, eds.
+(New York: Academic Press), pp. 45–72. [7]
+Gautschi, W. 1981, in E.B. Christoffel, P.L. Butzer and F. Feher,
+´ eds. (Basel: Birkhauser Verlag),
+pp. 72–147. [8]
+Gautschi, W. 1990, in Orthogonal Polynomials, P. Nevai, ed. (Dordrecht: Kluwer Academic Publishers), pp. 181–216. [9]
+Golub, G.H. 1973, SIAM Review, vol. 15, pp. 318–334. [10]
+Kronrod, A.S. 1964, Doklady Akademii Nauk SSSR, vol. 154, pp. 283–286 (in Russian). [11]
+Patterson, T.N.L. 1968, Mathematics of Computation, vol. 22, pp. 847–856 and C1–C11; 1969,
+op. cit., vol. 23, p. 892. [12]
+Piessens, R., de Doncker, E., Uberhuber, C.W., and Kahaner, D.K. 1983, QUADPACK: A Subroutine Package for Automatic Integration (New York: Springer-Verlag). [13]
+Stoer, J., and Bulirsch, R. 1980, Introduction to Numerical Analysis (New York: Springer-Verlag),
+§3.6.
+Johnson, L.W., and Riess, R.D. 1982, Numerical Analysis, 2nd ed. (Reading, MA: AddisonWesley), §6.5.
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+the weights and the remaining abscissas to maximize the degree of exactness of the
+the quadrature rule. The most common cases are Gauss-Radau quadrature, where
+one of the nodes is an endpoint of the interval, either a or b, and Gauss-Lobatto
+quadrature, where both a and b are nodes. Golub [10] has given an algorithm similar
+to gaucof for these cases.
+The second important extension is the Gauss-Kronrod formulas. For ordinary
+Gaussian quadrature formulas, as N increases the sets of abscissas have no points
+in common. This means that if you compare results with increasing N as a way of
+estimating the quadrature error, you cannot reuse the previous function evaluations.
+Kronrod [11] posed the problem of searching for optimal sequences of rules, each
+of which reuses all abscissas of its predecessor. If one starts with N = m, say,
+and then adds n new points, one has 2n + m free parameters: the n new abscissas
+and weights, and m new weights for the fixed previous abscissas. The maximum
+degree of exactness one would expect to achieve would therefore be 2n + m − 1.
+The question is whether this maximum degree of exactness can actually be achieved
+in practice, when the abscissas are required to all lie inside (a, b). The answer to
+this question is not known in general.
+Kronrod showed that if you choose n = m + 1, an optimal extension can
+be found for Gauss-Legendre quadrature. Patterson [12] showed how to compute
+continued extensions of this kind. Sequences such as N = 10, 21, 43, 87, . . . are
+popular in automatic quadrature routines [13] that attempt to integrate a function until
+some specified accuracy has been achieved.
+
+4.6 Multidimensional Integrals
+
+155
+
+Carnahan, B., Luther, H.A., and Wilkes, J.O. 1969, Applied Numerical Methods (New York:
+Wiley), §§2.9–2.10.
+Ralston, A., and Rabinowitz, P. 1978, A First Course in Numerical Analysis, 2nd ed. (New York:
+McGraw-Hill), §§4.4–4.8.
+
+Integrals of functions of several variables, over regions with dimension greater
+than one, are not easy. There are two reasons for this. First, the number of function
+evaluations needed to sample an N -dimensional space increases as the N th power
+of the number needed to do a one-dimensional integral. If you need 30 function
+evaluations to do a one-dimensional integral crudely, then you will likely need on
+the order of 30000 evaluations to reach the same crude level for a three-dimensional
+integral. Second, the region of integration in N -dimensional space is defined by
+an N − 1 dimensional boundary which can itself be terribly complicated: It need
+not be convex or simply connected, for example. By contrast, the boundary of a
+one-dimensional integral consists of two numbers, its upper and lower limits.
+The first question to be asked, when faced with a multidimensional integral,
+is, “can it be reduced analytically to a lower dimensionality?” For example,
+so-called iterated integrals of a function of one variable f (t) can be reduced to
+one-dimensional integrals by the formula
+
+0
+
+x
+
+
+
+ t2
+ t3
+dtn−1 · · ·
+dt2
+f (t1 )dt1
+0
+0
+0
+ x
+1
+=
+(x − t)n−1 f (t)dt
+(n − 1)! 0
+
+dtn
+
+tn
+
+(4.6.1)
+
+Alternatively, the function may have some special symmetry in the way it depends
+on its independent variables. If the boundary also has this symmetry, then the
+dimension can be reduced. In three dimensions, for example, the integration of a
+spherically symmetric function over a spherical region reduces, in polar coordinates,
+to a one-dimensional integral.
+The next questions to be asked will guide your choice between two entirely
+different approaches to doing the problem. The questions are: Is the shape of the
+boundary of the region of integration simple or complicated? Inside the region, is
+the integrand smooth and simple, or complicated, or locally strongly peaked? Does
+the problem require high accuracy, or does it require an answer accurate only to
+a percent, or a few percent?
+If your answers are that the boundary is complicated, the integrand is not
+strongly peaked in very small regions, and relatively low accuracy is tolerable, then
+your problem is a good candidate for Monte Carlo integration. This method is very
+straightforward to program, in its cruder forms. One needs only to know a region
+with simple boundaries that includes the complicated region of integration, plus a
+method of determining whether a random point is inside or outside the region of
+integration. Monte Carlo integration evaluates the function at a random sample of
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+4.6 Multidimensional Integrals
+

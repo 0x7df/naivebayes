@@ -1,0 +1,1186 @@
+Flexibility of the Gas Cooled Fast Reactor to Meet the Requirements of the 21st Century
+
+T D Newton and P J Smith
+Serco Assurance
+(Sponsored by BNFL)
+Winfrith, Dorset, England, DT2 8ZE
+Telephone : (44) 1305203706
+Fascimile : (44) 1305202194
+E-mail : peter.smith@sercoassurance.com
+
+Abstract – A new generation of reactor designs are being developed that are intended to meet the
+requirements of the 21st century. In the short term the most important requirements are increased
+competitiveness and efficiency, low construction and operating costs, inherent safety characteristics and low
+proliferation risk. In the longer term there is a need to establish sustainability of fuel and the need to
+minimise stocks of separated plutonium and minor actinide waste. The concept of the gas cooled fast reactor
+has recently seen renewed interest owing to its flexibility for plutonium and minor actinide management and
+its favourable safety characteristics compared to liquid metal cooled fast reactors. This paper presents the
+neutronics performance and safety characteristics for a conventional mixed oxide fuelled gas cooled fast
+reactor with a carbon dioxide coolant. The significant flexibility of this concept for plutonium management is
+demonstrated by the evaluation of a wide range of possible future scenarios. These include a core
+configuration capable of high rates of plutonium consumption, a configuration with a negligible breeding
+gain aimed at sustainability, and a core design that has been optimised for plutonium breeding. Evidence is
+also provided to demonstrate the potential of this gas cooled fast reactor concept for minor actinide
+transmutation. One way in which this can be achieved is homogeneous recycling by the addition of small
+amounts of minor actinides in the mixed oxide fuelled pins. This is compared with the alternative option of
+heterogeneous minor actinide recycling in which minor actinides are loaded in special target sub-assemblies
+located in either in-core or ex-core locations. Thus, this study demonstrates the significant flexibility of gas
+cooled fast reactor designs toward fuel utilisation and fuel cycle management.
+
+I. INTRODUCTION
+
+These advantages, combined with the extensive
+UK experience gained in the successful design and
+operation of the carbon dioxide cooled Advanced Gas
+Reactors, has led to the investigation of carbon dioxide
+cooled fast reactor concepts based on Advanced Gas
+Reactor technology but incorporating core design
+parameters from the European Fast Reactor1 . A number of
+gas cooled fast reactor cores have been considered
+including a conventional plutonium burning design, a
+configuration with a negligible breeding gain aimed at
+sustainability, and a core design that has been optimised
+for plutonium breeding. The potential of a gas cooled fast
+reactor concept for minor actinide transmutation has also
+been investigated2 . There are two main options for
+transmutation in a mixed oxide fuelled fast reactor core.
+One possibility is to smear a small amount of minor
+actinides homogeneously in the mixed oxide fuelled pins.
+This is compared with the alternative option of
+heterogeneous recycling in which minor actinides are
+
+In recent years there has been increased interest
+in gas cooled fast reactor systems for the management of
+plutonium and minor actinide stockpiles. Gas cooled fast
+reactors offer a number of advantages over liquid metal
+fuelled core designs. There are significant safety,
+economic and technical benefits to be gained from using a
+benign, readily available gaseous coolant which is
+compatible with both air and water, compared to sodium
+which reacts vigorously with water and requires specialist
+handling and disposal. The negligible coolant void
+coefficient in gas cooled cores, compared to sodium
+cooled systems, allows the loading of a far greater
+quantity of degraded plutonium and minor actinide fuels.
+An additional feature of a gaseous coolant, in terms of
+minor actinide incineration, is the hard neutron spectrum
+that exists in gas cooled cores. Gas cooled fast reactors
+therefore offer considerable flexibility in core design.
+
+1
+
+loaded in special target sub-assemblies located in either
+in-core or ex-core locations.
+This paper reviews the main gas cooled fast
+reactor concepts and core designs that have been
+considered during the course of this work, concentrating
+on the core physics and safety aspects particularly in
+terms of plutonium and minor actinide management. The
+performance and safety characteristics of each core
+concept are presented, compared and discussed. These
+studies have confirmed the significant flexibility of gas
+cooled fast reactor designs toward future fuel and fuel
+cycle utilisation.
+
+common to all of the core configurations considered
+during the course of this work.
+II.A. Plutonium Burning
+In order to determine the scope for plutonium
+management the feasibility of a gas cooled fast reactor
+core design for high levels of plutonium burning has been
+investigated. This option is based on a mixed oxide fuel
+with a high plutonium content of degraded isotopic
+quality. The feed fuel is the result of uranium oxide output
+that has been twice recycled in a mixed oxide PWR. The
+plutonium content is constrained to be no more than 45%
+by mass to remain within current reprocessing experience
+using the PUREX method. The use of a high plutonium
+content fuel can only be achieved by a significant
+reduction of the fuel inventory for a given core volume.
+This has been achieved by the introduction of dilution in
+the form of empty pin positions within the fuelled subassemblies. The main core parameters for the plutonium
+burning option are shown in Table 1.
+
+II. CORE DESIGN
+The basis of the present work is the
+demonstration of a feasible design for a gas cooled fast
+reactor as a generator of electricity having a similar power
+output to that of a conventional commercially sized
+sodium cooled fast reactor. Carbon dioxide is less
+effective than sodium as a heat transfer medium and so a
+larger pin spacing is required to satisfy the same design
+limiting criteria, which in turn provides for a reduced fuel
+rating. The gas cooled fast reactor design concept is based
+on the Hinkley Point B and Heysham 2 / Torness
+Advanced Gas Reactors which utilise a single cavity prestressed concrete pressure vessel to house the core
+structure, steam generators and gas circulators. The
+proposed boiler design, and the limitations imposed by
+existing fast reactor fuel technology, have resulted in a
+core inlet and mixed mean core outlet temperature of 252
+°C and 525 °C respectively with a coolant inlet pressure
+of 42 bar.
+
+Table I : Main Core Design Parameters for the Plutonium
+Burning Gas Cooled Fast Reactor Core Design
+Parameter
+Number of Fuelled Sub-Assemblies
+Number of Inner Core Sub-Assemblies
+Number of Outer Core Sub-Assemblies
+Number of Pins per Sub-Assembly
+Fuel Pin Outer Diameter
+Fuel Pin Clad Inner Diameter
+Fuel Pellet Outer Diameter
+Fuel Pellet Central Hole Diameter
+P/D
+Sub-Assembly Pitch
+Wrapper Inside (Across Flats)
+Plutonium Enrichment – Inner Core
+Plutonium Enrichment – Outer Core
+Cycle Length
+Number of Cycles
+Peak Pin Burnup
+
+In common with comparable sodium cooled core
+designs, the gas cooled core has a thermal output of 3600
+MWth with a load factor of 80%. The reactor is assumed
+to have a net thermal efficiency of 40% which therefore
+provides an electrical output of 1400 MWe. Conventional
+mixed oxide fuel pins with metal cladding are included in
+the core. The thermal hydraulic performance of this core
+has been assessed to ensure satisfactory cooling of the
+fuel pins. The gas cooled core design involves little
+extrapolation beyond present day technology and exhibits
+adequate thermal hydraulic performance.
+
+Value
+550
+334
+216
+169
+8.20 mm
+7.36 mm
+7.14 mm
+2.00 mm
+1.55
+180.61 mm
+167.00 mm
+31.12 mass %
+44.94 mass %
+344 efpd
+5
+20 % h.a.
+
+II.B. Plutonium Sustainability
+The feasibility of a gas cooled fast reactor for
+fuel sustainability has also been investigated. To sustain
+the nuclear fuel cycle, and maintain fuel stocks at existing
+levels, it is intended that this option should neither
+consume, nor produce, significant amounts of plutonium,
+and that therefore the core breeding gain should be close
+to zero. This option is based on a mixed oxide fuel with a
+lower plutonium content and cleaner isotopic quality in
+comparison with the plutonium burning option. The feed
+fuel is the result of a single recycle of uranium oxide fuel
+in a PWR.
+
+As the core height is not constrained by
+limitations imposed by the coolant void coefficient, as is
+the case for a sodium cooled fast reactor, a core height of
+1.5 m has been chosen. The steel reflector material
+adjacent to the core fuel, and the outer shielding subassemblies, are as currently assumed in comparable
+sodium cooled core designs. The control and secondary
+shut off rods are the same as those of equivalent sodium
+cooled core designs and comprise 24 primary control rods
+and 9 secondary shut off rods. These design features are
+
+2
+
+It can be noted that this core design contains 60 diluent
+sub-assemblies located in inner core positions to balance
+the peak ratings in the inner and outer core zones. The
+main core parameters for the sustainability option are
+shown in Table II.
+
+Table III : Main Core Design Parameters for the Breeder
+Gas Cooled Fast Reactor Core Design
+Parameter
+Number of Fuelled Sub-Assemblies
+Number of Inner Core Sub-Assemblies
+Number of Outer Core Sub-Assemblies
+Number of Diluent Sub-Assemblies
+Number of Breeder Sub-Assemblies
+Upper Axial Breeder Blanket
+Lower Axial Breeder Blanket
+Number of Pins per Sub-Assembly
+Fuel/Breeder Pin Outer Diameter
+Fuel/Breeder Pin Clad Inner Diameter
+Fuel/Breeder Pellet Outer Diameter
+Fuel Pellet Central Hole Diameter
+P/D
+Sub-Assembly Pitch
+Wrapper Inside (Across Flats)
+Plutonium Enrichment – Inner Core
+Plutonium Enrichment – Outer Core
+Cycle Length
+Number of Cycles
+Peak Pin Burnup
+
+Table II : Main Core Design Parameters for the
+Sustainability Gas Cooled Fast Reactor Core Design
+Parameter
+Number of Fuelled Sub-Assemblies
+Number of Inner Core Sub-Assemblies
+Number of Outer Core Sub-Assemblies
+Number of Diluent Sub-Assemblies
+Number of Pins per Sub-Assembly
+Fuel Pin Outer Diameter
+Fuel Pin Clad Inner Diameter
+Fuel Pellet Outer Diameter
+Fuel Pellet Central Hole Diameter
+P/D
+Sub-Assembly Pitch
+Wrapper Inside (Across Flats)
+Plutonium Enrichment – Inner Core
+Plutonium Enrichment – Outer Core
+Cycle Length
+Number of Cycles
+Peak Pin Burnup
+
+Value
+550
+238
+342
+60
+169
+8.20 mm
+7.36 mm
+7.14 mm
+2.00 mm
+1.55
+180.61 mm
+167.00 mm
+24.35 mass %
+27.07 mass %
+325 efpd
+6
+20 % h.a.
+
+Value
+550
+238
+342
+60
+198
+250 mm
+350 mm
+169
+8.20 mm
+7.36 mm
+7.14 mm
+2.00 mm
+1.55
+180.61 mm
+167.00 mm
+22.14 mass %
+25.68 mass %
+448 efpd
+6
+20 % h.a.
+
+III. NEUTRONICS METHODS
+All of the gas cooled core configurations have
+been modelled neutronically using the European fast
+reactor neutronics code scheme ERANOS Version 1.2
+along with the ERALIB1 nuclear cross section data
+library 3 . Broad group resonance self shielded cross
+sections have been produced for each core material using
+the ECCO cell code. A fine group slowing down
+treatment is combined with the sub group method within
+each fine group to provide an accurate description of the
+reaction thresholds and resonances for each type of
+critical and sub-critical sub-assembly.
+
+II.C. Plutonium Breeding
+To demonstrate the capability of the gas cooled
+fast reactor to satisfy the wide range of fuel cycle
+scenarios that may occur in the 21st century a gas cooled
+fast reactor core design for plutonium breeding has been
+investigated. The basic details of the core are similar to
+those of the sustainability option. As part of this breeder
+core design axial breeder regions of 35 cm and 25 cm
+thickness were included below and above the core
+respectively. Furthermore, two rows of radial breeder subassemblies were included around the outer edge of the
+core.
+
+For conventional applications, such as the
+sodium cooled fast reactor, the cross sections are then
+condensed and homogenised in the required broad group
+scheme to provide effective cross sections that correctly
+treat the spatial heterogeneity of the sub-assembly
+structure. However, for situations involving low density
+regions and strongly anisotropic neutron streaming, such
+as the gas cooled fast reactor, these conventional
+formulations are insufficient. Hence additional methods
+have been used to treat these specific characteristics
+correctly.
+
+The breeder sub-assembly dimensions were
+identical to the fuel and the dimensions and the number of
+fertile pins per breeder sub-assembly was the same as for
+the fuel sub-assemblies. However, no central hole is
+present in the radial breeder pins. A typical uranium oxide
+breeder fuel was assumed for the breeder pins, with
+depleted uranium containing 0.25% by mass of U235 . The
+main core parameters for the breeder option are shown in
+Table III.
+
+3
+
+The strong anisotropy of the streaming is taken
+into account by the use of directional collision
+probabilities. For low density regions, consideration of the
+equivalence between the limiting behaviour of the
+diffusion coefficient as the buckling and the cross section
+tend to zero has resulted in an alternative derivation of
+equivalent buckling dependent cross sections. In this way
+homogenised cross sections have been produced for each
+material in the gas cooled fast reactor core in 33 neutron
+energy groups.
+
+IV. PLUTONIUM MANAGEMENT
+In order to assess the capability of the gas cooled
+fast reactor for plutonium management three core designs
+intended for plutonium consumption, plutonium
+sustainability, and plutonium breeding have been
+established. For each core design performance and safety
+parameters have been calculated at the start and end of
+each equilibrium cycle. A summary of the main core
+performance and safety parameters, averaged over all
+equilibrium cycles, is given in Table IV.
+
+Whole core flux and depletion calculations have
+then been performed in 3-dimensional diffusion theory for
+each core configuration studied. The control rods have
+been modelled with a reduced B10 content to allow for the
+transport, heterogeneity and mesh effects that are not
+included in the simplified homogeneous control rod
+representation employed during these studies.
+
+The results obtained for all three options of this
+gas cooled fast reactor core design illustrate the viability
+of the concept and show no major difficulties with respect
+to core performance or safety. The peak pin burnup has
+been determined from the percentage change in heavy
+atom concentrations over the residence time of the fuel
+within the core and is close to the target value of 20%
+heavy atoms in all cases. The peak linear ratings, delayed
+neutron fraction and prompt neutron lifetime are
+consistent with equivalent values obtained for the
+European Fast Reactor.
+
+Consistent flux, isotopic compositions and
+macroscopic cross section data corresponding to each
+equilibrium core burnup state have been produced using
+detailed modelling of the individual fuel batches. The fuel
+cycle lengths have been determined by the criterion of
+attaining a peak clad damage over the lifetime of the fuel
+within the core close to 180 dpa NRT Fe. The inner and
+outer core feed fuel enrichments for each core
+configuration have been chosen to give balanced inner
+and outer core peak ratings and a calculated end of cycle
+reactivity close to unity with all control rods withdrawn.
+The control rod insertions at start of cycle and middle of
+cycle are then adjusted to obtain core reactivity values
+close to unity. The core performance and safety
+parameters have then been calculated for the start of
+cycle, middle of cycle and end of cycle conditions.
+
+The distribution and characteristics of the control
+rods, extrapolated from those of the European Fast
+Reactor, appear adequate as the necessary shutdown
+margins have been satisfied. The Doppler constant,
+strongly dependent on the core uranium content, is
+reasonable, even for the design optimised for plutonium
+consumption where the contribution from U238 capture is
+at its lowest.
+
+Table IV : Main Core Performance Parameters for the Gas Cooled Fast Reactor Core
+
+Peak Pin Burnup (% h.a.)
+Peak Linear Rating (W/cm)
+Peak Clad Damage (dpa)
+Doppler Constant (pcm)
+Coolant Void Reactivity (pcm)
+Water Ingress Reactivity (pcm)
+Total β-effective (pcm)
+Prompt Neutron Lifetime (10-7s)
+Reactivity Loss Over Cycle (pcm)
+Plutonium/Minor Actinide Consumption (kg/TWhe)
+Breeding Gain
+
+Consumption
+18.52
+230
+180
+-346
++276
+-3435
+337
+7.52
+6364
++52.4 / -4.7
+-0.38
+
+4
+
+Plutonium Management
+Sustainability
+18.48
+331
+167
+-576
++341
+-2752
+350
+7.46
+3118
++31.8 / -4.8
+-0.05
+
+Breeding
+19.37
+267
+172
+-886
++166
+-3130
+348
+7.63
+1478
+-3.4 / -4.9
++0.12
+
+As expected, the coolant void reactivity
+coefficient for the gas cooled fast reactor, at
+approximately +250 pcm, is very much smaller than that
+associated with sodium cooled fast reactor cores where
+the void reactivity worth can approach +2000 pcm. This
+confirms the significant safety advantage of the gas
+cooled core compared to liquid metal cooled cores. A
+fault condition of particular concern in a gas cooled fast
+reactor is that of water ingress into the core due to leaks in
+the steam generators. It can be seen the effect is large and
+negative for this gas cooled fast reactor core design.
+
+Options for the introduction of minor actinides in
+a fast reactor core include their introduction
+homogeneously as a small percentage of the fuel or
+heterogeneously in special target sub-assemblies located
+in and around the core. Both these options have been
+considered.
+V.A. Equilibrium Minor Actinide Transmutation
+The study discussed in this section of the paper is
+based on the plutonium consumption gas cooled fast
+reactor design. The core design has been optimised to
+investigate the possibility of burning both plutonium and
+minor actinides in proportions such that the minor
+actinides from a partitioned waste stream of a uranium
+oxide and mixed oxide fuelled reactor fleet are consumed,
+along with those produced within the gas cooled core
+itself. This is the notion of equilibrium in the consumption
+of plutonium and the minor actinides.
+
+These results demonstrate the significant
+flexibility with respect to plutonium management that is
+afforded by this gas cooled fast reactor core design. It is
+possible to change from high rates of plutonium
+consumption, in excess of 50 kg/TWhe, to moderate
+plutonium breeding, or to sustain existing plutonium
+stocks, with only small modifications to the basic reactor
+design. Furthermore, this degree of flexibility is
+achievable within the constraints imposed by existing fast
+reactor fuel and design technology. Thus, it is shown that
+the gas cooled fast reactor is capable of satisfying the
+wide range of fuel cycle scenarios that may occur in the
+near and longer term future.
+
+For homogeneous minor actinide recycling both
+neptunium and americium are dispersed homogeneously
+in the mixed oxide fuel. In the case of heterogeneous
+minor actinide recycling neptunium is mixed
+homogeneously in the core fuel but americium is
+introduced into target sub-assemblies located in the first
+row of radial reflector sub-assemblies around the core.
+The target sub-assembly design is based on that of the
+fuel sub-assemblies with each target containing 169 pins.
+All of the pins in the target sub-assemblies contain
+americium dispersed in a matrix of inert material
+(MgAl2 O4 – spinel) which extends over the fissile height
+of the core. The neptunium and americium content has
+been adjusted in each case to achieve an equilibrium
+consumption relative to plutonium. It is assumed that
+curium has been partitioned and stored. The main core
+parameters for the plutonium burner core optimised for
+minor actinide recycling are shown in Table V.
+
+V. MINOR ACTINIDE TRANSMUTATION
+To reduce the minor actinide content in long
+lived waste it is necessary to fission the minor actinide
+isotopes rather than to transmute them to higher actinides
+by neutron capture. Transmutation by fission of the long
+lived minor actinide isotopes requires a hard neutron
+spectrum. A gas cooled fast reactor provides a suitable
+environment for transmutation.
+
+Table V : Main Core Design Parameters for Minor Actinide Recycling in the Plutonium Consumption Gas Cooled Fast
+Reactor Core Design
+Minor Actinide Recycling
+Homogeneous
+Heterogeneous
+550
+550
+334/216
+334/216
+N/A
+89
+1.75 / 2.10
+5.48 / 5.52
+6.81 / 7.23
+N/A
+N/A
+13.34
+27.92 / 42.54
+33.12 / 44.65
+344
+396
+5
+4
+
+Number of Fuelled Sub-Assemblies
+Number of Sub-Assemblies – Inner Core/Outer Core
+Number of Target Sub-Assemblies
+Neptunium Content – Inner Core/Outer Core (Volume %)
+Americium Content – Inner Core/Outer Core (Volume %)
+Americium Content – Targets (Volume %)
+Plutonium Enrichment – Inner Core/Outer Core (mass %)
+Cycle Length (efpd)
+Number of Cycles
+
+5
+
+For each option of minor actinide recycling, core
+performance and safety parameters have been determined
+at the start and end of each equilibrium cycle. A summary
+of the main core performance and safety parameters,
+averaged over all equilibrium cycles, is given in Table VI.
+Equivalent results for the reference plutonium
+consumption core design are also provided for
+comparison purposes.
+
+reduced magnitude of the Doppler constant is acceptable.
+The reactivity loss over a cycle is also considerably
+reduced when compared to the reference plutonium
+consumption core design. Again, this is due to the
+inclusion of neptunium in the core fuel which leads to the
+production of additional plutonium. The characteristics of
+the control rods are adequate and the shutdown margins
+have been satisfied in all cases.
+
+All cases exhibit acceptable behaviour with
+regard to core performance and safety. The peak fuel
+burnups in the cores are close to the design value of 20%
+heavy atoms. The peak burnup in the heterogeneous
+targets is about half of that achieved in the core fuel due
+to the reduced fluxes at the core periphery. Similarly, the
+peak damage in the targets is only half that attained in the
+core fuel. This indicates that a target sub-assembly
+residence time one and a half times that of the core fuel
+may be possible if the same clad damage limits are
+applied.
+
+In the reference plutonium consumption core
+design 52.4 kg/TWhe of plutonium is consumed and 4.7
+kg/TWhe of minor actinides is produced. In both cases of
+minor actinide recycling the plutonium consumption is
+reduced to 46 kg/TWhe due to additional plutonium
+production from neptunium in the core fuel. However,
+there is now a significant consumption of minor actinides,
+nearly 9 kg/TWhe for both homogeneous and
+heterogeneous minor actinide recycling options. The
+consumption rates are such that an equilibrium
+consumption of americium and neptunium relative to the
+partitioned waste stream has been achieved. Thus, it is
+shown that the recycling of minor actinides can be
+feasibly undertaken in a gas cooled fast reactor within the
+constraints imposed by conventional technology.
+
+There is a significant reduction in the Doppler
+constant for the minor actinide recycling core options due
+to the inclusion of neptunium in the core fuel. As the
+coolant void coefficient remains a negligible effect the
+
+Table VI : Minor Actinide Recycling in the Plutonium Consumption Gas Cooled Fast Reactor Core Design
+
+Peak Pin Burnup (% h.a.)
+Peak Linear Rating (W/cm)
+Peak Clad Damage (dpa)
+Doppler Constant (pcm)
+Coolant Void Reactivity (pcm)
+Water Ingress Reactivity (pcm)
+Total β-effective (pcm)
+Prompt Neutron Lifetime (10-7s)
+Reactivity Loss Over Cycle (pcm)
+Plutonium Consumption (kg/TWhe)
+Minor Actinide Consumption (kg/TWhe)
+
+Reference Plutonium
+Consumption Core
+18.52
+230
+180
+-346
++276
+-3435
+337
+7.52
+6364
++52.4
+-0.38
+
+Minor Actinide Recycling
+Homogeneous
+Heterogeneous
+24.44
+19.82 (10.61 targets)
+233
+231 (175 targets)
+198
+178 (109 targets)
+-233
+-236
++335
++346
+-3236
+-3197
+295
+315
+6.29
+6.57
+3761
+4816
++45.7
++46.7
++9.97
++8.32
+
+V.B.. Optimised Minor Actinide Transmutation
+An evaluation of minor actinide transmutation
+has also been performed on the plutonium sustainibility
+gas cooled fast reactor core design. To fully investigate
+the scope for homogeneous minor actinide recycling a
+mixed americium and curium oxide fuel has been added
+to the mixed oxide core fuel, with a loading of 3%, 7%
+and 10% by volume of minor actinides. As the core
+reactivity is modified due to the differing capture rates of
+the minor actinide isotopes the plutonium enrichment has
+been adjusted to maintain the same value for the core
+reactivity at the end of cycle.
+
+The heavy atom burnup in the targets is limited
+by their residence time, which is in turn restricted by the
+peak clad damage. A multi-recycling of the targets is
+therefore required to reduce to a minimum the mass of
+minor actinides entering the waste stream. To completely
+remove the requirement for multi-recycling it is necessary
+to achieve a very high level of mass destruction within the
+target in a single irradiation, corresponding to a heavy
+atom burnup approaching 90% heavy atoms.
+
+6
+
+The introduction of a moderating material within
+the target, and the consequent softening of the neutron
+spectrum, reduces the peak clad damage while also
+increasing the minor actinide transmutation rate. Thus, a
+moderator material can be effectively used to extend the
+target residence time and hence increase the heavy atom
+burnup while retaining the existing limit on the fuel clad
+exposure.
+
+A study of heterogeneous minor actinide
+recycling has been performed for the plutonium
+sustainability core design using moderated targets located
+in both in-core and ex-core locations. The target design
+contains 312 target pins and 157 pins containing a
+zirconium hydride moderator. The target pins have an
+external radius of 3 mm with a clad thickness of 0.5 mm.
+The target material is a mixed americium and curium
+oxide located in an inert spinel matrix. The moderator
+pins are larger with an external radius of 3.5 mm and a
+clad internal radius of 3.2 mm. The target also contains a
+europium oxide burnable poison located in a layer of 4
+mm thickness situated inside and adjacent to the target
+sub-assembly hexagonal wrapper. The main core
+parameters for the plutonium sustainability core optimised
+for minor actinide recycling are shown in Table VII.
+
+A significant concern with the utilisation of
+moderator materials is the possibility for localised power
+peaking, leading to excessive fuel and clad temperatures,
+either inside the target or in immediately neighbouring
+core fuel sub-assemblies. However, a burnable poison can
+be used within the target to reduce this power peaking
+effect as the large capture cross section at low energy
+reduces the number of thermalised neutrons that leak from
+the target sub-assembly into the neighbouring core fuel.
+
+Table VII : Main Core Design Parameters for Minor Actinide Recycling in the Plutonium Sustainability Gas Cooled Fast
+Reactor Core Design
+
+Number of Fuelled Sub-Assemblies
+Number of Inner Core Sub-Assemblies
+Number of Outer Core Sub-Assemblies
+Number of Diluent Sub-Assemblies
+Number of Target Sub-Assemblies
+Plutonium Enrichment – Inner Core (mass %)
+Plutonium Enrichment – Outer Core (mass %)
+Cycle Length (efpd)
+Number of Cycles
+
+Homogeneous Recycling (volume %)
+3
+7
+10
+550
+550
+550
+334
+334
+334
+216
+216
+216
+60
+60
+60
+N/A
+N/A
+N/A
+23.24
+21.82
+20.96
+25.76
+24.32
+23.31
+338
+338
+338
+6
+6
+6
+
+A summary of the main core performance and
+safety parameters, averaged over all equilibrium cycles, is
+given in Table VIII.
+
+Heterogeneous Recycling
+In-Core
+Ex-Core
+597
+595
+240
+238
+357
+357
+N/A
+81
+90
+81
+25.46
+24.55
+29.63
+28.12
+338
+338
+6
+12
+
+illustrate the feasibility of homogeneous minor actinide
+recycling in the gas cooled fast reactor. A minor actinide
+consumption rate of 30.6 kg/TWhe has been achieved for
+a 10% minor actinide content in the core fuel.
+
+The results for the minor actinide recycling
+options of the plutonium sustainability core design
+Table VIII : Minor Actinide Recycling in the Plutonium Sustainability Gas Cooled Fast Reactor Core Design
+
+Peak Pin Burnup (% h.a.)
+Peak Linear Rating (W/cm)
+Peak Clad damage (dpa)
+Doppler Constant (pcm)
+Coolant Void Reactivity (pcm)
+Water Ingress Reactivity (pcm)
+Total β-effective (pcm)
+Prompt Neutron Lifetime (10-7 s)
+Reactivity Loss Over Cycle (pcm)
+Plutonium Consumption (kg/TWhe)
+Minor Actinide Consumption (kg/TWhe)
+
+Homogeneous Recycling (vol. %)
+3
+7
+10
+17.8
+17.6
+17.5
+329
+336
+343
+175
+178
+180
+-475
+-387
+-333
++364
++385
++392
+-3236
+-3244
+-3268
+322
+302
+289
+7.06
+6.54
+5.98
+2477
+1625
+1099
++26.1
++16.7
++10.1
++6.5
++20.6
++30.6
+
+7
+
+Heterogeneous Recycling
+In-Core
+Ex-core
+20.3 (88.5 targets)
+19.7 (86.7 targets)
+353 (140 targets)
+354 (50 targets)
+188 (194 targets)
+185 (197 targets)
+-545
+-532
++344
++352
+-2764
+-2758
+348
+354
+7.42
+7.49
+3254
+3212
++36.8
++26.3
++8.5
++8.8
+
+However, this is balanced by a low plutonium
+consumption rate of 10.1 kg/TWhe due to additional
+plutonium production by the minor actinide isotopes. The
+minor actinide consumption rate from homogeneous
+recycling compares favourably with that obtained from
+heterogeneous recycling with either moderated or nonmoderated targets.
+
+VI. FLEXIBILITY
+A significant constraint exists in the operation of
+liquid metal cooled fast reactors due to the degeneration
+of the core safety parameters when poor quality degraded
+plutonium fuels are utilised. The worsening of the core
+safety parameters is mainly attributed to the coolant void
+coefficient as the accumulation of higher plutonium and
+minor actinide isotopes causes the coolant void coefficient
+to become increasingly more positive.
+
+The remaining core performance parameters for
+the homogeneous minor actinide recycling cases are
+largely unaffected by the introduction of minor actinides
+within the core fuel. The reactivity loss over a cycle is
+strongly decreased with the increase in minor actinide
+content due to the additional plutonium produced by the
+minor actinide isotopes. In all of the cases considered the
+control rod reactivity worth is sufficient to cover the
+requirements for shutdown allowing for the associated
+uncertainties.
+
+The negligible void coefficient in the gas cooled
+fast reactor ensures that the consequences of using
+degraded plutonium fuels will be less severe. To evaluate
+the increased flexibility afforded by the gas cooled fast
+reactor three different plutonium qualities have been
+utilised in the plutonium consumption and plutonium
+sustainability gas cooled core designs, as shown in Table
+IX.
+
+As observed previously, there is a significant
+reduction in the Doppler constant when minor actinides
+are introduced in the core fuel. As the coolant void
+coefficient remains small and positive in magnitude the
+reduced Doppler constant is still acceptable. On the basis
+of these results, a minor actinide content of up to 10% is
+possible for the gas cooled fast reactor core design
+without any significant implications for the core safety
+behaviour.
+
+Table IX : Plutonium Isotopic Composition for the Gas
+Cooled Reactor (mass %)
+
+Pu 238
+Pu 239
+Pu 240
+Pu 241
+Pu 242
+Am241
+
+The results for heterogeneous minor actinide
+recycling show that high levels of mass destruction can be
+achieved within poisoned moderated targets without
+excessive power peaking in the core. A mass destruction
+rate of 76% and 72% has been attained for the in-core and
+ex-core targets respectively. This corresponds to a peak
+burnup of 88.5% and 86.7% heavy atoms. At the same
+time there is an associated maximum power peaking
+effect within the core fuel sub-assemblies of no more than
+5% with either the in-core or ex-core options. The net
+minor actinide consumption rate for the in-core and excore moderated targets is 8.5 and 8.8 kg/TWhe , which
+compares to a similar value of 8.3 kg/TWhe achieved
+with ex-core non-moderated targets. The very high level
+of mass destruction in the moderated targets indicates that
+the requirement for multi-recycling of the target material
+can be avoided in the gas cooled fast reactor.
+
+Case 1
+1.9
+53.3
+25.6
+9.9
+7.9
+1.3
+
+Case 2
+5.6
+39.1
+26.7
+13.0
+14.3
+1.3
+
+Case 3
+2.2
+31.2
+37.3
+6.9
+19.6
+2.7
+
+Case 1 corresponds to plutonium fuel originating
+from a once through irradiation of uranium oxide fuel.
+Case 2 is the result of twice recycling the Case 1 output in
+mixed oxide fuelled reactors. Case 3 corresponds to the
+multi-recycling of Case 2 fuel in a gas cooled fast reactor
+and is intended to represent the situation after the long
+term operation of gas cooled fast reactors whereby an
+equilibrium has been achieved with the rest of the reactor
+fleet. For each plutonium fuel core performance and
+safety parameters have been determined at the start and
+end of each equilibrium cycle. A summary of the main
+core performance and safety parameters, averaged over all
+equilibrium cycles, is given in Table X below.
+
+8
+
+Table X : Performance Parameters for Plutonium Fuels in the Gas Cooled Fast Reactor
+
+Cycle Length (efpd)
+Number of Cycles
+Plutonium Enrichment – Inner Core (mass %)
+Plutonium Enrichment – Outer Core (mass %)
+Peak Pin Burnup (% h.a)
+Peak Linear rating (W/cm)
+Doppler Constant (pcm)
+Coolant Void Reactivity (pcm)
+Water Ingress Reactivity (pcm)
+Total β-effective (pcm)
+Prompt Neutron Lifetime (10-7s)
+Plutonium Consumption (kg/TWhe)
+
+Plutonium Consumption
+Case 1
+Case 2
+Case 3
+344
+344
+344
+5
+5
+5
+28.9
+31.1
+33.1
+40.5
+44.9
+44.9
+16.9
+18.5
+18.9
+237
+230
+224
+-346
+-336
+-315
++312
++276
++244
+-3513
+-3435
+-3378
+327
+337
+320
+7.60
+7.52
+7.45
++47.7
++52.4
++57.4
+
+The performance results obtained for the
+different qualities of plutonium composition illustrate the
+significant amount of flexibility associated with the gas
+cooled fast reactor. No significant modifications to the
+core design are required to accommodate a wide range of
+plutonium isotopics. A small increase in plutonium
+enrichment is necessary with the degradation in the
+plutonium quality to compensate for the reduction in the
+fissile plutonium content. All of the main performance
+parameters follow similar consistent trends and show no
+significant deterioration with the change in plutonium
+quality. This demonstrates that the gas cooled fast reactor
+is capable of safe operation with a wide range of fuels,
+and consequently has the flexibility to meet the needs of
+the many fuel cycle scenarios that may occur in the future.
+
+Plutonium Sustainability
+Case 1
+Case 2
+Case 3
+325
+325
+325
+6
+6
+6
+22.1
+24.9
+27.6
+24.8
+27.6
+30.1
+17.9
+18.3
+18.6
+314
+324
+324
+-561
+-585
+-629
++352
++341
++333
+-3225
+-3209
+-3185
+345
+338
+334
+7.50
+7.54
+7.63
++29.1
++31.8
++35.4
+
+Furthermore, high levels of mass destruction, in
+excess of 80%, can be attained within poisoned moderated
+target sub-assemblies in a single irradiation. An
+investigation of the core safety parameters, including the
+reactivity effects associated with coolant voiding and
+water ingress, has shown that this gas cooled fast reactor
+core design is capable of safe operation with a wide range
+of plutonium quality fuels. This demonstrates that the gas
+cooled fast reactor is capable of satisfying the wide range
+of fuel cycle scenarios that may occur in the near and
+longer term future.
+ACKNOWLEDGEMENTS
+This work was sponsored by BNFL as part of the
+European CAPRA/CADRA project. Useful discussions
+with colleagues in the CAPRA/CADRA project are
+acknowledged.
+
+VII. CONCLUSIONS
+An evaluation has been undertaken to investigate
+the performance of a gas cooled fast reactor core design.
+Studies have shown that a feasible design for a reactor
+combining existing UK gas reactor experience with
+current fast reactor design objectives can be achieved
+within the limitations of conventional fast reactor fuel and
+design technology.
+
+REFERENCES
+
+This gas cooled fast reactor core design has been
+evaluated to explore its potential and flexibility for the
+effective management of plutonium and minor actinide
+stockpiles. It is possible to change from high rates of
+plutonium consumption, to moderate plutonium breeding,
+or to sustain existing plutonium stocks, with only minor
+modifications to the basic reactor design. It is also shown
+that the recycling of minor actinides, either
+homogeneously or heterogeneously, can be feasibly
+undertaken to achieve an equilibrium minor actinide
+consumption.
+
+9
+
+1.
+
+W. B. KEMMISH, M.V. Quick and I.L. Hurst, }Gas
+Cooled Fast Reactors~, Progress in Nuclear Energy,
+Volume 10, Number 1, Page 1 (1983).
+
+2.
+
+H. M Beaumont, R. E Sunderland and D. P. Every,
+}Heterogeneous Minor Actinide Recycling in the
+CAPRA High Burn-up Core with Target SubAssemblies~, Proceedings of GLOBAL’99 }Nuclear
+Technology – Bridging the Millenia~, Jackson Hole,
+Wyoming, U.S.A (1999).
+
+3.
+
+J. Y. Doriath, E. Kiefhaber, and J. M. Rieunier,
+}ERANOS : The Advanced European System of
+Codes for Reactor Physics Calculations~,
+Proceedings of International Conference on
+Mathematical Methods and Super Computing,
+Karlsruhe, Germany (1993).
+

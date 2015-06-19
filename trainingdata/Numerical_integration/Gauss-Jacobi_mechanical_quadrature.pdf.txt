@@ -1,0 +1,103 @@
+Gauss-Jacobi Mechanical Quadrature -- from Wolfram MathWorld
+
+Page 1 of 2
+Search Site
+
+Algebra
+Applied Mathematics
+Calculus and Analysis
+Discrete Mathematics
+
+Applied Mathematics > Numerical Methods > Numerical Integration
+
+Gauss-Jacobi Mechanical Quadrature
+
+Other Wolfram Sites:
+Wolfram Research
+Integrator
+Tones
+
+Foundations of Mathematics
+
+Functions Site
+
+Geometry
+
+Wolfram Science
+
+History and Terminology
+
+more…
+
+Number Theory
+
+If
+
+Probability and Statistics
+
+denote the zeros of
+such that
+
+, there exist real numbers
+Latest Mathematica Information >>
+
+Recreational Mathematics
+
+Download Mathematica Trial >>
+
+Topology
+
+Complete Mathematica
+Documentation >>
+
+Alphabetical Index
+
+Show your math savvy with a
+MathWorld T-shirt.
+
+Interactive Entries
+Random Entry
+New in MathWorld
+MathWorld Classroom
+About MathWorld
+Contribute an Entry
+
+for an arbitrary polynomial of order
+and the
+are called Christoffel
+numbers. The distribution
+and the integer uniquely determine these
+numbers
+.
+SEE ALSO: Gaussian Quadrature. [Pages Linking Here]
+
+Send a Message to the Team
+Order book from Amazon
+
+REFERENCES:
+12,611 entries
+Sat Aug 5 2006
+
+Szegö, G. Orthogonal Polynomials, 4th ed. Providence, RI: Amer. Math. Soc., p. 47, 1975.
+Yakimiw, E. "Accurate Computation of Weights in Classical Gauss-Christoffel Quadrature." J. Comput.
+Phys. 129, 406-430, 1996.
+
+CITE THIS AS:
+
+http://mathworld.wolfram.com/Gauss-JacobiMechanicalQuadrature.html
+
+09/08/2006
+
+Gauss-Jacobi Mechanical Quadrature -- from Wolfram MathWorld
+
+Page 2 of 2
+
+Weisstein, Eric W. "Gauss-Jacobi Mechanical Quadrature." From MathWorld--A Wolfram Web
+Resource. http://mathworld.wolfram.com/Gauss-JacobiMechanicalQuadrature.html
+
+© 1999 CRC Press LLC, © 1999-2006 Wolfram Research, Inc. | Terms of Use
+
+http://mathworld.wolfram.com/Gauss-JacobiMechanicalQuadrature.html
+
+09/08/2006
+

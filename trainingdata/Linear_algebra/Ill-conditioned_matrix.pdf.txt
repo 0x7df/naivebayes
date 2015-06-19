@@ -1,0 +1,85 @@
+Ill-Conditioned Matrix -- from Wolfram MathWorld
+
+Page 1 of 1
+Search Site
+
+Algebra
+Applied Mathematics
+
+Algebra > Linear Algebra > Matrices > Matrix Types
+Algebra > Linear Algebra > Matrices > Matrix Properties
+History and Terminology > Disciplinary Terminology > Medical Terminology
+
+Calculus and Analysis
+Discrete Mathematics
+Foundations of Mathematics
+
+Ill-Conditioned Matrix
+
+Other Wolfram Sites:
+Wolfram Research
+Integrator
+Tones
+Functions Site
+
+Geometry
+
+Wolfram Science
+
+History and Terminology
+
+more…
+
+Number Theory
+Latest Mathematica Information >>
+
+Probability and Statistics
+Recreational Mathematics
+Topology
+Alphabetical Index
+Interactive Entries
+Random Entry
+
+A matrix is ill-conditioned if the condition number is too large (and singular if it is
+infinite).
+
+Download Mathematica Trial >>
+
+SEE ALSO: Condition Number, Singular Matrix, Singular Value Decomposition.
+
+Show your math savvy with a
+MathWorld T-shirt.
+
+[Pages Linking Here]
+
+Complete Mathematica
+Documentation >>
+
+Read the latest Technical Software
+News.
+
+New in MathWorld
+MathWorld Classroom
+About MathWorld
+
+REFERENCES:
+
+Send a Message to the Team
+Order book from Amazon
+
+Arfken, G. "Ill-Conditioned Systems." Mathematical Methods for Physicists, 3rd ed. Orlando, FL:
+Academic Press, pp. 233-234, 1985.
+
+12,636 entries
+Mon Oct 9 2006
+
+CITE THIS AS:
+Weisstein, Eric W. "Ill-Conditioned Matrix." From MathWorld--A Wolfram Web Resource.
+http://mathworld.wolfram.com/Ill -ConditionedMatrix.html
+
+© 1999-2006 Wolfram Research, Inc. | Terms of Use
+
+http://mathworld.wolfram.com/Ill-ConditionedMatrix.html
+
+10/10/2006
+

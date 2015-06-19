@@ -1,0 +1,55 @@
+FLEXIBILITY OF CO2 COOLED FAST REACTORS FOR PLUTONIUM AND MINOR
+ACTINIDE MANAGEMENT
+H M Beaumont, G Hulme, J T Murgatroyd, R E Sunderland, E K Whyman,
+NNC Ltd. Booths Hall, Chelford Road, Knutsford Cheshire, WA13 8QZ, UK
+Tel: +44 (0)1565 633800
+Fax: +44 (0)1565 843878
+e-mail: heather.beaumont@nnc.co.uk
+S J Crossley
+BNFL plc., Springfields Works, Nr. Preston, Lancashire, PR4 OXJ, UK
+Tel: +44 (0) 1772 762216
+Fax: +44 (0) 1772 762470
+e-mail: steven.j.crossley@bnfl.com
+Summary
+In recent years there has been increased interest in gas cooled fast reactor systems for the
+management of plutonium and minor actinides. Gas-cooled fast reactors have a number of
+advantages over liquid metal fuelled concepts. There are obvious safety, economic and technical
+advantages of using a relatively benign, readily available and optically transparent, gaseous
+coolant which is compatible with both air and water, compared to sodium which reacts
+explosively with water and requires specialist handling and disposal. The absence of a significant
+positive coolant void reactivity effect in gas-cooled cores compared to LMFBRs also allows the
+potential for loading greater quantities of minor actinide isotopes. Loading large quantities of
+minor actinide isotopes into sodium cooled cores has been shown to lead to unacceptably large
+positive coolant void effects. An additional attractive feature of gas-cooling over sodium cooling,
+in terms of minor actinide incineration, is the harder neutron spectrum of gas-cooled cores.
+Drawing on the extensive UK experience gained in the successful design and operation of
+the Advanced Gas Reactors (AGRs) coupled with the experience gained from the design of the
+liquid metal fast reactors and earlier UK designs of gas-cooled fast reactors, a number of different
+gas-cooled fast reactor systems ranging from a conventional, plutonium burning, design based on
+existing technology to a dedicated minor actinide burning system have been investigated. The
+potential of a gas-cooled fast breeder reactor has also been demonstrated.
+This paper reviews the main, representative, core designs considered to date
+concentrating on the core physics and safety aspects particularly in terms of plutonium and minor
+actinide management. In this context the advantages of gas-cooling over sodium cooling are
+highlighted. Three basic designs are considered in some detail.
+i)
+A conventional core design which has been optimised for plutonium burning and utilises
+conventional MOX fuel pellets. The steel diluent sub-assemblies in the inner core region
+for this concept allow scope for balancing the enrichment levels in the inner and outer
+core regions which is advantageous in increasing the overall plutonium burning, whilst
+also producing a relatively flat power profile across the core.
+
+ii)
+
+A dedicated minor actinide burning concept, fuelled mainly with minor actinides and
+only sufficient plutonium to obtain criticality. This concept utilises nitride fuel coupled
+with a zirconium hydride moderator.
+iii)
+A core design optimised for plutonium breeding. This concept is based on conventional
+MOX fuelled pins and incorporates both axial and radial breeder blankets.
+All the designs considered are for commercial sizes reactors with a thermal power output of
+3600 MW, comparable to the European Fast Reactor (EFR).
+The studies have considered core design, core performance, safety parameters, and
+preliminary transient studies and have demonstrated the significant flexibility of gas-cooled fast
+reactors towards fuel and fuel cycle utilisation.
+

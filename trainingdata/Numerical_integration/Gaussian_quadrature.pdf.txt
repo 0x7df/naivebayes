@@ -1,0 +1,253 @@
+Gaussian Quadrature -- from Wolfram MathWorld
+
+Page 1 of 5
+Search Site
+
+Algebra
+Applied Mathematics
+Calculus and Analysis
+Discrete Mathematics
+
+Applied Mathematics > Numerical Methods > Numerical Integration
+
+Other Wolfram Sites:
+Wolfram Research
+
+Gaussian Quadrature
+
+Integrator
+Tones
+
+Foundations of Mathematics
+
+Functions Site
+
+Geometry
+
+Wolfram Science
+
+History and Terminology
+
+more…
+
+Number Theory
+Probability and Statistics
+Recreational Mathematics
+Topology
+Alphabetical Index
+Interactive Entries
+
+Seeks to obtain the best numerical estimate of an integral by picking optimal abscissas
+at which to evaluate the function
+. The fundamental theorem of Gaussian quadrature
+states that the optimal abscissas of the -point Gaussian quadrature formulas are
+precisely the roots of the orthogonal polynomial for the same interval and weighting
+function . Gaussian quadrature is optimal because it fits all polynomials up to degree
+exactly. Slightly less optimal fits are obtained from Radau quadrature and
+Laguerre quadrature.
+
+Latest Mathematica Information >>
+Download Mathematica Trial >>
+Complete Mathematica
+Documentation >>
+Show your math savvy with a
+MathWorld T-shirt.
+
+Random Entry
+New in MathWorld
+
+interval
+
+MathWorld Classroom
+
+are roots of
+
+1
+
+About MathWorld
+Contribute an Entry
+Send a Message to the Team
+Order book from Amazon
+
+12,611 entries
+Sat Aug 5 2006
+
+To determine the weights corresponding to the Gaussian abscissas
+Lagrange interpolating polynomial for
+by letting
+
+, compute a
+
+(1)
+
+http://mathworld.wolfram.com/GaussianQuadrature.html
+
+09/08/2006
+
+Gaussian Quadrature -- from Wolfram MathWorld
+
+(where Chandrasekhar 1967 uses
+
+Page 2 of 5
+
+instead of
+
+), so
+
+(2)
+
+Then fitting a Lagrange interpolating polynomial through the
+
+points gives
+
+(3)
+
+for arbitrary points . We are therefore looking for a set of points
+that for a weighting function
+,
+
+and weights
+
+such
+
+(4)
+
+(5)
+
+with weight
+
+(6)
+
+The weights
+are sometimes also called the Christoffel number (Chandrasekhar 1967).
+For orthogonal polynomials
+with =1, ..., ,
+
+http://mathworld.wolfram.com/GaussianQuadrature.html
+
+09/08/2006
+
+Gaussian Quadrature -- from Wolfram MathWorld
+
+Page 3 of 5
+(7)
+
+(Hildebrand 1956, p. 322), where
+
+is the coefficient of
+
+in
+
+, then
+
+(8)
+(9)
+
+where
+(10)
+Using the relationship
+
+(11)
+
+(Hildebrand 1956, p. 323) gives
+
+(12)
+
+(Note that Press et al. 1992 omit the factor
+weights are all positive. The error is given by
+
+.) In Gaussian quadrature, the
+
+(13)
+(14)
+
+where
+
+(Hildebrand 1956, pp. 320 -321).
+
+http://mathworld.wolfram.com/GaussianQuadrature.html
+
+09/08/2006
+
+Gaussian Quadrature -- from Wolfram MathWorld
+
+Page 4 of 5
+
+Other curious identities are
+
+(15)
+
+and
+
+(16)
+
+(17)
+
+(Hildebrand 1956, p. 323).
+In the notation of Szegö (1975), let
+be an ordered set of points in
+and let
+, ...,
+be a set of real numbers. If
+is an arbitrary function on the
+closed interval
+, write the mechanical quadrature as
+
+,
+
+(18)
+
+Here
+
+are the abscissas and
+
+are the Cotes numbers.
+
+SEE ALSO: Chebyshev Quadrature, Chebyshev-Gauss Quadrature, Chebyshev-Radau
+
+Quadrature, Fundamental Theorem of Gaussian Quadrature, Hermite -Gauss Quadrature,
+Jacobi-Gauss Quadrature, Laguerre-Gauss Quadrature, Legendre-Gauss Quadrature,
+Lobatto Quadrature, Mehler Quadrature, Radau Quadrature. [Pages Linking Here]
+
+REFERENCES:
+Abramowitz, M. and Stegun, I. A. (Eds.). Handbook of Mathematical Functions with Formulas, Graphs, and
+Mathematical Tables, 9th printing. New York: Dover, pp. 887-888, 1972.
+
+http://mathworld.wolfram.com/GaussianQuadrature.html
+
+09/08/2006
+
+Gaussian Quadrature -- from Wolfram MathWorld
+
+Page 5 of 5
+
+Acton, F. S. Numerical Methods That Work, 2nd printing. Washington, DC: Math. Assoc. Amer., p. 103,
+1990.
+Arfken, G. "Appendix 2: Gaussian Quadrature." Mathematical Methods for Physicists, 3rd ed. Orlando, FL:
+Academic Press, pp. 968-974, 1985.
+Beyer, W. H. CRC Standard Mathematical Tables, 28th ed. Boca Raton, FL: CRC Press, p. 461, 1987.
+Chandrasekhar, S. An Introduction to the Study of Stellar Structure. New York: Dover, 1967.
+Gauss, C. F. "Methodus nova integralium valores per approximationem inveniendi." Commentationes
+Societatis regiae scientarium Gottingensis recentiores 3, 39-76, 1814. Reprinted in Werke, Vol. 3. New
+York: George Olms, p. 163, 1981.
+Golub, G. H. and Welsh, J. H. "Calculation of Gauss Quadrature Rules." Math. Comput. 23, 221-230, 1969.
+Hildebrand, F. B. Introduction to Numerical Analysis. New York: McGraw-Hill, pp. 319-323, 1956.
+Press, W. H.; Flannery, B. P.; Teukolsky, S. A.; and Vetterling, W. T. "Gaussian Quadratures and
+Orthogonal Polynomials." §4.5 in Numerical Recipes in FORTRAN: The Art of Scientific Computing, 2nd ed.
+Cambridge, England: Cambridge University Press, pp. 140 -155, 1992.
+Stroud, A. H. and Secrest, D. Gaussian Quadrature Formulas. Englewood Cliffs, NJ: Prentice-Hall, 1966.
+Szegö, G. Orthogonal Polynomials, 4th ed. Providence, RI: Amer. Math. Soc., pp. 37-48 and 340-349,
+1975.
+Whittaker, E. T. and Robinson, G. "Gauss's Formula of Numerical Integration." §80 in The Calculus of
+Observations: A Treatise on Numerical Mathematics, 4th ed. New York: Dover, pp. 152-163, 1967.
+
+CITE THIS AS:
+Weisstein, Eric W. "Gaussian Quadrature." From MathWorld--A Wolfram Web Resource.
+http://mathworld.wolfram.com/GaussianQuadrature.html
+
+© 1999 CRC Press LLC, © 1999-2006 Wolfram Research, Inc. | Terms of Use
+
+http://mathworld.wolfram.com/GaussianQuadrature.html
+
+09/08/2006
+

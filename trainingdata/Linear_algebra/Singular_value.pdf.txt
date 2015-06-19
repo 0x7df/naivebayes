@@ -1,0 +1,159 @@
+Singular Value -- from Wolfram MathWorld
+
+Page 1 of 3
+Search Site
+
+Algebra
+Applied Mathematics
+
+Algebra > Linear Algebra > Matrices > Matrix Decomposition
+Algebra > Linear Algebra > Matrices > Matrix Eigenvalues
+Calculus and Analysis > Special Functions > Elliptic Integrals
+
+Other Wolfram Sites:
+Wolfram Research
+Integrator
+
+Calculus and Analysis
+Discrete Mathematics
+Foundations of Mathematics
+
+Singular Value
+
+Tones
+Functions Site
+
+Geometry
+
+Wolfram Science
+
+History and Terminology
+
+more…
+
+Number Theory
+Latest Mathematica Information >>
+
+Probability and Statistics
+Recreational Mathematics
+Topology
+Alphabetical Index
+Interactive Entries
+Random Entry
+New in MathWorld
+
+There are two types of singular values, one in the context of elliptic integrals, and
+the other in linear algebra.
+
+Download Mathematica Trial >>
+
+For a square matrix , the square roots of the eigenvalues of
+, where
+is
+the conjugate transpose, are called singular values (Marcus and Minc 1992, p. 69).
+The so-called singular value decomposition of a complex matrix
+is given by
+
+Show your math savvy with a
+MathWorld T-shirt.
+
+Send a Message to the Team
+Order book from Amazon
+
+12,636 entries
+Mon Oct 9 2006
+
+Read the latest Technical Software
+News.
+
+(1)
+
+MathWorld Classroom
+About MathWorld
+
+Complete Mathematica
+Documentation >>
+
+where
+and
+are unitary matrices and
+is a diagonal matrix whose elements are
+the singular values of
+(Golub and Van Loan 1996, pp. 70 and 73). Singular values
+are returned by the command SingularValueList[m] starting in Mathematica
+Version 5.0.
+If
+(2)
+where
+is a unitary matrix and
+are the singular values of .
+
+is a Hermitian matrix, then the eigenvalues of
+
+For elliptic integrals, a elliptic modulus
+
+http://mathworld.wolfram.com/SingularValue.html
+
+such that
+
+10/10/2006
+
+Singular Value -- from Wolfram MathWorld
+
+Page 2 of 3
+
+(3)
+
+where
+
+is a complete elliptic integral of the first kind, and
+. The elliptic lambda function
+
+gives the value of
+
+Abel
+(quoted in Whittaker and Watson 1990, p. 525) proved that if
+integer, or more generally whenever
+
+.
+
+is an
+
+(4)
+
+where , , , , and are integers, then the elliptic modulus
+algebraic equation with integer coefficients.
+
+is the root of an
+
+SEE ALSO: Elliptic Integral Singular Value, Elliptic Integral of the First Kind , Elliptic
+
+Lambda Function, Elliptic Modulus, Singular Value Decomposition.
+[Pages Linking Here]
+
+REFERENCES:
+Marcus, M. and Minc, H. Introduction to Linear Algebra. New York: Dover, p. 191, 1988.
+Marcus, M. and Minc, H. A Survey of Matrix Theory and Matrix Inequalities. New York: Dover, p. 69,
+1992.
+Whittaker, E. T. and Watson, G. N. A Course in Modern Analysis, 4th ed. Cambridge, England:
+Cambridge University Press, pp. 524-528, 1990.
+
+LAST MODIFIED: September 15, 2003
+CITE THIS AS:
+Weisstein, Eric W. "Singular Value." From MathWorld--A Wolfram Web Resource.
+http://mathworld.wolfram.com/SingularValue.html
+
+http://mathworld.wolfram.com/SingularValue.html
+
+10/10/2006
+
+Singular Value -- from Wolfram MathWorld
+
+Page 3 of 3
+
+© 1999 CRC Press LLC, © 1999-2006 Wolfram Research, Inc. | Terms of Use
+
+http://mathworld.wolfram.com/SingularValue.html
+
+10/10/2006
+

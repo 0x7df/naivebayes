@@ -1,0 +1,219 @@
+Investigation of New Quadrature Sets for Discrete Ordinates
+Method with Application to Non-conventional Problems
+Gianluca Longoni, Alireza Haghighat, James Brown, Vefa Kucukboyaci
+The Pennsylvania State University
+127 Reber Building
+16802 University Park, PA
+
+1. Introduction
+In this article we describe alternative quadrature sets for solving the neutron transport
+equation via the Discrete Ordinates (SN) Method. The standard quadrature set for solving
+the Linear Boltzmann Equation[1] is the Level Symmetric Quadrature Set[1]. This method
+is applicable up to order N=20, because beyond which the associated weights of the
+selected directions become negative. This of course is not physically acceptable hence
+other methods are needed.
+There is growing need for higher order quadrature sets (N>20) when dealing with nonconventional problems such as simulation of a CT-Scanning Device[2] or simulation of a
+Time-Of-Flight experiment [3] . Both problems include highly directional sources and
+media containing large regions of air.
+For this purpose we have developed and tested other types of quadrature sets like Equal
+Weight (EW), PN-EW and PN-TN[4]. These quadrature sets are suitable for higher (>20)
+SN orders, without any difficulty related to negative weights.
+Further, we have developed a new technique called Ordinate Splitting, which can be very
+effective for problems with highly peaked directional sources and/or fluxes.
+These quadrature techniques have been implemented into the PENTRAN code (Parallel
+Environment Neutral-Particle TRANsport)[5] and tested for solutions of the two problems
+mentioned earlier.
+
+2. Description of the Equal Weight, PN-EW and PN-T N sets
+The Equal Weight quadrature set is generated dividing one octant of the unit sphere in M
+directions, with M=N(N+2)/8and assigning an equal weight to each direction wi =1/M.
+For the PN-EW and PN-TN sets, two different kind s of orthogonal polynomials are applied
+to obtain the discrete directions; these are the Legendre and Chebyshev polynomials [4]. In
+the PN-EW quadrature set the levels along the z-axis are selected as the roots of the
+Legendre polynomial of order N, corresponding to the N levels of the Level-Symmetric
+approach. For the azimuthal angle, however each level is divided equally again following
+the Level Symmetric approach. This means that the number of directions per level is
+equal to N/2 – i + 1 with i = 1,2.., N/2
+For the PN-TN, similar to PN-EW, levels are set equal to the roots of the Legendre
+Polynomial, while the azimuthal angles for each level are selected as roots of Chebyshev
+polynomials. The Chebyshev polynomials have the following expression[4]:
+Tl[cos(w)]=cos(lw)
+
+These polynomials satisfy the orthogonality condition and the roots between 0 and Pi can
+be easily evaluated as follow[4]:
+wi = [(2l – 2i + 1)/2l] *Pi
+Where the parameter l in the previous expression is the total number of directions per
+level.
+The weights of levels for both PN-EW and PN-TN quadrature sets are evaluated by
+preserving the even moments of the Gauss-Legendre[4] polynomials, while equal weights
+are assigned to the directions in the same level.
+
+3. Ordinate Splitting Technique
+The Ordinate Splitting Technique is a method which is suitable to solve problems where
+the particle angular flux and/or source are peaked along certain directions of the unit
+sphere. This procedure can be considered as a biasing technique acting on discrete
+directions.
+The idea is to select a direction of flight of the neutron and split it into a certain number
+of directions of equal weights, while conserving the original weight.
+Currently we divide the solid angle, associated to the direction of interest, into equal size
+sectors. Then we place the directions on the corner and on the midpoint of the side of the
+sectors, while the original direction is at the center. A proper selection of the sector
+surrounding the original direction is performed to avoid overlapping with other
+directions. In figure 1 we can observe the applicatio n of ordinate splitting technique to
+one direction.
+
+Figure 1 – Ordinate Splitting Technique
+
+4. Verification and Accuracy of PN-EW and PN-T N quadrature sets
+The new sets with Ordinate Splitting capability have been implemented into the
+PENTRAN code.
+In order to verify the PN-EW and PN-TN quadrature sets and to check their accuracy, we
+have set up a simple benchmark, consisting in a homogeneous parallelepiped. An
+isotropic source is placed in lower left corner as shown in figure 2. Due to the symmetry
+of the proble m the particle current s flowing out in regions A and B (see Figure 2) must
+have the same value. Figure 3 shows the relative difference between the particle current
+
+in regions A and B for each quadrature set. For Level Symmetric this value is zero
+because it provides perfect symmetry as expected. The PN-TN yields almost perfect
+symmetry, while the PN-EW and Equal Weight both show maximum relative differences
+of 4% and 10% respectively.
+Comparison of Quadrature Sets
+12
+
+Relative Difference Jx/Jz (%)
+
+10
+
+8
+
+6
+
+4
+
+2
+
+0
+8
+
+10
+
+12
+
+14
+
+16
+
+18
+
+20
+
+SN Order
+Equal Weight Set
+
+Figure 2 – Problem Configuration
+
+PN-TN Set
+
+PN-EW Set
+
+Figure 3
+
+5. Results
+We have examined the effectiveness of these quadrature sets for simulating a CTScanning Device[2] and a Time-Of-Flight experiment [3] using PENTRAN. The CT-Scan
+is a device utilized for medical computer tomography. The simulation of this devic e via
+the transport equation is subjected to two major difficulties: the angular distribution of
+the X-ray source and the “ray-effects” generated by transporting the radiation through
+large amount of air. In order to overcome these difficulties we have utilized the new
+quadrature sets and the ordinate splitting technique.
+In figure 4, we compare the results of PENTRAN with a reference MCNP Monte Carlo[6]
+solution. For all cases, we split the first direction of the lowest level in 9 or 25 directions,
+e.g. PN-TN22-2-55 corresponds to S22 with direction 55 split in 9 directions. All the
+quadrature sets that use Ordinate Splitting (designated by OS), yield accurate results
+within the statistical uncertainty of MCNP predictions.
+The Level Symmetric S20 quadrature set (440 directions) without ordinate splitting
+provides poor results. Even using high order quadrature such as PN-TN S28 (840
+directions) underpredicts the results by about 21%.
+The Time-Of-Flight[3] experiment consists of measuring the transmission of acceleratorgenerated neutrons(E>1MeV) through spherical iron shells. The main difficulties in the
+simulation of this system are the large amount of air present and the collimated beam of
+neutrons. We have concluded that the new PN-TN set with splitting yields a flux
+distribution in good agreement with the Monte Carlo solutions. For further information,
+please refer to Ref. 3.
+
+9.00E+08
+8.50E+08
+8.00E+08
+
+X-Ray Flux
+
+7.50E+08
+7.00E+08
+6.50E+08
+6.00E+08
+
+Pn-Tn28 (No OS)
+
+5.50E+08
+
+S20-LS (No OS)
+
+5.00E+08
+4.50E+08
+4.00E+08
+0
+
+5
+Pn-Tn22-2-55
+S20-LS-3-46
+
+10
+Y-AxisPn-Tn-20-3-46
+Position (cm)
+
+15
+
+20
+
+MCNP Tally Flux
+
+S20-EW-5-46
+
+Figure 4 – Ordinate Splitting Technique Applied to the CT-Scan Model
+PN-TN22-2-55 PN-TN S22 quadrature set – direction 55 is split in 9 directions
+PN-TN20-3-46 PN-TN S20 quadrature set – direction 46 is split in 25 directions
+S20-LS-3-46
+Level Symmetric S20 quadrature set – direction 46 split in 25
+directions
+S20-EW-5-46
+Equal Weight S20 quadrature set – direction 46 split in 81
+directions
+
+Conclusions
+We have developed new quadrature sets including Equal Weight, PN-EW and PN-TN with
+a new technique called “Ordinate Splitting”. We have tested these quadrature sets against
+the conventional Level Symmetric. For a symmetric test problem, the PN-TN, similar to
+the Level Symmetric method, accurately predicts a symmetric set of solutions for flux
+and current, while the Equal Weight and PN-EW yield correct solutions with maximum
+relative difference of 10% and 4%, respectively.
+Further, the new quadrature sets were used to simulate a CT-Scanning Device and a
+Time-Of-Flight experiment. Results of these simulations demonstrate that the “Ordinate
+Splitting” is very effective for achieving accurate solutions with relatively low order
+quadrature sets.
+
+References
+[1] E.E. Lewis and W.F. Miller, Jr., Computational Methods of Neutron Transport,
+American Nuclear Society, La Grange Park, Illinois
+[2] J.F. Brown and A. Haghighat, “A PENTRAN Model for a Medical Computed
+Tomography (CT) Device,” Proceedings of Radiation Protection for our
+National Priorities, Spokane, Washington, September 17-21, 2000
+[3] V. Kucukboyaci, A. Haghighat, “PENTRAN Modeling for Design and
+Optimizations of the Spherical-Shell Transmission Experiments,” submitted to
+ANS 2001 Annual Meeting
+
+[4] R.E. Alcouffe, R.D. O’Dell, Transport Calculations for Nuclear Reactors, CRC
+Handbook of Nuclear Reactor Calculations
+[5] Sjoden, G. and A. Haghighat, “PENTRAN – Parallel Environment Neutralparticle TRASNsport in 3-D Cartesian Geometry,” Proceedings of the Joint
+International Conference On Mathematical Methods and Supercomputing for
+Nuclear Applications, Saratoga Springs, NY, (1997)
+[6] J.F. Briesmeister, Ed. MCNP- A General Monte Carlo N-Particle Transport
+Code, Version 4A, LA-12625-M, 1993
+

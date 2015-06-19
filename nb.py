@@ -2,20 +2,25 @@ import nbutil
 from sh import find
 import yaml
 import sys
+import math
+import imp
 
-filename = sys.argv[1]
 
-def categorise(file):
-    if "cryptid" in f:
-        category = "crypto"
-    else:
-        category = "dino"
-    return category
+try:
+    filename = sys.argv[1]
+except IndexError:
+    sys.exit("Name of file to categorise required as argument to nb.py")
+    
 
 # read input
-#filename = "test01_input.yaml"
 stream = file(filename, 'r')
 uinput = yaml.load(stream)
+
+
+# load the categorise function from the user-supplied module
+trainingmodfilename = uinput['categorisemodule']
+imp.load_source('trainingmod',trainingmodfilename)
+from trainingmod import categorise
 
 # setup some structures to store our data
 vocab = {}
@@ -52,31 +57,28 @@ for f in find(uinput['trainingdata']):
         word_counts[category][word] += count
 
 
-#new_doc = open("examples/Allosaurus.txt").read()
-#new_doc = open("examples/Python.txt").read()
-new_doc = open(uinput['testfile']).read()
-words = nbutil.tokenize(new_doc)
-counts = nbutil.count_words(words)
+for testfile in uinput['testfile']:
+    new_doc = open(testfile).read()
+    words = nbutil.tokenize(new_doc)
+    counts = nbutil.count_words(words)
 
-import math
-
-priors_sum = sum(priors.values())
-for icat in uinput['categories']:
-    priors[icat] = priors[icat] / priors_sum
-
-for w, cnt in list(counts.items()):
-    # skip words that we haven't seen before, or words less than 3 letters long
-    if w not in vocab or len(w) <= 3:
-        continue
-
-    p_word = vocab[w] / sum(vocab.values())
+    priors_sum = sum(priors.values())
     for icat in uinput['categories']:
-        p_w_given[icat] = (word_counts[icat].get(w, 0.0) / 
-                           sum(word_counts[icat].values()))
+        priors[icat] = priors[icat] / priors_sum
+
+    for w, cnt in list(counts.items()):
+        # skip words that we haven't seen before, or words less than 3 letters long
+        if w not in vocab or len(w) <= 3:
+            continue
+
+        p_word = vocab[w] / sum(vocab.values())
+        for icat in uinput['categories']:
+            p_w_given[icat] = (word_counts[icat].get(w, 0.0) / 
+                               sum(word_counts[icat].values()))
+
+        for icat in uinput['categories']:
+            if p_w_given[icat] > 0.:
+                log_prob[icat] += math.log(cnt * p_w_given[icat] / p_word)
 
     for icat in uinput['categories']:
-        if p_w_given[icat] > 0.:
-            log_prob[icat] += math.log(cnt * p_w_given[icat] / p_word)
-
-for icat in uinput['categories']:
-    print("Score("+icat+"):", math.exp(log_prob[icat] + math.log(priors[icat])))
+        print("Score("+icat+"):", math.exp(log_prob[icat] + math.log(priors[icat])))

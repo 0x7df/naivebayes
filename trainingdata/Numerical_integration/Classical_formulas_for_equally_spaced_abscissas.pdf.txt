@@ -1,0 +1,732 @@
+124
+
+Chapter 4.
+
+Integration of Functions
+
+CITED REFERENCES AND FURTHER READING:
+Carnahan, B., Luther, H.A., and Wilkes, J.O. 1969, Applied Numerical Methods (New York:
+Wiley), Chapter 2.
+Isaacson, E., and Keller, H.B. 1966, Analysis of Numerical Methods (New York: Wiley), Chapter 7.
+Acton, F.S. 1970, Numerical Methods That Work; 1990, corrected edition (Washington: Mathematical Association of America), Chapter 4.
+Stoer, J., and Bulirsch, R. 1980, Introduction to Numerical Analysis (New York: Springer-Verlag),
+Chapter 3.
+Ralston, A., and Rabinowitz, P. 1978, A First Course in Numerical Analysis, 2nd ed. (New York:
+McGraw-Hill), Chapter 4.
+Dahlquist, G., and Bjorck, A. 1974, Numerical Methods (Englewood Cliffs, NJ: Prentice-Hall),
+§7.4.
+Kahaner, D., Moler, C., and Nash, S. 1989, Numerical Methods and Software (Englewood Cliffs,
+NJ: Prentice Hall), Chapter 5.
+Forsythe, G.E., Malcolm, M.A., and Moler, C.B. 1977, Computer Methods for Mathematical
+Computations (Englewood Cliffs, NJ: Prentice-Hall), §5.2, p. 89. [1]
+Davis, P., and Rabinowitz, P. 1984, Methods of Numerical Integration, 2nd ed. (Orlando, FL:
+Academic Press).
+
+4.1 Classical Formulas for Equally Spaced
+Abscissas
+Where would any book on numerical analysis be without Mr. Simpson and his
+“rule”? The classical formulas for integrating a function whose value is known at
+equally spaced steps have a certain elegance about them, and they are redolent with
+historical association. Through them, the modern numerical analyst communes with
+the spirits of his or her predecessors back across the centuries, as far as the time
+of Newton, if not farther. Alas, times do change; with the exception of two of the
+most modest formulas (“extended trapezoidal rule,” equation 4.1.11, and “extended
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+of various orders, with higher order sometimes, but not always, giving higher
+accuracy. “Romberg integration,” which is discussed in §4.3, is a general formalism
+for making use of integration methods of a variety of different orders, and we
+recommend it highly.
+Apart from the methods of this chapter and of Chapter 16, there are yet
+other methods for obtaining integrals. One important class is based on function
+approximation. We discuss explicitly the integration of functions by Chebyshev
+approximation (“Clenshaw-Curtis” quadrature) in §5.9. Although not explicitly
+discussed here, you ought to be able to figure out how to do cubic spline quadrature
+using the output of the routine spline in §3.3. (Hint: Integrate equation 3.3.3
+over x analytically. See [1].)
+Some integrals related to Fourier transforms can be calculated using the fast
+Fourier transform (FFT) algorithm. This is discussed in §13.9.
+Multidimensional integrals are another whole multidimensional bag of worms.
+Section 4.6 is an introductory discussion in this chapter; the important technique of
+Monte-Carlo integration is treated in Chapter 7.
+
+125
+
+4.1 Classical Formulas for Equally Spaced Abscissas
+
+x0
+
+x1
+
+x2
+
+xN
+
+xN + 1
+
+open formulas use these points
+closed formulas use these points
+Figure 4.1.1. Quadrature formulas with equally spaced abscissas compute the integral of a function
+between x0 and xN+1 . Closed formulas evaluate the function on the boundary points, while open
+formulas refrain from doing so (useful if the evaluation algorithm breaks down on the boundary points).
+
+midpoint rule,” equation 4.1.19, see §4.2), the classical formulas are almost entirely
+useless. They are museum pieces, but beautiful ones.
+Some notation: We have a sequence of abscissas, denoted x 0 , x1 , . . . , xN ,
+xN +1 which are spaced apart by a constant step h,
+xi = x0 + ih
+
+i = 0, 1, . . . , N + 1
+
+(4.1.1)
+
+A function f (x) has known values at the x i ’s,
+f (xi ) ≡ fi
+
+(4.1.2)
+
+We want to integrate the function f (x) between a lower limit a and an upper limit
+b, where a and b are each equal to one or the other of the x i ’s. An integration
+formula that uses the value of the function at the endpoints, f (a) or f (b), is called
+a closed formula. Occasionally, we want to integrate a function whose value at one
+or both endpoints is difficult to compute (e.g., the computation of f goes to a limit
+of zero over zero there, or worse yet has an integrable singularity there). In this
+case we want an open formula, which estimates the integral using only x i ’s strictly
+between a and b (see Figure 4.1.1).
+The basic building blocks of the classical formulas are rules for integrating a
+function over a small number of intervals. As that number increases, we can find
+rules that are exact for polynomials of increasingly high order. (Keep in mind that
+higher order does not always imply higher accuracy in real cases.) A sequence of
+such closed formulas is now given.
+
+Closed Newton-Cotes Formulas
+Trapezoidal rule:
+ x2
+x1
+
+
+f (x)dx = h
+
+1
+1
+f1 + f2
+2
+2
+
+
+
++ O(h3 f  )
+
+(4.1.3)
+
+Here the error term O( ) signifies that the true answer differs from the estimate by
+an amount that is the product of some numerical coefficient times h 3 times the value
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+h
+
+126
+
+Chapter 4.
+
+Integration of Functions
+
+Simpson’s rule:
+
+
+x3
+
+x1
+
+
+f (x)dx = h
+
+1
+4
+1
+f1 + f2 + f3
+3
+3
+3
+
+
+
++ O(h5 f (4) )
+
+(4.1.4)
+
+Here f (4) means the fourth derivative of the function f evaluated at an unknown
+place in the interval. Note also that the formula gives the integral over an interval
+of size 2h, so the coefficients add up to 2.
+There is no lucky cancellation in the four-point formula, so it is also exact for
+polynomials up to and including degree 3.
+Simpson’s
+
+
+x4
+
+x1
+
+3
+8
+
+rule:
+
+
+f (x)dx = h
+
+3
+9
+9
+3
+f1 + f2 + f3 + f4
+8
+8
+8
+8
+
+
+
++ O(h5 f (4) )
+
+(4.1.5)
+
+The five-point formula again benefits from a cancellation:
+Bode’s rule:
+
+
+x5
+
+x1
+
+
+
+14
+64
+24
+64
+14
+f1 + f2 + f3 + f4 + f5
+f (x)dx = h
+45
+45
+45
+45
+45
+
+
+
++ O(h7 f (6) ) (4.1.6)
+
+This is exact for polynomials up to and including degree 5.
+At this point the formulas stop being named after famous personages, so we
+will not go any further. Consult [1] for additional formulas in the sequence.
+
+Extrapolative Formulas for a Single Interval
+We are going to depart from historical practice for a moment. Many texts
+would give, at this point, a sequence of “Newton-Cotes Formulas of Open Type.”
+Here is an example:
+
+
+x5
+x0
+
+
+
+55
+5
+5
+55
+f1 + f2 + f3 + f4
+f (x)dx = h
+24
+24
+24
+24
+
+
+
++ O(h5 f (4) )
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+of the function’s second derivative somewhere in the interval of integration. The
+coefficient is knowable, and it can be found in all the standard references on this
+subject. The point at which the second derivative is to be evaluated is, however,
+unknowable. If we knew it, we could evaluate the function there and have a higherorder method! Since the product of a knowable and an unknowable is unknowable,
+we will streamline our formulas and write only O( ), instead of the coefficient.
+Equation (4.1.3) is a two-point formula (x 1 and x2 ). It is exact for polynomials
+up to and including degree 1, i.e., f (x) = x. One anticipates that there is a
+three-point formula exact up to polynomials of degree 2. This is true; moreover, by a
+cancellation of coefficients due to left-right symmetry of the formula, the three-point
+formula is exact for polynomials up to and including degree 3, i.e., f (x) = x 3 :
+
+4.1 Classical Formulas for Equally Spaced Abscissas
+
+127
+
+
+
+x1
+
+x0
+
+
+
+x1
+
+x0
+
+
+
+x1
+
+f (x)dx = h[f1 ]
+
+f (x)dx = h
+
++ O(h2 f  )
+
+3
+1
+f1 − f2
+2
+2
+
+
+
+
+
+(4.1.7)
+
++ O(h3 f  )
+
+23
+16
+f1 − f2 +
+f (x)dx = h
+12
+12
+x0
+
+ x1
+55
+59
+f1 − f2 +
+f (x)dx = h
+24
+24
+x0
+
+5
+f3
+12
+
+
+
+(4.1.8)
+
++ O(h4 f (3) )
+
+37
+9
+f3 − f4
+24
+24
+
+
+
+(4.1.9)
+
++ O(h5 f (4) )(4.1.10)
+
+Perhaps a word here would be in order about how formulas like the above can
+be derived. There are elegant ways, but the most straightforward is to write down the
+basic form of the formula, replacing the numerical coefficients with unknowns, say
+p, q, r, s. Without loss of generality take x 0 = 0 and x1 = 1, so h = 1. Substitute in
+turn for f (x) (and for f 1 , f2 , f3 , f4 ) the functions f (x) = 1, f (x) = x, f (x) = x 2 ,
+and f (x) = x3 . Doing the integral in each case reduces the left-hand side to a
+number, and the right-hand side to a linear equation for the unknowns p, q, r, s.
+Solving the four equations produced in this way gives the coefficients.
+
+Extended Formulas (Closed)
+If we use equation (4.1.3) N − 1 times, to do the integration in the intervals
+(x1 , x2 ), (x2 , x3 ), . . . , (xN −1 , xN ), and then add the results, we obtain an “extended”
+or “composite” formula for the integral from x 1 to xN .
+Extended trapezoidal rule:
+
+ xN
+1
+f (x)dx = h f1 + f2 + f3 +
+2
+x1
+(4.1.11)
+
+
+
+(b − a)3 f 
+1
+· · · + fN −1 + fN
++O
+2
+N2
+Here we have written the error estimate in terms of the interval b − a and the number
+of points N instead of in terms of h. This is clearer, since one is usually holding
+a and b fixed and wanting to know (e.g.) how much the error will be decreased
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+Notice that the integral from a = x 0 to b = x5 is estimated, using only the interior
+points x1 , x2 , x3 , x4 . In our opinion, formulas of this type are not useful for the
+reasons that (i) they cannot usefully be strung together to get “extended” rules, as we
+are about to do with the closed formulas, and (ii) for all other possible uses they are
+dominated by the Gaussian integration formulas which we will introduce in §4.5.
+Instead of the Newton-Cotes open formulas, let us set out the formulas for
+estimating the integral in the single interval from x 0 to x1 , using values of the
+function f at x1 , x2 , . . . . These will be useful building blocks for the “extended”
+open formulas.
+
+128
+
+Chapter 4.
+
+Integration of Functions
+
+
+
+xN
+
+x1
+
+
+f (x)dx = h
+
+5
+13
+f1 + f2 + f3 + f4 +
+12
+12
+
+13
+5
+· · · + fN −2 + fN −1 + fN
+12
+12
+
+
++O
+
+1
+N3
+
+
+
+(4.1.12)
+
+(We will see in a moment where this comes from.)
+If we apply equation (4.1.4) to successive, nonoverlapping pairs of intervals,
+we get the extended Simpson’s rule:
+
+
+xN
+
+x1
+
+
+f (x)dx = h
+
+1
+4
+2
+4
+f1 + f2 + f3 + f4 +
+3
+3
+3
+3
+
+4
+1
+2
+· · · + fN −2 + fN −1 + fN
+3
+3
+3
+
+
++O
+
+1
+N4
+
+(4.1.13)
+
+
+
+Notice that the 2/3, 4/3 alternation continues throughout the interior of the evaluation. Many people believe that the wobbling alternation somehow contains deep
+information about the integral of their function that is not apparent to mortal eyes.
+In fact, the alternation is an artifact of using the building block (4.1.4). Another
+extended formula with the same order as Simpson’s rule is
+
+
+xN
+
+x1
+
+
+f (x)dx = h
+
+3
+7
+23
+f1 + f2 + f3 + f4 + f5 +
+8
+6
+24
+
+23
+7
+3
+· · · + fN −4 + fN −3 + fN −2 + fN −1 + fN
+24
+6
+8
+
+
+1
++O
+N4
+
+
+(4.1.14)
+
+This equation is constructed by fitting cubic polynomials through successive groups
+of four points; we defer details to §18.3, where a similar technique is used in the
+solution of integral equations. We can, however, tell you where equation (4.1.12)
+came from. It is Simpson’s extended rule, averaged with a modified version of
+itself in which the first and last step are done with the trapezoidal rule (4.1.3). The
+trapezoidal step is two orders lower than Simpson’s rule; however, its contribution to
+the integral goes down as an additional power of N (since it is used only twice, not
+N times). This makes the resulting formula of degree one less than Simpson.
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+by taking twice as many steps (in this case, it is by a factor of 4). In subsequent
+equations we will show only the scaling of the error term with the number of steps.
+For reasons that will not become clear until §4.2, equation (4.1.11) is in fact
+the most important equation in this section, the basis for most practical quadrature
+schemes.
+The extended formula of order 1/N 3 is:
+
+4.1 Classical Formulas for Equally Spaced Abscissas
+
+129
+
+Extended Formulas (Open and Semi-open)
+
+Equations (4.1.8) and (4.1.12) give
+
+ xN
+23
+7
+f2 + f3 + f4 + f5 +
+f (x)dx = h
+12
+12
+x1
+7
+23
+· · · + fN −3 + fN −2 + fN −1
+12
+12
+
+
+1
++O
+N3
+
+
+
+Equations (4.1.9) and (4.1.13) give
+
+ xN
+27
+13
+4
+f2 + 0 + f4 + f5 +
+f (x)dx = h
+12
+12
+3
+x1
+
+4
+13
+27
+· · · + fN −4 + fN −3 + 0 + fN −1
+3
+12
+12
+
+
+1
++O
+N4
+
+(4.1.16)
+
+(4.1.17)
+
+The interior points alternate 4/3 and 2/3. If we want to avoid this alternation,
+we can combine equations (4.1.9) and (4.1.14), giving
+
+ xN
+55
+1
+11
+f2 − f3 + f4 + f5 + f6 + f7 +
+f (x)dx = h
+24
+6
+8
+x1
+
+11
+1
+55
+· · · + fN −5 + fN −4 + fN −3 − fN −2 + fN −1
+8
+6
+24
+
+
+1
++O
+N4
+(4.1.18)
+We should mention in passing another extended open formula, for use where
+the limits of integration are located halfway between tabulated abscissas. This one is
+known as the extended midpoint rule, and is accurate to the same order as (4.1.15):
+ xN
+f (x)dx = h[f3/2 + f5/2 + f7/2 +
+x1
+(4.1.19)
+
+
+1
+· · · + fN −3/2 + fN −1/2 ] + O
+N2
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+We can construct open and semi-open extended formulas by adding the closed
+formulas (4.1.11)–(4.1.14), evaluated for the second and subsequent steps, to the
+extrapolative open formulas for the first step, (4.1.7)–(4.1.10). As discussed
+immediately above, it is consistent to use an end step that is of one order lower
+than the (repeated) interior step. The resulting formulas for an interval open at
+both ends are as follows:
+Equations (4.1.7) and (4.1.11) give
+
+
+
+
+ xN
+3
+3
+1
+f (x)dx = h f2 + f3 + f4 + · · · + fN −2 + fN −1
++O
+(4.1.15)
+2
+2
+N2
+x1
+
+130
+
+Chapter 4.
+
+Integration of Functions
+
+N=1
+2
+3
+4
+
+Figure 4.2.1. Sequential calls to the routine trapzd incorporate the information from previous calls and
+evaluate the integrand only at those new points necessary to refine the grid. The bottom line shows the
+totality of function evaluations after the fourth call. The routine qsimp, by weighting the intermediate
+results, transforms the trapezoid rule into Simpson’s rule with essentially no additional overhead.
+
+There are also formulas of higher order for this situation, but we will refrain from
+giving them.
+The semi-open formulas are just the obvious combinations of equations (4.1.11)–
+(4.1.14) with (4.1.15)–(4.1.18), respectively. At the closed end of the integration,
+use the weights from the former equations; at the open end use the weights from
+the latter equations. One example should give the idea, the formula with error term
+decreasing as 1/N 3 which is closed on the right and open on the left:
+
+ xN
+23
+7
+f2 + f3 + f4 + f5 +
+f (x)dx = h
+12
+12
+x1
+
+
+ (4.1.20)
+1
+13
+5
+· · · + fN −2 + fN −1 + fN
++O
+12
+12
+N3
+CITED REFERENCES AND FURTHER READING:
+Abramowitz, M., and Stegun, I.A. 1964, Handbook of Mathematical Functions, Applied Mathematics Series, Volume 55 (Washington: National Bureau of Standards; reprinted 1968 by
+Dover Publications, New York), §25.4. [1]
+Isaacson, E., and Keller, H.B. 1966, Analysis of Numerical Methods (New York: Wiley), §7.1.
+
+4.2 Elementary Algorithms
+Our starting point is equation (4.1.11), the extended trapezoidal rule. There are
+two facts about the trapezoidal rule which make it the starting point for a variety of
+algorithms. One fact is rather obvious, while the second is rather “deep.”
+The obvious fact is that, for a fixed function f (x) to be integrated between fixed
+limits a and b, one can double the number of intervals in the extended trapezoidal
+rule without losing the benefit of previous work. The coarsest implementation of
+the trapezoidal rule is to average the function at its endpoints a and b. The first
+stage of refinement is to add to this average the value of the function at the halfway
+point. The second stage of refinement is to add the values at the 1/4 and 3/4 points.
+And so on (see Figure 4.2.1).
+Without further ado we can write a routine with this kind of logic to it:
+
+Sample page from NUMERICAL RECIPES IN FORTRAN 77: THE ART OF SCIENTIFIC COMPUTING (ISBN 0-521-43064-X)
+Copyright (C) 1986-1992 by Cambridge University Press. Programs Copyright (C) 1986-1992 by Numerical Recipes Software.
+Permission is granted for internet users to make one paper copy for their own personal use. Further reproduction, or any copying of machinereadable files (including this one) to any server computer, is strictly prohibited. To order Numerical Recipes books or CDROMs, visit website
+http://www.nr.com or call 1-800-872-7423 (North America only), or send email to directcustserv@cambridge.org (outside North America).
+
+(total after N = 4)
+

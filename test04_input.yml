@@ -1,0 +1,5 @@
+# YAML
+categorisemodule: "./trainingdata/categorisefunc.py"
+categories: ["Reactor_physics", "Radiation_transport", "Linear_algebra", "Numerical_integration"]
+trainingdata: "./trainingdata"
+testfile: ["./testdata/Generalized_minimum_residual_method.pdf.txt"]
