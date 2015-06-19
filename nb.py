@@ -1,5 +1,6 @@
 """Main routine for the naive Bayes classifier.
 
+Based on http://blog.yhathq.com/posts/naive-bayes-in-python.html.
 Required argument: filename of YAML input deck.
 """
 
